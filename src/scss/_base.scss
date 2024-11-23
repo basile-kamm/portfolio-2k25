@@ -16,3 +16,9 @@ video {
 h1 {
   font-family: "humane";
 }
+
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
