@@ -1,0 +1,32 @@
+.selected-background {
+  min-width: 100vw;
+  height: 100vh;
+  top: 0;
+
+  z-index: 5;
+  position: fixed;
+}
+
+.parallax-container {
+  height: 100vh;
+}
+// .selected-spacer {
+//   height: 100vh;
+// }
+
+.selected-work {
+  display: flex;
+  padding: 12px 2vw;
+  justify-content: space-between;
+}
+
+.selected-work-topics {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.selected-works {
+  position: relative;
+  z-index: 6;
+}
