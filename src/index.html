@@ -14,6 +14,7 @@
           <div class="banner-container">
             <img
               src="asset/img/banner/whole.webp"
+              class="layer-background"
               alt=""
               srcset="
                 asset/img/banner/whole.webp?width=3000 3000w,
@@ -36,6 +37,7 @@
               alt=""
               class="desktop layer-3"
             />
+
             <div class="container">
               <div class="row">
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
@@ -81,22 +83,28 @@
               </div>
             </div>
           </div>
-          <img
+          <!-- <img
             src="asset/img/forest-desktop.png"
             class="selected-background"
             alt=""
-          />
-        </div>
-        <div class="selected-spacer"></div>
-        <div class="selected-works">
-          <h2 class="selected-works-title">Selected works</h2>
-          <include src="html-modules/selected-work.html">
-            { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
-            "topic3": "" }
-          </include>
+            srcset="
+              asset/img/forest-desktop.png?width=3000&as=webp 3000w,
+              asset/img/forest-desktop.png?width=1500&as=webp 1500w,
+              asset/img/forest-mobile.png?width=700&as=webp    800w
+            "
+          /> -->
+          <div class="selected-background"></div>
+          <div class="selected-works">
+            <h2 class="selected-works-title">Selected works</h2>
+            <include src="html-modules/selected-work.html">
+              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
+              "topic3": "" }
+            </include>
+          </div>
         </div>
         <div class="selected-trailers"></div>
         <div class="selected-works-details"></div>
+        okay okay
       </section>
     </main>
     <script src="js/main.js" type="module"></script>

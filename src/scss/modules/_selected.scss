@@ -2,17 +2,18 @@
   min-width: 100vw;
   height: 100vh;
   top: 0;
+  pointer-events: none;
 
   z-index: 5;
   position: fixed;
+  background-image: url("../asset/img/forest-desktop.png");
+  background-position: center center;
+  background-size: cover;
 }
 
 .parallax-container {
   height: 100vh;
 }
-// .selected-spacer {
-//   height: 100vh;
-// }
 
 .selected-work {
   display: flex;
@@ -27,6 +28,15 @@
 }
 
 .selected-works {
-  position: relative;
+  color: $white;
+  position: fixed;
+  bottom: 20px;
+  left: 5vw;
   z-index: 6;
+}
+
+@include breakpoint("small") {
+  .selected-background {
+    background-image: url("../asset/img/forest-mobile.png");
+  }
 }
