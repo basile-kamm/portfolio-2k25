@@ -6,9 +6,17 @@
 
   z-index: 5;
   position: fixed;
-  background-image: url("../asset/img/forest-desktop.png");
-  background-position: center center;
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .selected-background-img {
+    background-image: url("../asset/img/forest-desktop.png?as=webp&width=2000");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .parallax-container {
@@ -22,6 +30,7 @@
   overflow: hidden;
   position: relative;
   padding: 3px 3vw 5px;
+  height: 50px;
   cursor: pointer;
   background: linear-gradient(
     0deg,
@@ -42,6 +51,21 @@
 
 .selected-work-titles {
   position: relative;
+}
+
+.selected-trailers {
+  background: red;
+  width: 350px;
+  aspect-ratio: 16/9;
+  transform: translateY(50%);
+  rotate: 3deg;
+  position: absolute;
+  z-index: -3;
+}
+
+.selected-trailer {
+  width: 100%;
+  display: none;
 }
 
 .selected-work-title {
@@ -65,6 +89,9 @@
 
 .selected-work-topics {
   text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  right: 3vw;
   font-weight: 400;
   letter-spacing: 0.1rem;
   font-size: 40px;
@@ -97,6 +124,6 @@
 
 @include breakpoint("small") {
   .selected-background {
-    background-image: url("../asset/img/forest-mobile.png");
+    background-image: url("../asset/img/forest-mobile.png?as=webp");
   }
 }

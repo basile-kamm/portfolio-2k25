@@ -67,6 +67,12 @@
   }
 }
 
+@include breakpoint("medium") {
+  .layer-background {
+    height: 110vh;
+  }
+}
+
 @include breakpoint("small") {
   .banner-container {
     img {

@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
   parallax.to(
     ".banner-container",
     {
-      scale: 0.35,
+      scale: 0.4,
       duration: 0.3,
       y: 100,
     },

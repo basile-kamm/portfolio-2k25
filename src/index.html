@@ -93,16 +93,30 @@
               asset/img/forest-mobile.png?width=700&as=webp    800w
             "
           /> -->
-          <div class="selected-background"></div>
+          <div class="selected-background">
+            <div class="selected-background-img"></div>
+
+            <div class="selected-trailers">
+              <video
+                src="asset/img/trailer/trailer-test.webm?width=350"
+                autoplay
+                loop
+                class="selected-trailer furieuse"
+              ></video>
+            </div>
+          </div>
           <div class="selected-works">
             <h2 class="selected-works-title">Selected works</h2>
             <include src="html-modules/selected-work.html">
               { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
-              "topic3": "" }
+              "topic3": "Motion", "value": "furieuse" }
+            </include>
+            <include src="html-modules/selected-work.html">
+              { "title": "Grenouche", "topic1": "Game Design", "topic2": "Dev",
+              "topic3": "", "value": "grenouche" }
             </include>
           </div>
         </div>
-        <div class="selected-trailers"></div>
         <div class="selected-works-details"></div>
         okay oka
       </section>
