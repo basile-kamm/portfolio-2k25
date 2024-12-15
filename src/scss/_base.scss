@@ -6,6 +6,7 @@
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img,
@@ -13,7 +14,14 @@ video {
   display: block;
 }
 
-h1 {
+p,
+a {
+  font-family: "Founders Grotesk";
+}
+
+h1,
+h2,
+h3 {
   font-family: "humane";
 }
 

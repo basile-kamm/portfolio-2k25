@@ -1,0 +1,129 @@
+.selected-background {
+  min-width: 100vw;
+  height: 100vh;
+  top: 0;
+  pointer-events: none;
+
+  z-index: 5;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .selected-background-img {
+    background-image: url("../asset/img/forest-desktop.png?as=webp&width=2000");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.parallax-container {
+  height: 100vh;
+}
+
+.selected-work {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 3px 3vw 5px;
+  height: 50px;
+  cursor: pointer;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+}
+
+.selected-work-underline {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  width: 100vw;
+  transform: translateY(100%);
+}
+
+.selected-work-titles {
+  position: relative;
+}
+
+.selected-trailers {
+  background: red;
+  width: 350px;
+  aspect-ratio: 16/9;
+  transform: translateY(50%);
+  rotate: 3deg;
+  position: absolute;
+  z-index: -3;
+}
+
+.selected-trailer {
+  width: 100%;
+  display: none;
+}
+
+.selected-work-title {
+  font-size: 48px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  &.desktop {
+    font-family: "Migra";
+    font-style: italic;
+    font-weight: 200;
+    transform: translateY(100%);
+    font-size: 44px;
+  }
+
+  &.main {
+    font-family: "Founders Grotesk";
+    font-weight: 600;
+  }
+}
+
+.selected-work-topics {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  right: 3vw;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  font-size: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  .selected-work-topic {
+    font-family: "Humane";
+    transform: translateY(110%);
+  }
+}
+
+.selected-works {
+  color: $white;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100vw;
+  z-index: 6;
+}
+
+.selected-works-title {
+  padding-left: 3vw;
+  font-family: "Humane";
+  font-size: 44px;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+}
+
+@include breakpoint("small") {
+  .selected-background {
+    background-image: url("../asset/img/forest-mobile.png?as=webp");
+  }
+}
