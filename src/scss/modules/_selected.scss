@@ -30,7 +30,6 @@
   overflow: hidden;
   position: relative;
   padding: 3px 3vw 5px;
-  height: 50px;
   cursor: pointer;
   background: linear-gradient(
     0deg,
@@ -54,8 +53,8 @@
 }
 
 .selected-trailers {
-  background: red;
-  width: 350px;
+  // background: red;
+  width: 20vw;
   aspect-ratio: 16/9;
   transform: translateY(50%);
   rotate: 3deg;
@@ -69,21 +68,23 @@
 }
 
 .selected-work-title {
-  font-size: 48px;
+  font-size: 3vw;
   text-transform: uppercase;
-  position: absolute;
   top: 0;
   &.desktop {
+    position: absolute;
     font-family: "Migra";
     font-style: italic;
     font-weight: 200;
     transform: translateY(100%);
-    font-size: 44px;
+    font-size: 2.8vw;
   }
 
   &.main {
     font-family: "Founders Grotesk";
     font-weight: 600;
+    line-height: 80%;
+    padding-top: 1vh;
   }
 }
 
@@ -94,10 +95,10 @@
   right: 3vw;
   font-weight: 400;
   letter-spacing: 0.1rem;
-  font-size: 40px;
+  font-size: 2vw;
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 16px;
 
   .selected-work-topic {
     font-family: "Humane";
@@ -117,7 +118,7 @@
 .selected-works-title {
   padding-left: 3vw;
   font-family: "Humane";
-  font-size: 44px;
+  font-size: 3vw;
   letter-spacing: 0.1rem;
   font-weight: 300;
 }
