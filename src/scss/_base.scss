@@ -30,3 +30,22 @@ h3 {
     display: none;
   }
 }
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background: $dark;
+}
+
+*::selection {
+  background: $dark;
+  color: $white;
+}
