@@ -11,5 +11,9 @@ $green: #1e975c;
     @media (max-width: 991px) {
       @content;
     }
+  } @else if $size== "big" {
+    @media (min-width: 1800px) {
+      @content;
+    }
   }
 }

@@ -1,0 +1,153 @@
+.resume {
+  background: $green;
+}
+
+.resume-box {
+  border: 1px solid $white;
+  padding: 2vh 2vw;
+  height: 100%;
+  color: $white;
+}
+
+.resume-box {
+  display: flex;
+  &.contact {
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  &.title,
+  &.skills {
+    flex-direction: column;
+
+    justify-content: flex-end;
+  }
+
+  &.about {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.resume-contact {
+  font-family: "Founders Grotesk";
+  font-size: 2vw;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 74.166%;
+  text-align: right;
+  text-decoration: underline;
+  transition: transform 1s;
+}
+.resume-box.contact:hover .resume-contact {
+  transform: scaleY(2) translateY(-25%);
+}
+
+.resume-title {
+  font-family: "Humane";
+  font-size: 18vw;
+  line-height: 50%;
+  margin-top: 10vh;
+
+  span {
+    font-family: "Migra";
+    font-size: 2vw;
+    font-weight: 200;
+    line-height: 74.166%;
+  }
+}
+
+.resume-skills-title {
+  font-family: "Migra";
+  font-size: 2vw;
+  font-weight: 800;
+}
+
+.resume-skills-list {
+  font-family: "Migra";
+  font-size: 1.8vw;
+  font-weight: 200;
+  padding-left: 2vw;
+  list-style-type: square;
+
+  i {
+    font-size: 1.5vw;
+  }
+}
+
+.resume-about-text {
+  text-align: right;
+  font-family: "Founders Grotesk";
+  font-size: 2vw;
+  font-weight: 300;
+  line-height: 85%;
+  width: 80%;
+  margin-bottom: 10vh;
+  white-space: 10px;
+
+  a {
+    text-decoration: underline;
+    display: inline-block;
+    transition: transform 0.3s;
+    &:hover {
+      transform: skew(-45deg);
+    }
+  }
+
+  i {
+    font-family: "Migra";
+    font-size: 2vw;
+    font-style: italic;
+    font-weight: 200;
+  }
+}
+
+.resume-btn {
+  font-family: "humane";
+  font-weight: 300;
+  font-size: 6vw;
+  transition: all 0.3s;
+  text-decoration: underline;
+
+  &:hover {
+    letter-spacing: 10px;
+    -webkit-text-stroke: 2px $white;
+  }
+}
+
+@include breakpoint("small") {
+  .resume-box {
+    padding: 16px;
+  }
+
+  .resume-btn {
+    font-size: 60px;
+  }
+
+  .resume-about-text {
+    font-size: 24px;
+    width: 88vw;
+    i {
+      font-size: 24px;
+    }
+  }
+  .resume-title {
+    font-size: 150px;
+    span {
+      font-size: 24px;
+    }
+  }
+
+  .resume-skills-list {
+    font-size: 24px;
+    margin-left: 32px;
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .resume-skills-title {
+    font-size: 26px;
+  }
+}
