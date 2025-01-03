@@ -62,7 +62,8 @@
   z-index: -3;
 }
 
-.selected-trailer {
+.selected-trailer,
+.selected-main-trailer {
   width: 100%;
   display: none;
 }
@@ -124,7 +125,36 @@
 }
 
 @include breakpoint("small") {
-  .selected-background {
+  .selected-background-img {
     background-image: url("../asset/img/forest-mobile.png?as=webp");
+  }
+
+  .selected-works-title {
+    font-size: 28px;
+  }
+
+  .selected-work-title {
+    transform: translateY(25%);
+    font-size: 24px;
+  }
+
+  .selected-work-topics {
+    font-size: 24px;
+    gap: 12px;
+
+    .selected-work-topic {
+      transform: translateY(0);
+    }
+  }
+
+  .selected-work-underline {
+    transform: translateY(0);
+    height: 1px;
+    left: 2vw;
+    width: 96vw;
+  }
+
+  .selected-work {
+    margin-bottom: 16px;
   }
 }

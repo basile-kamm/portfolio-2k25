@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedDetails = document.querySelectorAll(
     ".selected-detail-container"
   );
+  const selectedDetailClose = document.querySelector(".selected-detail-close");
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
 
   const body = document.querySelector("body");
@@ -43,9 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     selectedWork.addEventListener("click", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
         if (selectedWorkDetail.classList.contains(hoverValue)) {
-          const selectedDetailClose = selectedWorkDetail.querySelector(
-            ".selected-detail-close"
-          );
           const openDetailAnim = openWorkDetail(
             selectedWorkDetail,
             selectedDetailClose
@@ -70,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     body.classList.add("no-scroll");
     tl.set(selectedWorkDetail, { display: "block" });
-    tl.set(selectedDetailClose, { zIndex: 10 });
     tl.set(selectedCloseMap, { display: "block" });
     tl.to(selectedWorkDetail, { translateX: 0 });
     tl.fromTo(
@@ -84,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "<0.2"
     );
+    tl.to(selectedDetailClose, { x: 0 }, "<0.2");
     tl.to(
       selectedCloseMap,
       {
@@ -98,46 +96,47 @@ document.addEventListener("DOMContentLoaded", function () {
   function selectedWorkHover(selectedWork) {
     const tl = gsap.timeline();
 
-    // Scope animations to children of the specific selectedWork
-    tl.to(selectedWork.querySelector(".selected-work-title.main"), {
-      translateY: "-100%",
-      duration: 0.5,
-    });
-    tl.to(
-      selectedWork.querySelector(".selected-work-title.desktop"),
-      {
-        translateY: "0",
-        duration: 0.3,
-      },
-      "<"
-    );
-    tl.to(
-      selectedWork.querySelectorAll(".selected-work-topic"),
-      {
-        translateY: 0,
-        stagger: 0.1,
-        duration: 0.2,
-      },
-      "<0.1"
-    );
-    tl.to(
-      selectedWork.querySelector(".selected-work-underline"),
-      {
-        translateY: 0,
-        duration: 0.3,
-      },
-      "<0.2"
-    );
-    tl.to(
-      selectedWork,
-      {
-        duration: 0.2,
-        background:
-          "linear-gradient(0deg, rgba(255,255,255, 0.3) 0%, rgba(217, 217, 217, 0) 100%)",
-      },
-      "<0.1"
-    );
-
+    if (window.screen.width >= 678) {
+      // Scope animations to children of the specific selectedWork
+      tl.to(selectedWork.querySelector(".selected-work-title.main"), {
+        translateY: "-100%",
+        duration: 0.5,
+      });
+      tl.to(
+        selectedWork.querySelector(".selected-work-title.desktop"),
+        {
+          translateY: "0",
+          duration: 0.3,
+        },
+        "<"
+      );
+      tl.to(
+        selectedWork.querySelectorAll(".selected-work-topic"),
+        {
+          translateY: 0,
+          stagger: 0.1,
+          duration: 0.2,
+        },
+        "<0.1"
+      );
+      tl.to(
+        selectedWork.querySelector(".selected-work-underline"),
+        {
+          translateY: 0,
+          duration: 0.3,
+        },
+        "<0.2"
+      );
+      tl.to(
+        selectedWork,
+        {
+          duration: 0.2,
+          background:
+            "linear-gradient(0deg, rgba(255,255,255, 0.3) 0%, rgba(217, 217, 217, 0) 100%)",
+        },
+        "<0.1"
+      );
+    }
     return tl;
   }
 });

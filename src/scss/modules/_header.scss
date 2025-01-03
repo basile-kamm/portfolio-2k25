@@ -35,3 +35,17 @@ header {
   font-family: "founders grotesk";
   text-transform: uppercase;
 }
+
+@include breakpoint("small") {
+  header {
+    font-size: 16px;
+  }
+
+  .header-items {
+    gap: 16px;
+  }
+
+  .header-nav {
+    font-size: 18px;
+  }
+}

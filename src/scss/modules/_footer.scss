@@ -148,18 +148,32 @@ footer {
 
 @include breakpoint("small") {
   .footer-cta {
-    font-size: 170px;
-    line-height: 81%;
+    font-size: 150px;
+    line-height: 84%;
+    width: 60vw;
+    text-decoration: none;
+  }
+
+  .footer-cta-container {
+    padding: 16px;
   }
 
   .footer-sub-cta {
-    font-size: 24px;
+    font-size: 18px;
     transform: translateY(60%);
   }
 
   .footer-links-container {
-    padding: 0 32px;
-    gap: 400px;
+    padding: 0 16px;
+    gap: 300px;
+    width: 15vw;
+  }
+  .footer-infos {
+    gap: 8px;
+  }
+
+  .footer-social {
+    font-size: 24px;
   }
 }
 @include breakpoint("big") {

@@ -33,6 +33,10 @@
   color: $white;
 }
 
+.banner-titles {
+  margin-left: 1vw;
+}
+
 .banner-title {
   font-size: 15vw;
   font-weight: 400;
@@ -60,7 +64,8 @@
 .banner-text {
   text-transform: uppercase;
   font-size: 1.5vw;
-  line-height: 77%; /* 22.25px */
+  line-height: 85%; /* 22.25px */
+  text-align: right;
 
   i {
     font-weight: 300;
@@ -90,7 +95,7 @@
   }
 
   .banner-subtitle {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 5px;
   }
 
@@ -99,6 +104,6 @@
   }
 
   .banner-texts {
-    margin-bottom: 50px;
+    padding-bottom: 100px;
   }
 }

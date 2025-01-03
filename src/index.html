@@ -43,9 +43,9 @@
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
                   <div class="banner-texts">
                     <p class="banner-text">
-                      I am an IMD student looking for an Intership... I love
-                      <i>web developement & design</i>. I love nature, free
-                      party and cats.
+                      I am an IMD student looking for an Intership... <br />
+                      I love <i>web design & developement</i>. I love nature,
+                      free party and cats.
                     </p>
                     <a href="" class="button">Contact me</a>
                   </div>
@@ -99,6 +99,12 @@
             <div class="selected-trailers">
               <video
                 src="asset/img/trailer/trailer-test.webm?width=350"
+                class="selected-main-trailer"
+                autoplay
+                loop
+              ></video>
+              <video
+                src="asset/img/trailer/trailer-test.webm?width=350"
                 autoplay
                 loop
                 class="selected-trailer furieuse"
@@ -112,14 +118,18 @@
               "topic3": "Motion", "value": "furieuse" }
             </include>
             <include src="html-modules/selected-work.html">
-              { "title": "Grenouche", "topic1": "Game Design", "topic2": "Dev",
-              "topic3": "", "value": "grenouche" }
+              { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
+              "Game Design", "value": "grenouche" }
             </include>
           </div>
         </div>
         <div class="selected-works-details">
           <include src="html-modules/selected-detail.html"></include>
           <div class="selected-detail-close-map"></div>
+          <button class="selected-detail-close">
+            <div class="selected-detail-close-bar"></div>
+            <div class="selected-detail-close-bar"></div>
+          </button>
         </div>
       </section>
       <section class="resume">
@@ -147,7 +157,8 @@
                   <a href="https://www.eikon.ch" target="_blank"
                     >eikon in Fribourg</a
                   >. Once I began, I quickly developed a strong interest in web
-                  development—a passion that still continues to grow. <br />
+                  development—a passion that still continues to grow.
+                  <br />
                   Now in my third year of apprenticeship as an
                   <i>Interactive Media Designer</i>, I’m focused on finding an
                   intership to specialize in graphic design, web design, and
@@ -198,7 +209,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h3 class="credits-title">Credits</h3>
+              <h3 class="credits-title" data-creditAnim>Credits</h3>
             </div>
             <div class="col-7">
               <div class="credits-fonts-container">
