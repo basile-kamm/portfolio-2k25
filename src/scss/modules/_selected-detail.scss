@@ -27,7 +27,9 @@
   width: 45px;
   border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: all 0.3s;
+  transform: translateX(400px);
+  z-index: 15;
 
   .selected-detail-close-bar {
     background: $white;
@@ -48,6 +50,7 @@
   &:hover {
     background: rgba($white, 0.25);
     box-shadow: 0 0 10px 2px rgba($white, 0.5);
+    transform: rotate(90deg);
   }
 }
 
@@ -145,6 +148,9 @@
 }
 
 @include breakpoint("small") {
+  .selected-detail-container {
+    width: 90vw;
+  }
   .selected-detail-arrow {
     rotate: 45deg;
   }
@@ -154,8 +160,11 @@
     font-size: 16px;
   }
 
-  .selected-detail-main-link::after {
-    transform: translateX(0);
+  .selected-detail-main-link {
+    gap: 8px;
+    &::after {
+      transform: translateX(0);
+    }
   }
 
   .selected-detail-text {

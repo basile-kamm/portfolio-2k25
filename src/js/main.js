@@ -13,13 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let openCreditsAnim;
 
   creditsCta.addEventListener("click", function () {
-    if (!openCreditsAnim) {
-      openCreditsAnim = openCredits(); // Create the animation instance
-    }
+    openCreditsAnim = openCredits(); // Create the animation instance
   });
 
   creditsClose.addEventListener("click", function () {
-    console.log("ye");
+    openCreditsAnim.reverse();
+    openCreditsAnim == null;
+  });
+  selectedCloseMap.addEventListener("click", function () {
+    openCreditsAnim.reverse();
+    openCreditsAnim == null;
   });
 
   function openCredits() {
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tl.set(creditsCont, { display: "block" });
     tl.set(selectedCloseMap, { display: "block" });
-    tl.to(creditsCont, { translateY: 0 });
+    tl.to(creditsCont, { translateY: 0, duration: 0.5 });
 
     return tl;
   }

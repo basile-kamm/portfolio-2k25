@@ -123,19 +123,24 @@
 
   .resume-btn {
     font-size: 60px;
+
+    &:hover {
+      letter-spacing: 5px;
+      -webkit-text-stroke: 2px $white;
+    }
   }
 
   .resume-about-text {
-    font-size: 24px;
+    font-size: 20px;
     width: 88vw;
     i {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   .resume-title {
-    font-size: 150px;
+    font-size: 120px;
     span {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 
