@@ -10,6 +10,13 @@
     position: absolute;
     bottom: 0;
     pointer-events: none;
+    user-select: none;
+
+    // &.layer-1,
+    // &.layer-1-2,
+    // &.layer-2 {
+    //   opacity: 0.9;
+    // }
   }
 
   // #layer-1-2 {
@@ -42,6 +49,15 @@
   font-weight: 400;
   text-transform: uppercase;
   line-height: 75%; /* 179.481px */
+  z-index: 50;
+}
+
+.banner-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: red;
+  z-index: 50;
 }
 
 .banner-subtitle {

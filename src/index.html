@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scss/main.scss" />
-  </head>
-  <body>
-    <include src="html-modules/header.html"></include>
+<extends src="base-layout.html" locals='{"script": "main.js"}'>
+  <block name="content">
     <main>
       <section class="heading">
         <div class="parallax-container">
@@ -43,11 +35,11 @@
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
                   <div class="banner-texts">
                     <p class="banner-text">
-                      I am an IMD student looking for an Intership... <br />
-                      I love <i>web design & developement</i>. I love nature,
-                      free party and cats.
+                      I am an IMD student looking for an intership... I love
+                      <i>web design & developement</i>. I love nature, free
+                      party and cats.
                     </p>
-                    <a href="" class="button">Contact me</a>
+                    <a href="contact.html" class="button">Contact me</a>
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -126,10 +118,10 @@
         <div class="selected-works-details">
           <include src="html-modules/selected-detail.html"></include>
           <div class="selected-detail-close-map"></div>
-          <button class="selected-detail-close">
+          <div class="selected-detail-close">
             <div class="selected-detail-close-bar"></div>
             <div class="selected-detail-close-bar"></div>
-          </button>
+          </div>
         </div>
       </section>
       <section class="resume">
@@ -165,12 +157,12 @@
                   especially in frontend and backend development.
                 </p>
 
-                <a href="" class="resume-btn">See my whole resume</a>
+                <a href="resume.html" class="resume-btn">See my whole resume</a>
               </div>
             </div>
             <div class="col-12 col-md-3">
               <div class="resume-box skills">
-                <p class="resume-skills-title">what can I do ?</p>
+                <h3 class="resume-skills-title">what can I do ?</h3>
                 <ul class="resume-skills-list">
                   <li>visual identities</li>
                   <li>web design</li>
@@ -191,8 +183,10 @@
     <footer>
       <div class="footer-cta-container">
         <p class="footer-sub-cta">If I catched your attention,</p>
-        <a href="" class="footer-cta desktop">Let's get in touch</a>
-        <a href="" class="footer-cta mobile">Let's get<br />in touch</a>
+        <a href="contact.html" class="footer-cta desktop">Let's get in touch</a>
+        <a href="contact.html" class="footer-cta mobile"
+          >Let's get<br />in touch</a
+        >
       </div>
       <div class="footer-links-container">
         <nav class="footer-socials">
@@ -227,7 +221,7 @@
                   </li>
                   <li>
                     <a href="" target="_blank" class="credits-font grotesk"
-                      >Neue Grotesk</a
+                      >Founders Grotesk</a
                     >
                   </li>
                 </ul>
@@ -248,6 +242,5 @@
         </div>
       </div>
     </footer>
-    <script src="js/main.js" type="module"></script>
-  </body>
-</html>
+  </block>
+</extends>

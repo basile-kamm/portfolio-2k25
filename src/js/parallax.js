@@ -12,11 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: 0.3,
     },
   });
+
+  parallax.set(".banner-title-overlay", {
+    zIndex: 100,
+  });
   if (window.screen.width <= 678) {
     parallax.from(
       ".selected-background",
       {
-        scale: 20,
+        scale: 13,
         x: -1000,
         y: "-170vw",
         rotate: -45,
@@ -32,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         translateY: "200%",
         duration: 0.5,
       },
-      "<0.75"
+      "<0.6"
     );
   } else {
     parallax.to(".layer-1", {

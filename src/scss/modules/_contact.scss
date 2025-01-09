@@ -1,0 +1,134 @@
+.contact-slideshow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  z-index: -1;
+}
+.contact-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Make each image fill the container */
+  object-fit: cover; /* Maintain image aspect ratio */
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.contact-slide:first-child {
+  opacity: 1;
+}
+
+.contact-socials,
+.contact-texts {
+  color: $white;
+}
+
+.contact-texts {
+  position: fixed;
+  bottom: 2vh;
+  left: 2vw;
+}
+
+.contact-text {
+  font-family: "Migra";
+  font-size: 1.5vw;
+  font-weight: 200;
+  line-height: 74.166%; /* 17.8px */
+  transform: translateY(-180%);
+  margin-bottom: 1vh;
+}
+
+.contact-cta {
+  font-family: "Humane";
+  font-size: 20vw;
+  font-weight: 700;
+  line-height: 74.166%; /* 225.802px */
+
+  display: flex;
+  gap: 1px;
+
+  .word {
+    display: flex;
+    gap: 1.2px;
+    position: relative;
+
+    .contact-underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2vh;
+      background: var(--background);
+      border: 2px solid $white;
+    }
+  }
+
+  b {
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 2px $white;
+  }
+}
+
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3vh;
+
+  padding: 20vh 2vw 0;
+}
+
+.contact-social {
+  text-align: right;
+  font-family: "Migra ";
+  font-size: 2vw;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 90%; /* 23.733px */
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+
+  &::after {
+    content: "";
+    height: 2px;
+    background: $white;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.3s 0.1s;
+    transform: translateX(110%);
+  }
+
+  &:hover {
+    transform: skewY(-15deg);
+    &::after {
+      transform: translateX(0);
+    }
+  }
+}
+
+@include breakpoint("small") {
+  .contact-cta {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(55%) translateY(-300%);
+    rotate: -90deg;
+  }
+
+  .contact-socials {
+    align-items: flex-start;
+  }
+
+  .contact-text {
+    width: 80%;
+  }
+}

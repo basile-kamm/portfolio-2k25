@@ -1,0 +1,97 @@
+.works-page {
+  background-image: url(/src/asset/img/brik-wall.jpg?as=webp);
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
+.works-heading {
+  display: flex;
+  align-items: baseline;
+  padding: 70vh 2vw 1vh;
+}
+
+.works-deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 43vw;
+  pointer-events: none;
+}
+
+.works-title {
+  font-family: "Humane";
+  font-size: 15vw;
+  line-height: 80%;
+  font-weight: 400;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.works-display {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.works-display-row {
+  height: 26vh;
+  padding: 0 0 3vh 2vw;
+  display: flex;
+  gap: 2vw;
+
+  &:nth-child(2) {
+    height: 29vh;
+  }
+}
+
+.works-item {
+  height: 100%;
+  background: $dark;
+  object-fit: cover;
+  box-shadow: -1px 4px 28.3px 0px rgba(0, 0, 0, 0.45);
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.works-input-container {
+  display: flex;
+  gap: 1.5vw;
+  padding-left: 1vw;
+  input {
+    display: none;
+  }
+
+  label p {
+    color: $white;
+    font-family: "Migra";
+    font-size: 2vw;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 74.166%; /* 23.733px */
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      text-shadow: 0 6px 2px 0 $dark;
+      transform: translateY(-6px);
+    }
+  }
+}
+input:checked + p {
+  opacity: 1;
+  font-size: 2.4vw;
+  -webkit-text-stroke: 0.7px $white;
+  transform: translateY(-18%);
+}
