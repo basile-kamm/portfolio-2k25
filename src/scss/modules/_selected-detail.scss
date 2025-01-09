@@ -60,7 +60,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(29, 31, 29, 0.15);
+  backdrop-filter: blur(0.6px);
   z-index: 5;
   display: none;
   opacity: 0;

@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           duration: 0.2,
           background:
-            "linear-gradient(0deg, rgba(255,255,255, 0.3) 0%, rgba(217, 217, 217, 0) 100%)",
+            "linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(217, 217, 217, 0) 100%)",
         },
         "<0.1"
       );

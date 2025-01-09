@@ -29,13 +29,9 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 3px 3vw 5px;
+  padding: 3px 3vw 5px 2vw;
   cursor: pointer;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(217, 217, 217, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .selected-work-underline {
@@ -117,7 +113,7 @@
 }
 
 .selected-works-title {
-  padding-left: 3vw;
+  padding-left: 2vw;
   font-family: "Humane";
   font-size: 3vw;
   letter-spacing: 0.1rem;

@@ -11,13 +11,15 @@
 
 .resume-box {
   display: flex;
-  &.contact {
+  &.contact,
+  &.software {
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
   }
   &.title,
-  &.skills {
+  &.skills,
+  &.languages {
     flex-direction: column;
 
     justify-content: flex-end;
@@ -27,6 +29,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  &.experiences,
+  &.education,
+  &.reference {
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -81,7 +89,7 @@
   font-family: "Founders Grotesk";
   font-size: 2vw;
   font-weight: 300;
-  line-height: 85%;
+  line-height: 95%;
   width: 80%;
   margin-bottom: 10vh;
   white-space: 10px;
@@ -113,6 +121,234 @@
   &:hover {
     letter-spacing: 10px;
     -webkit-text-stroke: 2px $white;
+  }
+}
+
+.resume.page {
+  .resume-about-text {
+    padding-top: 20vh;
+    margin-bottom: 2vh;
+  }
+
+  .resume-title {
+    padding: 10vh 0 1vh;
+  }
+}
+
+.resume-experiences-title {
+  text-align: right;
+  font-size: 16vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90%; /* 148.332px */
+  text-transform: uppercase;
+}
+
+.resume-experiences-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+}
+
+.resume-experiences-texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+}
+
+.resume-experiences-topics {
+  display: flex;
+  gap: 0.5vw;
+  align-items: last baseline;
+}
+
+.resume-experiences-time {
+  font-family: "Migra";
+  font-size: 1.8vw;
+  font-weight: 800;
+  line-height: 74.166%; /* 17.8px */
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.resume-experiences-topic {
+  font-size: 2vw;
+  font-weight: 300;
+}
+
+.resume-experiences-type {
+  font-size: 1.4vw;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.resume-experiences-place {
+  font-family: "Migra";
+  font-size: 1.8vw;
+  font-style: italic;
+  font-weight: 200;
+}
+.resume-experiences-underline {
+  height: 2px;
+  background: $white;
+  transform: translateY(-300%);
+}
+
+.resume-software-title {
+  font-size: 6vw;
+  font-weight: 400;
+  line-height: 90%; /* 59.333px */
+  text-transform: uppercase;
+}
+
+.resume-softwares {
+  padding-top: 10vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7vh;
+  margin-bottom: 1vh;
+  font-family: "Migra";
+  font-size: 2.2vw;
+  font-weight: 200;
+  line-height: 90%; /* 23.733px */
+}
+
+.resume-language-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5vw;
+}
+
+.resume-language {
+  font-family: "Humane";
+  font-size: 3vw;
+  font-weight: 600;
+  line-height: 90%; /* 26.7px */
+  text-transform: uppercase;
+  margin-top: 2vh;
+  letter-spacing: 0.1vw;
+}
+
+.resume-language-level {
+  font-family: "Migra";
+  font-size: 1.6vw;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 90%;
+}
+
+.resume-education-title {
+  align-self: flex-end;
+  font-family: "Migra";
+  font-size: 2.5vw;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10vh;
+}
+
+.resume-education-time {
+  margin: 3vh 0 1vh;
+  font-family: "Migra";
+  font-size: 1.5vw;
+  font-weight: 800;
+  line-height: 90%; /* 17.8px */
+  text-transform: uppercase;
+}
+
+.resume-education-texts {
+  display: flex;
+  gap: 0.5vw;
+  font-family: "Founders Grotesk";
+  font-size: 1.5vw;
+  font-weight: 400;
+  line-height: 74.166%; /* 17.8px */
+}
+
+.resume-education-place {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.resume-ref-texts {
+  display: flex;
+  gap: 0.5vw;
+  align-items: baseline;
+}
+
+.resume-ref {
+  font-family: "Migra";
+  font-size: 2vw;
+  font-weight: 800;
+  line-height: 90%; /* 23.733px */
+}
+
+.resume-ref-role {
+  font-size: 1.6vw;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.resume-ref-mail {
+  font-family: "Migra";
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 200;
+  margin-bottom: 0.5vh;
+}
+
+.resume-ref-title {
+  font-family: "Founders Grotesk";
+  -webkit-text-stroke: 1.3px $white;
+  color: rgba($white, 0);
+  font-size: 3vw;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.resume-ref-cta-container {
+  overflow: hidden;
+}
+.resume-ref-cta {
+  transform: translateX(-100%);
+  transition: 0.3s;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4vw;
+  font-size: 1.4vw;
+}
+
+#resumeref--cta-arrow {
+  rotate: 45deg;
+  width: 0.5vw;
+  fill: $white;
+}
+
+.resume-ref-texts.first {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+    background: $white;
+    height: 2px;
+  }
+}
+
+.resume-ref-container:hover {
+  .resume-ref-cta {
+    transform: translateX(0);
+  }
+  .resume-ref-texts.first::after {
+    transform: translateX(0);
   }
 }
 

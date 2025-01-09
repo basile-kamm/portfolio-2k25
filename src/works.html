@@ -1,0 +1,124 @@
+<extends src="base-layout.html" locals='{"script": "works.js"}'>
+  <block name="content">
+    <div class="works-page">
+      <div class="works-heading">
+        <h1 class="works-title">Works</h1>
+        <div class="works-input-container">
+          <label
+            ><input type="radio" name="filter" value="works-item" checked />
+            <p>all</p>
+          </label>
+          <label
+            ><input type="radio" name="filter" value="frontend" />
+            <p>frontend</p></label
+          >
+          <label
+            ><input type="radio" name="filter" value="ui" />
+            <p>UI</p></label
+          >
+          <label
+            ><input type="radio" name="filter" value="video" />
+            <p>video/motion</p></label
+          >
+          <label
+            ><input type="radio" name="filter" value="3d" />
+            <p>3D</p></label
+          >
+          <label
+            ><input type="radio" name="filter" value="graphism" />
+            <p>graphism</p></label
+          >
+          <label
+            ><input type="radio" name="filter" value="photo" />
+            <p>photo</p></label
+          >
+        </div>
+      </div>
+      <img src="asset/img/vines.png?as=webp" alt="" class="works-deco" />
+      <section class="works-display">
+        <div class="works-display-row">
+          <img
+            src="asset/img/works/3d/green-room.webp?width=500"
+            alt=""
+            class="works-item 3d"
+          />
+          <video
+            src="asset/img/works/video-motion/beyler-motion.webm?width=500"
+            alt=""
+            class="works-item video"
+            loop
+            autoplay
+            muted
+          ></video>
+          <img
+            src="asset/img/works/graphism/cervin.webp?width=500"
+            alt=""
+            class="works-item graphism"
+          />
+          <img
+            src="asset/img/works/photo/DSCN6904.png?as=webp&width=500"
+            alt=""
+            class="works-item photo"
+          />
+          <img
+            src="asset/img/works/frontend/what-da-duck.webp?width=500"
+            alt=""
+            class="works-item frontend"
+          />
+        </div>
+        <div class="works-display-row">
+          <img
+            src="asset/img/works/frontend/damn-cookies.webp?width=500"
+            alt=""
+            class="works-item frontend"
+          />
+          <img
+            src="asset/img/works/graphism/melting-down.webp?width=500"
+            alt=""
+            class="works-item graphism"
+          />
+          <img
+            src="asset/img/works/3d/invader-city.webp?width=500"
+            alt=""
+            class="works-item 3d"
+          />
+          <video
+            src="asset/img/works/video-motion/the-one.webm?width=500"
+            alt=""
+            class="works-item video"
+            loop
+            muted
+            autoplay
+          ></video>
+        </div>
+        <div class="works-display-row">
+          <video
+            src="asset/img/works/video-motion/the-grief.webm?width=500"
+            alt=""
+            class="works-item video"
+            loop
+            autoplay
+            muted
+          ></video>
+          <img
+            src="asset/img/works/graphism/kitty-kat.webp?width=500"
+            alt=""
+            class="works-item graphism"
+          />
+          <video
+            src="asset/img/works/3d/clock-world_3.webm?width=500"
+            alt=""
+            class="works-item 3d"
+            loop
+            autoplay
+          ></video>
+          <img
+            src="asset/img/works/graphism/gentille-hess.webp?width=500"
+            alt=""
+            class="works-item graphism"
+          />
+        </div>
+      </section>
+    </div>
+  </block>
+</extends>
