@@ -101,27 +101,48 @@
                 loop
                 class="selected-trailer furieuse"
               ></video>
+              <video
+                src="asset/img/trailer/trailer-tatitotu.webm"
+                autoplay
+                loop
+                class="selected-trailer tatitotu"
+              ></video>
             </div>
           </div>
           <div class="selected-works">
             <h2 class="selected-works-title">Selected works</h2>
             <include src="html-modules/selected-work.html">
-              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
-              "topic3": "Motion", "value": "furieuse" }
+              { "title": "Licorne", "topic1": "", "topic2": "Frontend",
+              "topic3": "UI Design", "value": "licorne" }
             </include>
             <include src="html-modules/selected-work.html">
               { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
               "Game Design", "value": "grenouche" }
+            </include>
+            <include src="html-modules/selected-work.html">
+              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
+              "topic3": "Motion", "value": "furieuse" }
+            </include>
+            <include src="html-modules/selected-work.html">
+              { "title": "Mirage Festival", "topic1": "", "topic2": "Graphism",
+              "topic3": "UI Design", "value": "mirage" }
+            </include>
+            <include src="html-modules/selected-work.html">
+              { "title": "Tatitotu", "topic1": "", "topic2": "Frontend",
+              "topic3": "UI Design", "value": "tatitotu" }
             </include>
           </div>
         </div>
         <div class="selected-works-details">
           <include src="html-modules/selected-detail.html"></include>
           <div class="selected-detail-close-map"></div>
-          <div class="selected-detail-close">
+          <button
+            aria-label="Overlay-close-button"
+            class="selected-detail-close"
+          >
             <div class="selected-detail-close-bar"></div>
             <div class="selected-detail-close-bar"></div>
-          </div>
+          </button>
         </div>
       </section>
       <section class="resume">

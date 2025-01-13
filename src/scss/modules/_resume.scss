@@ -16,6 +16,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
+    position: relative;
   }
   &.title,
   &.skills,
@@ -153,7 +154,7 @@
 .resume-experiences-texts {
   display: flex;
   justify-content: space-between;
-  align-items: last baseline;
+  align-items: baseline;
 }
 
 .resume-experiences-topics {
@@ -276,6 +277,11 @@
   display: flex;
   gap: 0.5vw;
   align-items: baseline;
+  width: fit-content;
+  &.first {
+    gap: 0;
+    transition: gap 0.4s 0.3s;
+  }
 }
 
 .resume-ref {
@@ -294,9 +300,9 @@
 .resume-ref-mail {
   font-family: "Migra";
   font-size: 1.4vw;
-  font-style: normal;
   font-weight: 200;
   margin-bottom: 0.5vh;
+  transition: transform 0.6s;
 }
 
 .resume-ref-title {
@@ -309,46 +315,61 @@
   text-transform: uppercase;
 }
 
-.resume-ref-cta-container {
-  overflow: hidden;
-}
 .resume-ref-cta {
-  transform: translateX(-100%);
-  transition: 0.3s;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4vw;
-  font-size: 1.4vw;
-}
-
-#resumeref--cta-arrow {
-  rotate: 45deg;
-  width: 0.5vw;
-  fill: $white;
-}
-
-.resume-ref-texts.first {
+  max-width: 0;
   overflow: hidden;
+  // order: 1;
+  transition: max-width 0.8s;
+  font-family: "Migra";
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 200;
+  transform: skewX(-20deg);
+}
+
+.resume-ref-container {
+  width: fit-content;
+  display: block;
   position: relative;
-  &::after {
+  // background: $green;
+  z-index: 2;
+  padding: 5px 5px 0;
+  transform: translateY(10%);
+  &::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(-100%);
-    transition: transform 0.4s;
-    background: $white;
-    height: 2px;
+    top: -0.5vh;
+    bottom: -0.5vh;
+    left: -0.5vh;
+    right: -0.5vh;
+    border: 2px solid $white;
+    background: $dark;
+    mix-blend-mode: exclusion;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: bottom;
+    transition: transform 0.6s, opacity 0.4s;
   }
-}
 
-.resume-ref-container:hover {
-  .resume-ref-cta {
-    transform: translateX(0);
-  }
-  .resume-ref-texts.first::after {
-    transform: translateX(0);
+  &:hover {
+    .resume-ref-texts.first {
+      gap: 0.3vw;
+    }
+    .resume-ref-cta {
+      // order: 0;
+      max-width: 5vw;
+      transition: max-width 0.8s 0.2s;
+    }
+
+    .resume-ref-mail {
+      transform: skewX(-20deg);
+      transition: transform 0.6s 0.2s;
+    }
+    &::before {
+      transition: transform 0.4s, opacity 0.8s;
+      transform: scaleY(100%);
+      opacity: 1;
+    }
   }
 }
 
@@ -367,28 +388,58 @@
   }
 
   .resume-about-text {
-    font-size: 20px;
+    font-size: 1.2rem;
     width: 88vw;
     i {
-      font-size: 22px;
+      font-size: 1.3rem;
     }
   }
   .resume-title {
     font-size: 120px;
     span {
-      font-size: 20px;
+      font-size: 1.2rem;
     }
   }
 
   .resume-skills-list {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-left: 32px;
     i {
-      font-size: 20px;
+      font-size: 1.2rem;
     }
   }
 
   .resume-skills-title {
     font-size: 26px;
+  }
+
+  .resume-experiences-title {
+    font-size: 32vw;
+  }
+  .resume-experiences-time {
+    font-size: 1.1rem;
+  }
+  .resume-experiences-topic {
+    font-size: 1.4rem;
+    line-height: 94%;
+    margin-bottom: 5px;
+  }
+  .resume-experiences-type {
+    font-size: 1rem;
+  }
+  .resume-experiences-place {
+    font-size: 1rem;
+  }
+
+  .resume-softwares {
+    font-size: 1.5rem;
+  }
+
+  .resume-software-title {
+    position: absolute;
+    top: 10vh;
+    left: 16px;
+    font-size: 90px;
+    font-weight: 700;
   }
 }
