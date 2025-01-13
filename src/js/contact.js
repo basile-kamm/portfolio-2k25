@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".contact-slide");
   let currentSlide = 0;
 
-  console.log("ye");
   function hideSlide(index) {
     const tl = gsap.timeline();
     // Set the z-index of the current slide to the highest
@@ -132,34 +131,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Change slide every 6 seconds
   setInterval(showNextSlide, 4000);
 
-  const contactCta = document.querySelector(".contact-cta");
-  const contactCtaEl = document.querySelectorAll(".contact-cta b");
+  if (window.innerWidth >= 678) {
+    const contactCta = document.querySelector(".contact-cta");
+    const contactCtaEl = document.querySelectorAll(".contact-cta b");
 
-  let hoverAnim;
+    let hoverAnim;
 
-  contactCta.addEventListener("mouseenter", function () {
-    hoverAnim = HoverCta();
-  });
-  contactCta.addEventListener("mouseleave", function () {
-    hoverAnim.reverse();
-  });
-
-  function HoverCta() {
-    const tl = gsap.timeline();
-
-    tl.to(contactCtaEl, {
-      color: "rgba(255,255,255, 1)",
-      stagger: 0.02,
+    contactCta.addEventListener("mouseenter", function () {
+      hoverAnim = HoverCta();
     });
-    tl.to(
-      ".contact-underline",
-      {
-        background: "rgba(255,255,255, 1)",
-        duration: 0.4,
-      },
-      "<0.1"
-    );
+    contactCta.addEventListener("mouseleave", function () {
+      hoverAnim.reverse();
+    });
 
-    return tl;
+    function HoverCta() {
+      const tl = gsap.timeline();
+
+      tl.to(contactCtaEl, {
+        color: "rgba(255,255,255, 1)",
+        stagger: 0.02,
+      });
+      tl.to(
+        ".contact-underline",
+        {
+          background: "rgba(255,255,255, 1)",
+          duration: 0.4,
+        },
+        "<0.1"
+      );
+
+      return tl;
+    }
   }
 });

@@ -62,7 +62,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 2vh;
+      height: 1.2vw;
       background: var(--background);
       border: 2px solid $white;
     }
@@ -115,20 +115,48 @@
   }
 }
 
+@include breakpoint("medium") {
+  .contact-text {
+    font-size: 2.5vw;
+  }
+
+  .contact-social {
+    font-size: 3vw;
+  }
+}
+
 @include breakpoint("small") {
   .contact-cta {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translateX(55%) translateY(-300%);
-    rotate: -90deg;
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    writing-mode: vertical-rl;
+    rotate: 180deg;
+    font-size: 25vw;
+
+    b {
+      text-decoration: 2px wavy underline $white;
+      color: rgba($white, 1);
+      -webkit-text-stroke: 0px;
+    }
+  }
+  .contact-underline {
+    display: none;
   }
 
   .contact-socials {
     align-items: flex-start;
   }
 
+  .contact-social {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   .contact-text {
-    width: 80%;
+    width: 75%;
+    font-size: 20px;
+    line-height: 90%;
+    transform: translateY(0);
   }
 }
