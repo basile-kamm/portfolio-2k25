@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Create and play the enter animation
       hoverEnterAnim = createHoverEnterAnimation(selectedWork);
+      hoverGlitch = hoverGlitchAnim();
 
       // Show the related trailer
       selectedTrailers.forEach((trailer) => {
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Create and play the leave animation
       hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
 
-      // Hide the related trailer after the animation completes
       hoverLeaveAnim.eventCallback("onComplete", () => {
         selectedTrailers.forEach((trailer) => {
           if (trailer.classList.contains(hoverValue)) {
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       });
+      // Hide the related trailer after the animation completes
     });
 
     selectedWork.addEventListener("click", function () {
@@ -106,6 +107,23 @@ document.addEventListener("DOMContentLoaded", function () {
           );
       }
       return tl;
+    }
+
+    function hoverGlitchAnim() {
+      const tl = gsap.timeline();
+
+      tl.to(".selected-trailer-glitch", {
+        opacity: 1,
+        duration: 0.3,
+      });
+      tl.to(
+        ".selected-trailer-glitch",
+        {
+          opacity: 0,
+          duration: 0.3,
+        },
+        "0.5"
+      );
     }
 
     function createHoverLeaveAnimation(selectedWork) {

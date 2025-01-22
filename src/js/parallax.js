@@ -10,12 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
       end: "bottom top",
       pin: ".parallax-container",
       scrub: 0.3,
+      onEnterBack: () => {
+        gsap.set(".banner-container", { display: "block" });
+      },
+    },
+    onComplete: () => {
+      gsap.set(".banner-container", { display: "none" });
     },
   });
 
-  parallax.set(".banner-title-overlay", {
-    zIndex: 100,
-  });
+  // parallax.set(".banner-title-overlay", {
+  //   zIndex: 100,
+  // });
+  parallax.set(".selected-trailer", { zIndex: 10 });
   if (window.screen.width <= 678) {
     parallax.from(
       ".selected-background",
@@ -117,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         y: "-170vw",
         rotate: -45,
 
-        duration: 1,
+        duration: 2,
       },
       "<"
     );
@@ -125,16 +132,25 @@ document.addEventListener("DOMContentLoaded", function () {
       ".banner-container",
       {
         scale: 0.4,
-        duration: 0.3,
+        duration: 2,
         y: 100,
       },
-      "<0.75"
+      "<1.3"
+    );
+    parallax.from(
+      ".selected-main-trailer",
+      {
+        opacity: 0,
+        duration: 1,
+        zIndex: "-3",
+      },
+      "<"
     );
     parallax.from(
       ".selected-works",
       {
         translateY: "200%",
-        duration: 0.5,
+        duration: 2,
       },
       "<"
     );
