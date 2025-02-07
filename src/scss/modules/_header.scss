@@ -37,6 +37,12 @@ header {
 
 .header-name {
   font-family: "migra";
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: perspective(50px) rotateX(40deg) scale(1.05);
+  }
 }
 
 .header-language {

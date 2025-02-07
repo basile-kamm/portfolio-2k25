@@ -42,6 +42,7 @@
             alt=""
             loading="lazy"
             class="works-item 3d"
+            data-works-item-value="green-room"
           />
           <video
             src="asset/img/works/video-motion/beyler-motion.webm?width=500"
@@ -50,24 +51,28 @@
             loop
             autoplay
             muted
+            data-works-item-value="beyler"
           ></video>
           <img
             src="asset/img/works/graphism/cervin.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
+            data-works-item-value="cervin"
           />
           <img
             src="asset/img/works/photo/DSCN6904.png?as=webp&width=500"
             alt=""
             loading="lazy"
             class="works-item photo"
+            data-works-item-value="venice"
           />
           <img
             src="asset/img/works/frontend/what-da-duck.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item frontend"
+            data-works-item-value="what-da-duck"
           />
         </div>
         <div class="works-display-row">
@@ -76,18 +81,21 @@
             alt=""
             loading="lazy"
             class="works-item frontend"
+            data-works-item-value="damn-cookies"
           />
           <img
             src="asset/img/works/graphism/melting-down.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
+            data-works-item-value="melting-down"
           />
           <img
             src="asset/img/works/3d/invader-city.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item 3d"
+            data-works-item-value="invader-city"
           />
           <video
             src="asset/img/works/video-motion/the-one.webm?width=500"
@@ -96,6 +104,7 @@
             loop
             muted
             autoplay
+            data-works-item-value="the-one"
           ></video>
         </div>
         <div class="works-display-row">
@@ -106,12 +115,14 @@
             loop
             autoplay
             muted
+            data-works-item-value="grief"
           ></video>
           <img
             src="asset/img/works/graphism/kitty-kat.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
+            data-works-item-value="kitty-kat"
           />
           <video
             src="asset/img/works/3d/clock-world_3.webm?width=500"
@@ -120,14 +131,246 @@
             class="works-item 3d"
             loop
             autoplay
+            data-works-item-value="clock-world"
           ></video>
           <img
             src="asset/img/works/graphism/gentille-hess.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
+            data-works-item-value="gentille-hess"
           />
         </div>
+      </section>
+      <section class="works-details">
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "grief", "detailTitle": "The Grief","detailTopic1": "Video", "detailTopic2": "", "detailText": "The Grief is a short movie about apple", "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab">
+            Project in collaboration with
+            <a href="https://pierreguerin.ch">Lauriane Sauteur</a>
+          </block>
+          <block name="detailContent">
+            <iframe
+              title="vimeo-player"
+              src="https://player.vimeo.com/video/1031444403?h=bfc8d21e19"
+              width="1280"
+              height="720"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "gentille-hess", "detailTitle": "la Gentille-hess",
+          "detailTopic1": "Graphism", "detailTopic2": "", 
+          "detailText": "", 
+          "detailTool1": "Photoshop", "detailTool2": "Illustrator", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/gentille-hess.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "green-room", "detailTitle": "The Green room",
+        "detailTopic1": "3D", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Blender", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/3d/green-room.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "cervin", "detailTitle": "The Cervij",
+        "detailTopic1": "Graphism", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/cervin.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "invader-city", "detailTitle": "Invader City",
+        "detailTopic1": "3D", "detailTopic2": "", 
+        "detailText": "Modeling of an utopic location", 
+        "detailTool1": "Cinema 4D", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="/src/asset/img/works/3d/invader-city.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "melting-down", "detailTitle": "Melting Down",
+        "detailTopic1": "Graphism", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="/src/asset/img/works/graphism/melting-down.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "the-one", "detailTitle": "The One",
+        "detailTopic1": "video", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/gentille-hess.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "clock-world", "detailTitle": "Clock World",
+        "detailTopic1": "3D", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Cinema 4D", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/gentille-hess.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "beyler", "detailTitle": "Beyler",
+        "detailTopic1": "Graphism", "detailTopic2": "", 
+        "detailText": "Editing showcasing the citation of Egon Schiele - { Art cannot be modern, art is eternal }", 
+        "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/gentille-hess.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "glitch", "detailTitle": "Glitch",
+        "detailTopic1": "Motion", "detailTopic2": "", 
+        "detailText": "Sound recommended", 
+        "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/gentille-hess.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "kitty-kat", "detailTitle": "Kitty Invasion",
+        "detailTopic1": "Graphism", "detailTopic2": "Matte painting", 
+        "detailText": "In a world where black cats have taken over...", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="/src/asset/img/works/graphism/kitty-kat.webp"
+              />
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/graphism/kitty-kat.webp"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="html-modules/selected-detail-link.html"
+          locals='{"detailValue": "damn-cookies", "detailTitle": "Damn Cookies",
+          "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://damn-cookies.basile-kamm.ch/",
+          "detailText": "First experimental website using GSAP ScrollTrigger", 
+          "detailTool1": "VS Code", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/frontend/damn-cookies.webp"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/frontend/damn-cookies-2.png?as=webp"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="/src/asset/img/works/frontend/damn-cookies-3.png?as=webp"
+              />
+            </div>
+          </block>
+        </extends>
+
+        <div class="selected-detail-close-map"></div>
+        <button aria-label="Overlay-close-button" class="selected-detail-close">
+          <div class="selected-detail-close-bar"></div>
+          <div class="selected-detail-close-bar"></div>
+        </button>
       </section>
     </div>
   </block>

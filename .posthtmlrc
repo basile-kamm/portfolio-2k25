@@ -1,8 +1,10 @@
 {
   "plugins": {
     "posthtml-include": {
-      "root": "src"
+      "root": "src",
+      "raw": true
     },
+    "posthtml-expressions": {},
     "posthtml-extend": {
       "root": "src",
       "strict": false

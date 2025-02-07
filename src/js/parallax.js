@@ -122,9 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         scale: 30,
         y: "-170vw",
-        rotate: -45,
+        rotate: -65,
 
-        duration: 2,
+        duration: 1.6,
       },
       "<"
     );

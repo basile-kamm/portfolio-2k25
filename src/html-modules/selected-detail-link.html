@@ -1,0 +1,59 @@
+<div class="selected-detail-container {{detailValue}}">
+  <div class="selected-detail-row">
+    <div class="selected-detail-title-container">
+      <a
+        href="{{detailLink}}"
+        target="_blank"
+        class="selected-detail-main-link open-anim"
+      >
+        <h3 class="selected-detail-title">{{detailTitle}}</h3>
+        <svg
+          id="arrow"
+          class="selected-detail-arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          viewBox="0 0 195.3 195.3"
+        >
+          <polygon
+            class="st0"
+            points="195.3 0 195.3 155.7 147.7 155.7 147.7 84.7 37 195.3 0 158.3 110.6 47.7 39.7 47.7 39.7 0 195.3 0"
+          />
+        </svg>
+        <div class="selected-detail-main-link-cta-container">
+          <p class="selected-detail-main-link-cta">visit website</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-9">
+        <div class="selected-detail-topics">
+          <p class="selected-detail-topic open-anim">{{detailTopic1}}</p>
+          <p class="selected-detail-topic open-anim">{{detailTopic2}}</p>
+        </div>
+        <p class="selected-detail-text open-anim">{{detailText}}</p>
+        <p class="selected-detail-credits open-anim">
+          <block name="detailCollab"></block>
+        </p>
+      </div>
+      <div class="col-3">
+        <ul class="selected-detail-tools">
+          <li class="selected-detail-tool open-anim">{{detailTool1}}</li>
+          <li class="selected-detail-tool open-anim">{{detailTool2}}</li>
+          <li class="selected-detail-tool open-anim">{{detailTool3}}</li>
+        </ul>
+      </div>
+      <block name="detailContent"></block>
+      <div class="col-12 right">
+        <a
+          href="{{detailLink}}"
+          class="selected-detail-last-cta"
+          target="_blank"
+        >
+          <span> Visit website </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
