@@ -11,6 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
 
   const body = document.querySelector("body");
+  console.log("Selected details count:", selectedDetails.length);
+  selectedDetails.forEach((detail) => console.log("Found:", detail.classList));
+
+  const observer = new MutationObserver(() => {
+    const selectedDetails = document.querySelectorAll(
+      ".selected-detail-container"
+    );
+    if (selectedDetails.length >= 6) {
+      // Remplace 6 par le bon nombre
+      console.log("All details are loaded:", selectedDetails.length);
+      observer.disconnect(); // Arrêter l'observation une fois chargé
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
@@ -42,6 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
         hoverEnterAnim.kill();
         hoverEnterAnim = null;
       }
+      if (hoverGlitch) {
+        hoverGlitch.restart();
+      } else {
+        hoverGlitch = hoverGlitchAnim();
+      }
 
       // Create and play the leave animation
       hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
@@ -58,11 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectedWork.addEventListener("click", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
+        console.log(
+          "Comparing:",
+          selectedWorkDetail.classList,
+          "with",
+          hoverValue
+        );
         if (selectedWorkDetail.classList.contains(hoverValue)) {
-          const openDetailAnim = openWorkDetail(
-            selectedWorkDetail,
-            selectedDetailClose
-          );
+          const openDetailAnim = openWorkDetail(selectedWorkDetail);
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
           };
@@ -80,26 +103,28 @@ document.addEventListener("DOMContentLoaded", function () {
         tl.to(selectedWork.querySelector(".selected-work-title.main"), {
           translateY: "-100%",
           duration: 0.5,
+          ease: "back.out(1.7)",
         })
           .to(
             selectedWork.querySelector(".selected-work-title.desktop"),
-            { translateY: "0", duration: 0.3 },
+            { translateY: "0", duration: 0.6, ease: "back.out(1.7)" },
             "<"
           )
-          .to(
-            selectedWork.querySelectorAll(".selected-work-topic"),
-            { translateY: 0, stagger: 0.1, duration: 0.2 },
+          .fromTo(
+            selectedWork.querySelector(".selected-work-underline"),
+            { translateX: "-100%" },
+            { translateX: 0, duration: 0.5 },
             "<0.1"
           )
           .to(
-            selectedWork.querySelector(".selected-work-underline"),
-            { translateY: 0, duration: 0.3 },
-            "<0.2"
+            selectedWork.querySelectorAll(".selected-work-topic"),
+            { translateY: 0, stagger: 0.1, duration: 0.4, ease: "back.out(1)" },
+            "<0.1"
           )
           .to(
             selectedWork,
             {
-              duration: 0.2,
+              duration: 0.6,
               background:
                 "linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(217, 217, 217, 0) 100%)",
             },
@@ -132,7 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (window.screen.width >= 678) {
         tl.to(selectedWork.querySelector(".selected-work-title.main"), {
           translateY: "0%",
-          duration: 0.5,
+          duration: 0.6,
+          ease: "bounce.out",
         })
           .to(
             selectedWork.querySelector(".selected-work-title.desktop"),
@@ -141,12 +167,17 @@ document.addEventListener("DOMContentLoaded", function () {
           )
           .to(
             selectedWork.querySelectorAll(".selected-work-topic"),
-            { translateY: "100%", stagger: 0.1, duration: 0.2 },
+            {
+              translateY: "120%",
+              stagger: 0.1,
+              duration: 0.4,
+              ease: "bounce.out",
+            },
             "<0.1"
           )
           .to(
             selectedWork.querySelector(".selected-work-underline"),
-            { translateY: 100, duration: 0.3 },
+            { translateX: "100%", duration: 0.4 },
             "<0.2"
           )
           .to(
@@ -163,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function openWorkDetail(selectedWorkDetail, selectedDetailClose) {
+  function openWorkDetail(selectedWorkDetail) {
     const tl = gsap.timeline({
       onReverseComplete: () => {
         gsap.set(selectedWorkDetail, { display: "none" });
@@ -176,11 +207,11 @@ document.addEventListener("DOMContentLoaded", function () {
     tl.to(selectedWorkDetail, { translateX: 0 });
     tl.fromTo(
       selectedWorkDetail.querySelectorAll(".open-anim"),
-      { x: 400 },
+      { x: 600 },
       { x: 0, stagger: 0.1 },
-      "<0.2"
+      "<"
     );
-    tl.to(selectedDetailClose, { x: 0 }, "<0.2");
+    tl.to(selectedDetailClose, { x: 0 }, "<");
     tl.to(selectedCloseMap, { opacity: 1 }, "<");
 
     return tl;

@@ -1,0 +1,29 @@
+<div class="selected-detail-container {{detailValue}}">
+  <div class="selected-detail-row">
+    <div class="selected-detail-title-container">
+      <h3 class="selected-detail-title">{{detailTitle}}</h3>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-9">
+        <div class="selected-detail-topics">
+          <p class="selected-detail-topic open-anim">{{detailTopic1}}</p>
+          <p class="selected-detail-topic open-anim">{{detailTopic2}}</p>
+        </div>
+        <p class="selected-detail-text open-anim">{{detailText}}</p>
+        <p class="selected-detail-credits open-anim">
+          <block name="detailCollab"></block>
+        </p>
+      </div>
+      <div class="col-3">
+        <ul class="selected-detail-tools">
+          <li class="selected-detail-tool open-anim">{{detailTool1}}</li>
+          <li class="selected-detail-tool open-anim">{{detailTool2}}</li>
+          <li class="selected-detail-tool open-anim">{{detailTool3}}</li>
+        </ul>
+      </div>
+      <block name="detailContent"></block>
+    </div>
+  </div>
+</div>
