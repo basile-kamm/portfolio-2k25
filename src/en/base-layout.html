@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
     <title>Basile Kamm - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scss/main.scss" />
+    <link rel="stylesheet" href="../scss/main.scss" />
   </head>
   <body>
     <header>
       <a href="index.html" class="header-name">Basile Kamm</a>
       <div class="header-items">
-        <div class="header-language">fr/en</div>
+        <a href="" class="header-language">fr / <b>en</b></a>
         <nav class="header-nav">
-          <a href="works.html" class="header-nav-item">works,</a>
-          <a href="resume.html" class="header-nav-item">resume,</a>
+          <a href="works.html" class="header-nav-item">{{headerWorks}},</a>
+          <a href="resume.html" class="header-nav-item">{{headerResume}},</a>
           <a href="contact.html" class="header-nav-item">contact</a>
         </nav>
       </div>
     </header>
 
     <block name="content"></block>
-    <script src="js/{{ script }}" type="module"></script>
+    <script src="../js/{{ script }}" type="module"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 import gsap from "gsap";
 
+console.log("js loaded");
+
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".works-item");
   const radioButtons = document.querySelectorAll('input[name="filter"]');
