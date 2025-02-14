@@ -1,4 +1,7 @@
-<extends src="base-layout.html" locals='{"script": "works.js"}'>
+<extends
+  src="en/base-layout.html"
+  locals='{"script": "works.js", "headerWorks": "works", "headerResume": "resume"}'
+>
   <block name="content">
     <div class="works-page">
       <div class="works-heading">
@@ -34,18 +37,18 @@
           >
         </div>
       </div>
-      <img src="asset/img/vines.png?as=webp" alt="" class="works-deco" />
+      <img src="../asset/img/vines.png?as=webp" alt="" class="works-deco" />
       <section class="works-display">
         <div class="works-display-row">
           <img
-            src="asset/img/works/3d/green-room.webp?width=500"
+            src="../asset/img/works/3d/green-room.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item 3d"
             data-works-item-value="green-room"
           />
           <video
-            src="asset/img/works/video-motion/beyler-motion.webm?width=500"
+            src="../asset/img/works/video-motion/beyler-motion.webm?width=500"
             alt=""
             class="works-item video"
             loop
@@ -54,21 +57,21 @@
             data-works-item-value="beyler"
           ></video>
           <img
-            src="asset/img/works/graphism/cervin.webp?width=500"
+            src="../asset/img/works/graphism/cervin.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
             data-works-item-value="cervin"
           />
           <img
-            src="asset/img/works/photo/DSCN6904.png?as=webp&width=500"
+            src="../asset/img/works/photo/DSCN6904.png?as=webp&width=500"
             alt=""
             loading="lazy"
             class="works-item photo"
             data-works-item-value="venice"
           />
           <img
-            src="asset/img/works/frontend/what-da-duck.webp?width=500"
+            src="../asset/img/works/frontend/what-da-duck.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item frontend"
@@ -77,28 +80,28 @@
         </div>
         <div class="works-display-row">
           <img
-            src="asset/img/works/frontend/damn-cookies.webp?width=500"
+            src="../asset/img/works/frontend/damn-cookies.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item frontend"
             data-works-item-value="damn-cookies"
           />
           <img
-            src="asset/img/works/graphism/melting-down.webp?width=500"
+            src="../asset/img/works/graphism/melting-down.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
             data-works-item-value="melting-down"
           />
           <img
-            src="asset/img/works/3d/invader-city.webp?width=500"
+            src="../asset/img/works/3d/invader-city.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item 3d"
             data-works-item-value="invader-city"
           />
           <video
-            src="asset/img/works/video-motion/the-one.webm?width=500"
+            src="../asset/img/works/video-motion/the-one.webm?width=500"
             alt=""
             class="works-item video"
             loop
@@ -109,7 +112,7 @@
         </div>
         <div class="works-display-row">
           <video
-            src="asset/img/works/video-motion/the-grief.webm?width=500"
+            src="../asset/img/works/video-motion/the-grief.webm?width=500"
             alt=""
             class="works-item video"
             loop
@@ -118,14 +121,14 @@
             data-works-item-value="grief"
           ></video>
           <img
-            src="asset/img/works/graphism/kitty-kat.webp?width=500"
+            src="../asset/img/works/graphism/kitty-kat.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
             data-works-item-value="kitty-kat"
           />
           <video
-            src="asset/img/works/3d/clock-world_3.webm?width=500"
+            src="../asset/img/works/3d/clock-world_3.webm?width=500"
             alt=""
             loading="lazy"
             class="works-item 3d"
@@ -134,7 +137,7 @@
             data-works-item-value="clock-world"
           ></video>
           <img
-            src="asset/img/works/graphism/gentille-hess.webp?width=500"
+            src="../asset/img/works/graphism/gentille-hess.webp?width=500"
             alt=""
             loading="lazy"
             class="works-item graphism"
@@ -144,7 +147,7 @@
       </section>
       <section class="works-details">
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "grief", "detailTitle": "The Grief","detailTopic1": "Video", "detailTopic2": "", "detailText": "The Grief is a short movie about apple", "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab">
@@ -163,7 +166,7 @@
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "gentille-hess", "detailTitle": "la Gentille-hess",
           "detailTopic1": "Graphism", "detailTopic2": "", 
           "detailText": "", 
@@ -174,13 +177,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/gentille-hess.webp"
+                src="../asset/img/works/graphism/gentille-hess.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "green-room", "detailTitle": "The Green room",
         "detailTopic1": "3D", "detailTopic2": "", 
         "detailText": "", 
@@ -191,13 +194,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/3d/green-room.webp"
+                src="../asset/img/works/3d/green-room.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "cervin", "detailTitle": "The Cervij",
         "detailTopic1": "Graphism", "detailTopic2": "", 
         "detailText": "", 
@@ -208,13 +211,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/cervin.webp"
+                src="../asset/img/works/graphism/cervin.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "invader-city", "detailTitle": "Invader City",
         "detailTopic1": "3D", "detailTopic2": "", 
         "detailText": "Modeling of an utopic location", 
@@ -225,13 +228,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img window-height"
-                src="/src/asset/img/works/3d/invader-city.webp"
+                src="../asset/img/works/3d/invader-city.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "melting-down", "detailTitle": "Melting Down",
         "detailTopic1": "Graphism", "detailTopic2": "", 
         "detailText": "", 
@@ -242,13 +245,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img window-height"
-                src="/src/asset/img/works/graphism/melting-down.webp"
+                src="../asset/img/works/graphism/melting-down.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "the-one", "detailTitle": "The One",
         "detailTopic1": "video", "detailTopic2": "", 
         "detailText": "", 
@@ -259,13 +262,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/gentille-hess.webp"
+                src="../asset/img/works/graphism/gentille-hess.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "clock-world", "detailTitle": "Clock World",
         "detailTopic1": "3D", "detailTopic2": "", 
         "detailText": "", 
@@ -276,13 +279,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/gentille-hess.webp"
+                src="../asset/img/works/graphism/gentille-hess.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "beyler", "detailTitle": "Beyler",
         "detailTopic1": "Graphism", "detailTopic2": "", 
         "detailText": "Editing showcasing the citation of Egon Schiele - { Art cannot be modern, art is eternal }", 
@@ -293,13 +296,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/gentille-hess.webp"
+                src="../asset/img/works/graphism/gentille-hess.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "glitch", "detailTitle": "Glitch",
         "detailTopic1": "Motion", "detailTopic2": "", 
         "detailText": "Sound recommended", 
@@ -310,13 +313,13 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/gentille-hess.webp"
+                src="../asset/img/works/graphism/gentille-hess.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-nolink.html"
+          src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "kitty-kat", "detailTitle": "Kitty Invasion",
         "detailTopic1": "Graphism", "detailTopic2": "Matte painting", 
         "detailText": "In a world where black cats have taken over...", 
@@ -327,18 +330,18 @@
             <div class="col-12">
               <img
                 class="selected-detail-img window-height"
-                src="/src/asset/img/works/graphism/kitty-kat.webp"
+                src="../asset/img/works/graphism/kitty-kat.webp"
               />
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/graphism/kitty-kat.webp"
+                src="../asset/img/works/graphism/kitty-kat.webp"
               />
             </div>
           </block>
         </extends>
         <extends
-          src="html-modules/selected-detail-link.html"
-          locals='{"detailValue": "damn-cookies", "detailTitle": "Damn Cookies",
+          src="./html-modules/selected-detail-link.html"
+          locals='{"detailCtaText": "visit website", "detailValue": "damn-cookies", "detailTitle": "Damn Cookies",
           "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://damn-cookies.basile-kamm.ch/",
           "detailText": "First experimental website using GSAP ScrollTrigger", 
           "detailTool1": "VS Code", "detailTool2": "", "detailTool3": ""}'
@@ -348,19 +351,19 @@
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/frontend/damn-cookies.webp"
+                src="../asset/img/works/frontend/damn-cookies.webp"
               />
             </div>
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/frontend/damn-cookies-2.png?as=webp"
+                src="../asset/img/works/frontend/damn-cookies-2.png?as=webp"
               />
             </div>
             <div class="col-12">
               <img
                 class="selected-detail-img"
-                src="/src/asset/img/works/frontend/damn-cookies-3.png?as=webp"
+                src="../asset/img/works/frontend/damn-cookies-3.png?as=webp"
               />
             </div>
           </block>
