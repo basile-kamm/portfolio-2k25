@@ -1,4 +1,7 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 console.log("js loaded");
 
@@ -81,5 +84,25 @@ document.addEventListener("DOMContentLoaded", function () {
     tl.to(selectedCloseMap, { opacity: 1 }, "<");
 
     return tl;
+  }
+
+  // works section horizontal scroll
+  {
+    const process = document.querySelector(".process");
+    if (typeof process != "undefined" && process != null) {
+      let sections = gsap.utils.toArray(".process__item");
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: process,
+          markers: false,
+          scrub: 1,
+          pin: true,
+          snap: 1 / (sections.length - 1),
+          end: () => "+=" + document.querySelector(".process").offsetWidth,
+        },
+      });
+    }
   }
 });
