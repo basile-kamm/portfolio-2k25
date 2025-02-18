@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
           opacity: 0,
           duration: 0.3,
         },
-        "0.5"
+        "0.7"
       );
     }
 
