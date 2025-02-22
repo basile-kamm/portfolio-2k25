@@ -54,14 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
           // }
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
+            playVimeoVideos();
           };
           selectedCloseMap.addEventListener("click", function () {
             openDetailAnim.reverse();
+            playVimeoVideos();
           });
         }
       });
     });
   });
+
+  function playVimeoVideos() {
+    const iframes = document.querySelectorAll(
+      ".selected-detail-iframe-container.thumbnail iframe"
+    );
+
+    iframes.forEach((iframe) => {
+      const vimeoPlayer = new Vimeo.Player(iframe);
+      vimeoPlayer.play(); // Play the video
+    });
+  }
 
   function openWorkDetail(selectedWorkDetail, selectedDetailClose) {
     const tl = gsap.timeline({

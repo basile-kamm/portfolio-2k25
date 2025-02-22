@@ -88,13 +88,24 @@ document.addEventListener("DOMContentLoaded", function () {
           const openDetailAnim = openWorkDetail(selectedWorkDetail);
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
+            playVimeoVideos();
           };
           selectedCloseMap.addEventListener("click", function () {
             openDetailAnim.reverse();
+            playVimeoVideos();
           });
         }
       });
     });
+
+    function playVimeoVideos() {
+      const iframes = document.querySelectorAll(".selected-trailer-js");
+
+      iframes.forEach((iframe) => {
+        const vimeoPlayer = new Vimeo.Player(iframe);
+        vimeoPlayer.play(); // Play the video
+      });
+    }
 
     function createHoverEnterAnimation(selectedWork) {
       const tl = gsap.timeline();
