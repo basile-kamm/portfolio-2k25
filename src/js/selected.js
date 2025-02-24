@@ -78,12 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectedWork.addEventListener("click", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
-        console.log(
-          "Comparing:",
-          selectedWorkDetail.classList,
-          "with",
-          hoverValue
-        );
         if (selectedWorkDetail.classList.contains(hoverValue)) {
           const openDetailAnim = openWorkDetail(selectedWorkDetail);
           selectedDetailClose.onclick = function () {

@@ -34,6 +34,57 @@
     }
   }
 }
+.banner-cta-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.banner-cta {
+  color: $white;
+  font-weight: 600;
+  font-family: "migra";
+
+  font-size: 1.8vw;
+
+  &.main {
+    position: relative;
+    font-style: italic;
+    line-height: 80%;
+    margin-bottom: 0.8vh;
+    padding: 1.4vh 0 0.2vh;
+    --height: 0;
+    cursor: url("../asset/img/mouse-icon.png?width=64 "), cell;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: var(--height);
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      background: $dark;
+      z-index: -1;
+      border: 1px solid $white;
+    }
+  }
+
+  &.added {
+    padding: 0.8vh 1.2vw;
+    opacity: 0.8;
+
+    position: absolute;
+    pointer-events: none;
+    background: rgba($dark, 0.7);
+    border: 1px solid $white;
+    mix-blend-mode: difference;
+  }
+}
 
 .banner-titles,
 .banner-texts {
