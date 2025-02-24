@@ -129,13 +129,14 @@
   padding-bottom: 4vw;
 }
 .banner-text {
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-size: 1.5vw;
-  line-height: 85%; /* 22.25px */
+  font-weight: 300;
+  line-height: 95%; /* 22.25px */
   text-align: right;
 
   i {
-    font-weight: 300;
+    font-weight: 500;
   }
 }
 

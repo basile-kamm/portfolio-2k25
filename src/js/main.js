@@ -2,9 +2,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+gsap.to(".loader-text-container", {
+  opacity: 1,
+  duration: 0.5,
+  stagger: 0.3,
+});
+
+import "./loader";
+
 import "./parallax";
 import "./selected";
 import "./credits";
+
 document.addEventListener("DOMContentLoaded", function () {
   {
     //hover Btn effect
