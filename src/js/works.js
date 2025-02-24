@@ -3,6 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import "./loader";
+
 console.log("js loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
