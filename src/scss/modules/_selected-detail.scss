@@ -82,9 +82,15 @@
 }
 
 .selected-detail-title-container {
+  width: 100%;
   .selected-detail-title {
     font-size: 25vw;
     line-height: 120%;
+    white-space: nowrap;
+
+    &.small {
+      font-size: 20vw;
+    }
   }
 }
 
@@ -115,11 +121,19 @@
       padding-right: 18.1%;
     }
     &.rgrief {
-      padding-right: 16%;
+      padding-right: 18%;
+    }
+
+    &.r16-9 {
+      padding-right: 26.5%;
+    }
+
+    &.r19-6 {
+      padding-right: 23.5%;
     }
 
     &.r1-1 {
-      padding-right: 12%;
+      padding-right: 15%;
     }
   }
 }

@@ -45,12 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
           // const selectedTitle = document.querySelector(
           //   ".selected-detail-title"
           // );
-          // let fontSize = 10;
+          // let fontSize = 100;
+          // console.log(
+          //   selectedTitleContainer.clientWidth,
+          //   selectedWorkDetail.innerWidth
+          // );
           // while (
-          //   selectedTitleContainer.clientWidth < selectedWorkDetail.innerWidth
+          //   selectedTitleContainer.clientWidth > selectedWorkDetail.innerWidth
           // ) {
-          //   fontSize += 1;
-          //   selectedTitle.style.fontSize = fontSize + "wv";
+          //   console.log(selectedTitleContainer.clientWidth);
+          //   fontSize -= 1;
+          //   selectedTitle.style.fontSize = fontSize + "px";
           // }
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
@@ -100,22 +105,59 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // works section horizontal scroll
-  {
-    const process = document.querySelector(".process");
-    if (typeof process != "undefined" && process != null) {
-      let sections = gsap.utils.toArray(".process__item");
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: process,
-          markers: false,
-          scrub: 1,
-          pin: true,
-          snap: 1 / (sections.length - 1),
-          end: () => "+=" + document.querySelector(".process").offsetWidth,
-        },
-      });
-    }
-  }
+  // {
+  //   const process = document.querySelector(".works-display");
+  //   if (typeof process != "undefined" && process != null) {
+  //     let sections = gsap.utils.toArray(".works-display-row");
+  //     gsap.to(sections, {
+  //       xPercent: -100 * (sections.length - 1),
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: process,
+  //         markers: false,
+  //         scrub: 1,
+  //         pin: true,
+  //         snap: 1 / (sections.length - 1),
+  //         end: () =>
+  //           "+=" + document.querySelector(".works-display-row").offsetWidth,
+  //       },
+  //     });
+  //   }
+  // }
+
+  const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
+  const worksRows = document.querySelectorAll(".works-display-row");
+
+  let maxScrollDistance = 0;
+
+  worksRows.forEach((worksRow) => {
+    const rowWidth = worksRow.scrollWidth;
+    maxScrollDistance = Math.max(maxScrollDistance, rowWidth);
+  });
+
+  // Create a scrollable space so the animation has enough room to happen
+  gsap.set("body", { height: `${maxScrollDistance + window.innerHeight}px` });
+
+  // Pin the entire page when reaching .works-display
+  ScrollTrigger.create({
+    trigger: worksContainer,
+    start: "bottom bottom",
+    end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
+    pin: true,
+    scrub: 1,
+  });
+
+  // Animate each row at its own speed, moving 50px further
+  worksRows.forEach((worksRow) => {
+    gsap.to(worksRow, {
+      x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: worksContainer, // Tie movement to the pinned section
+        start: "bottom bottom",
+        end: `+=${maxScrollDistance}`,
+        scrub: 1,
+      },
+    });
+  });
 });
