@@ -17,9 +17,17 @@ header {
 
 .header-nav-item {
   transition: 0.3s;
-  &:hover {
-    text-decoration: 1px wavy line-through $dark;
-    opacity: 0.9;
+}
+
+.header-nav:hover {
+  .header-nav-item:not(:hover) {
+    text-decoration: 1px wavy line-through rgba($dark, 0.8);
+    opacity: 0.8;
+    scale: 0.95;
+  }
+
+  .header-nav-item:hover {
+    transform: translateY(-2px);
   }
 }
 
