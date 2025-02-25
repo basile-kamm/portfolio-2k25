@@ -23,12 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let addInterval, removeInterval;
     let addedBtn = 0;
     let hoverAnim = null;
+    let hoverAnimLeave = null;
 
     mainBtn.addEventListener("mouseover", () => {
       clearInterval(removeInterval); // Stop removal if hovering again
-      if (hoverAnim) {
-        hoverAnim.kill();
-        hoverAnim = null;
+      if (hoverAnimLeave) {
+        hoverAnimLeave.kill();
+        hoverAnimLeave = null;
       }
       hoverAnim = mainCtaHoverAnim();
       addInterval = setInterval(() => {
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
           gsap.set(newElem, {
             x: "random(0, 100, 5)vw",
             y: "random(0, 80, 1)vh",
-            rotate: "random(0, 360)",
+            // rotate: "random(0, 360)",
             opacity: "random(0.5, 1)",
           });
 
@@ -57,8 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
     mainBtn.addEventListener("mouseleave", () => {
       clearInterval(addInterval); // Stop adding new elements
       if (hoverAnim) {
-        hoverAnim.reverse();
+        hoverAnim.kill();
+        hoverAnim = null;
       }
+
+      hoverAnimLeave = mainCtaHoverAnimLeave();
+
       removeInterval = setInterval(() => {
         const addedButtons = document.querySelectorAll(".banner-cta.added");
         if (addedButtons.length > 0) {
@@ -89,6 +94,28 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "<"
       );
+
+      return tl;
+    }
+    function mainCtaHoverAnimLeave() {
+      const tl = gsap.timeline();
+
+      tl.to(mainBtn, {
+        "--height": "0",
+        duration: 0.3,
+      });
+      tl.to(
+        mainBtn,
+        {
+          padding: "1.4vh 1.2vw 0.2vh",
+          duration: 0.3,
+        },
+        "<"
+      );
+      tl.to(mainBtn, {
+        padding: "1.4vh 0 0.2vh",
+        duration: 0.3,
+      });
 
       return tl;
     }

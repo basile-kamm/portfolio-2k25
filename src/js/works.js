@@ -147,6 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
     end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
     pin: true,
     scrub: 1,
+    onEnter: () => {
+      console.log("worked");
+      // document.querySelector("body").classList.add("no-scroll");
+    },
   });
 
   // Animate each row at its own speed, moving 50px further
