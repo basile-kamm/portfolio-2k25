@@ -1,7 +1,8 @@
-.works-page {
+.works-scroll {
   background-image: url(/src/asset/img/brik-wall.jpg?as=webp);
   background-repeat: repeat-y;
   background-size: contain;
+  user-select: none;
 }
 
 .works-heading {

@@ -21,8 +21,11 @@
   align-items: center;
   top: 6vw;
   right: 3vw;
-  border: 1px solid $white;
-  background: rgba($white, 0.15);
+  // border: 1px solid $white;
+  // background: rgba($white, 0.15);
+  background: none;
+  border: none;
+  mix-blend-mode: difference;
   height: 45px;
   width: 45px;
   border-radius: 50px;
@@ -48,15 +51,23 @@
   }
 
   &:hover {
-    background: rgba($white, 0.25);
-    box-shadow: 0 0 10px 2px rgba($white, 0.5);
-    transform: rotate(90deg);
+    animation: rotate 1s;
+    scale: 1.3 !important;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 
 .selected-detail-close-map {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0;
   right: 0;
