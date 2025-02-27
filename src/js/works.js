@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import "./loader";
 
-console.log("js loaded");
+// console.log("js loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".works-item");
@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
           card.classList.add("hidden");
         }
       });
+      ScrollTrigger.killAll();
+      const elementBox = document
+        .querySelector(".works-display-row.last")
+        .getBoundingClientRect();
+      const bottomPosition =
+        window.scrollY + elementBox.top + elementBox.height;
+      window.scrollTo({ top: bottomPosition - window.innerHeight });
+
+      workHorizontalScroll();
     });
   });
 
@@ -34,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemValue = card.getAttribute("data-works-item-value");
 
     card.addEventListener("click", function () {
-      console.log(itemValue);
       selectedDetails.forEach((selectedWorkDetail) => {
         if (selectedWorkDetail.classList.contains(itemValue)) {
           const openDetailAnim = openWorkDetail(
@@ -127,43 +135,58 @@ document.addEventListener("DOMContentLoaded", function () {
   //   }
   // }
 
-  const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
-  const worksRows = document.querySelectorAll(".works-display-row");
+  const windowHeight = window.innerHeight;
 
-  let maxScrollDistance = 0;
+  function workHorizontalScroll() {
+    const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
+    const worksRows = document.querySelectorAll(".works-display-row");
+    const worksLastRow = document.querySelector(".works-display-row.last");
 
-  worksRows.forEach((worksRow) => {
-    const rowWidth = worksRow.scrollWidth;
-    maxScrollDistance = Math.max(maxScrollDistance, rowWidth);
-  });
+    let maxScrollDistance = 0;
 
-  // Create a scrollable space so the animation has enough room to happen
-  gsap.set("body", { height: `${maxScrollDistance + window.innerHeight}px` });
-
-  // Pin the entire page when reaching .works-display
-  ScrollTrigger.create({
-    trigger: worksContainer,
-    start: "bottom bottom",
-    end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
-    pin: true,
-    scrub: 1,
-    onEnter: () => {
-      console.log("worked");
-      // document.querySelector("body").classList.add("no-scroll");
-    },
-  });
-
-  // Animate each row at its own speed, moving 50px further
-  worksRows.forEach((worksRow) => {
-    gsap.to(worksRow, {
-      x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
-      ease: "none",
-      scrollTrigger: {
-        trigger: worksContainer, // Tie movement to the pinned section
-        start: "bottom bottom",
-        end: `+=${maxScrollDistance}`,
-        scrub: 1,
-      },
+    worksRows.forEach((worksRow) => {
+      const rowWidth = worksRow.scrollWidth;
+      maxScrollDistance = Math.max(maxScrollDistance, rowWidth);
     });
-  });
+
+    gsap.set("body", {
+      height: `${windowHeight}px`,
+    });
+
+    console.log(maxScrollDistance, window.innerWidth);
+
+    if (maxScrollDistance > window.innerWidth) {
+      // Create a scrollable space so the animation has enough room to happen
+      gsap.set("body", {
+        height: `${maxScrollDistance + windowHeight}px`,
+      });
+
+      // Pin the entire page when reaching .works-display
+      ScrollTrigger.create({
+        trigger: worksLastRow,
+        start: "bottom bottom",
+        end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
+        pin: ".works-scroll",
+        scrub: 1,
+        markers: true,
+      });
+
+      // Animate each row at its own speed, moving 50px further
+      worksRows.forEach((worksRow) => {
+        gsap.to(worksRow, {
+          x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: worksLastRow, // Tie movement to the pinned section
+            start: "bottom bottom",
+            end: `+=${maxScrollDistance}`,
+            scrub: 1,
+            markers: true,
+          },
+        });
+      });
+    }
+  }
+
+  workHorizontalScroll();
 });
