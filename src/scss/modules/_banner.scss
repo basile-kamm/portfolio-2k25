@@ -101,6 +101,16 @@
   text-transform: uppercase;
   line-height: 75%; /* 179.481px */
   z-index: 50;
+  transform-origin: top left;
+}
+
+.banner-title-word {
+  display: flex;
+}
+
+.banner-title-line {
+  display: flex;
+  gap: 1vw;
 }
 
 .banner-title-overlay {
