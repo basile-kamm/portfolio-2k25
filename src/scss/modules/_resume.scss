@@ -270,6 +270,7 @@
 
 .resume-education-place {
   font-style: italic;
+  font-family: "Migra";
   font-weight: 300;
 }
 
@@ -441,5 +442,57 @@
     left: 16px;
     font-size: 90px;
     font-weight: 700;
+  }
+
+  .resume-language-container {
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 2vh;
+    }
+  }
+
+  .resume-language {
+    font-size: 4rem;
+  }
+
+  .resume-language-level,
+  .resume-education-time,
+  .resume-education-place {
+    font-size: 1.3rem;
+  }
+
+  .resume-education-title {
+    font-size: 1.4rem;
+  }
+
+  .resume-education-texts {
+    font-size: 1.4rem;
+    flex-direction: column;
+  }
+
+  .resume-ref-title {
+    font-size: 2.4rem;
+  }
+
+  .resume-ref {
+    font-size: 1.6rem;
+  }
+
+  .resume-ref-cta {
+    font-size: 2rem;
+  }
+
+  .resume-ref-texts:not(.first) {
+    flex-direction: column;
+  }
+
+  .resume-ref-role {
+    font-size: 1.2rem;
+  }
+
+  .resume-ref-mail {
+    font-size: 1.2rem;
+    text-decoration: underline 0.7px;
   }
 }

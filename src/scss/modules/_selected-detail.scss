@@ -348,4 +348,22 @@
   .selected-detail-img {
     margin: 0;
   }
+
+  .selected-detail-close {
+    top: 10vh;
+    right: 3vw;
+  }
+
+  .selected-detail-topics {
+    flex-direction: column;
+    font-size: 6vw;
+  }
+
+  .selected-detail-tools {
+    font-size: 4vw;
+  }
+
+  .selected-detail-last-cta {
+    font-size: 8vw;
+  }
 }
