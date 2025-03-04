@@ -49,17 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedWorkDetail,
             selectedDetailClose
           );
-          // const selectedTitleContainer = document.querySelector(
-          //   ".selected-detail-title-container"
-          // );
-          // const selectedTitle = document.querySelector(
-          //   ".selected-detail-title"
-          // );
-          // let fontSize = 100;
-          // console.log(
-          //   selectedTitleContainer.clientWidth,
-          //   selectedWorkDetail.innerWidth
-          // );
+          const selectedTitleContainer = document.querySelector(
+            ".selected-detail-title-container"
+          );
+          const selectedTitle = document.querySelector(
+            ".selected-detail-title"
+          );
+          let fontSize = 100;
+          console.log(selectedTitle.clientWidth, selectedWorkDetail.innerWidth);
           // while (
           //   selectedTitleContainer.clientWidth > selectedWorkDetail.innerWidth
           // ) {
@@ -114,26 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return tl;
   }
 
-  // works section horizontal scroll
-  // {
-  //   const process = document.querySelector(".works-display");
-  //   if (typeof process != "undefined" && process != null) {
-  //     let sections = gsap.utils.toArray(".works-display-row");
-  //     gsap.to(sections, {
-  //       xPercent: -100 * (sections.length - 1),
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: process,
-  //         markers: false,
-  //         scrub: 1,
-  //         pin: true,
-  //         snap: 1 / (sections.length - 1),
-  //         end: () =>
-  //           "+=" + document.querySelector(".works-display-row").offsetWidth,
-  //       },
-  //     });
-  //   }
-  // }
+  // horizontal scroll
 
   const windowHeight = window.innerHeight;
 
