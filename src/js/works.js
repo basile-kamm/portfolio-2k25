@@ -27,15 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
           card.classList.add("hidden");
         }
       });
-      ScrollTrigger.killAll();
-      const elementBox = document
-        .querySelector(".works-display-row.last")
-        .getBoundingClientRect();
-      const bottomPosition =
-        window.scrollY + elementBox.top + elementBox.height;
-      window.scrollTo({ top: bottomPosition - window.innerHeight });
+      if (window.innerWidth > 768) {
+        ScrollTrigger.killAll();
+        const elementBox = document
+          .querySelector(".works-display-row.last")
+          .getBoundingClientRect();
+        const bottomPosition =
+          window.scrollY + elementBox.top + elementBox.height;
+        window.scrollTo({ top: bottomPosition - window.innerHeight });
 
-      workHorizontalScroll();
+        workHorizontalScroll();
+      } else {
+        window.scrollTo({ top: 200 });
+      }
     });
   });
 
@@ -98,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("no-scroll");
     tl.set(selectedWorkDetail, { display: "block" });
     tl.set(selectedCloseMap, { display: "block" });
-    tl.to(selectedWorkDetail, { translateX: 0 });
+    tl.to(selectedWorkDetail, { translateY: 0 });
     tl.fromTo(
       selectedWorkDetail.querySelectorAll(".open-anim"),
       { x: 600 },
@@ -116,53 +120,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const windowHeight = window.innerHeight;
 
   function workHorizontalScroll() {
-    const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
-    const worksRows = document.querySelectorAll(".works-display-row");
-    const worksLastRow = document.querySelector(".works-display-row.last");
+    if (window.innerWidth > 768) {
+      const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
+      const worksRows = document.querySelectorAll(".works-display-row");
+      const worksLastRow = document.querySelector(".works-display-row.last");
 
-    let maxScrollDistance = 0;
+      let maxScrollDistance = 0;
 
-    worksRows.forEach((worksRow) => {
-      const rowWidth = worksRow.scrollWidth;
-      maxScrollDistance = Math.max(maxScrollDistance, rowWidth);
-    });
-
-    gsap.set("body", {
-      height: `${windowHeight}px`,
-    });
-
-    console.log(maxScrollDistance, window.innerWidth);
-
-    if (maxScrollDistance > window.innerWidth) {
-      // Create a scrollable space so the animation has enough room to happen
-      gsap.set("body", {
-        height: `${maxScrollDistance + windowHeight}px`,
-      });
-
-      // Pin the entire page when reaching .works-display
-      ScrollTrigger.create({
-        trigger: worksLastRow,
-        start: "bottom bottom",
-        end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
-        pin: ".works-scroll",
-        scrub: 1,
-        markers: true,
-      });
-
-      // Animate each row at its own speed, moving 50px further
       worksRows.forEach((worksRow) => {
-        gsap.to(worksRow, {
-          x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
-          ease: "none",
-          scrollTrigger: {
-            trigger: worksLastRow, // Tie movement to the pinned section
-            start: "bottom bottom",
-            end: `+=${maxScrollDistance}`,
-            scrub: 1,
-            markers: true,
-          },
-        });
+        const rowWidth = worksRow.scrollWidth;
+        maxScrollDistance = Math.max(maxScrollDistance, rowWidth);
       });
+
+      gsap.set("body", {
+        height: `${windowHeight}px`,
+      });
+
+      console.log(maxScrollDistance, window.innerWidth);
+
+      if (maxScrollDistance > window.innerWidth) {
+        // Create a scrollable space so the animation has enough room to happen
+        gsap.set("body", {
+          height: `${maxScrollDistance + windowHeight}px`,
+        });
+
+        // Pin the entire page when reaching .works-display
+        ScrollTrigger.create({
+          trigger: worksLastRow,
+          start: "bottom bottom",
+          end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
+          pin: ".works-scroll",
+          scrub: 1,
+          markers: true,
+        });
+
+        // Animate each row at its own speed, moving 50px further
+        worksRows.forEach((worksRow) => {
+          gsap.to(worksRow, {
+            x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: worksLastRow, // Tie movement to the pinned section
+              start: "bottom bottom",
+              end: `+=${maxScrollDistance}`,
+              scrub: 1,
+              markers: true,
+            },
+          });
+        });
+      }
     }
   }
 

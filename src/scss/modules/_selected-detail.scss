@@ -317,6 +317,7 @@
 @include breakpoint("small") {
   .selected-detail-container {
     width: 90vw;
+    transform: translateX(0) translateY(100%);
   }
   .selected-detail-arrow {
     rotate: 45deg;
@@ -365,5 +366,32 @@
 
   .selected-detail-last-cta {
     font-size: 8vw;
+  }
+
+  .selected-detail-iframe-container {
+    &.thumbnail {
+      height: 0;
+      width: 100%;
+      padding-bottom: 56.2%;
+
+      &.r4-5 {
+        padding-right: 0;
+        padding-bottom: 75%;
+      }
+
+      &.r1-1 {
+        padding-bottom: 100%;
+      }
+
+      &.rgrief {
+        padding-bottom: 76%;
+      }
+    }
+  }
+
+  .selected-detail-container {
+    width: 100vw;
+    top: 10vh;
+    left: 0;
   }
 }

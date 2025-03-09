@@ -109,3 +109,39 @@ input:checked + p {
   -webkit-text-stroke: 0.7px $white;
   transform: translateY(-18%);
 }
+
+@include breakpoint("small") {
+  .works-heading {
+    align-items: flex-start;
+    transform: translateY(-5%);
+  }
+  .works-title {
+    font-size: 32vh;
+    transform: scaleY(1.4);
+    transform-origin: top;
+  }
+
+  .works-input-container {
+    flex-direction: column;
+
+    label p {
+      font-size: 3.5vh;
+      margin-bottom: 1.2vh;
+    }
+  }
+
+  .works-display-row {
+    flex-direction: column;
+    height: unset;
+    padding: 1vh 5vw 0;
+    gap: 2vh;
+
+    &:nth-child(2) {
+      height: unset;
+    }
+  }
+
+  input:checked + p {
+    transform: translateY(1%);
+  }
+}

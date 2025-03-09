@@ -175,6 +175,11 @@
     font-size: 28px;
   }
 
+  .selected-trailers {
+    width: 60vw;
+    visibility: hidden;
+  }
+
   .selected-trailer-glitch {
     width: 60vw;
     margin-left: -15vw;
