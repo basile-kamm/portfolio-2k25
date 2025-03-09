@@ -137,6 +137,12 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "<1.3"
     );
+    parallax.set(".selected-main-trailer", {
+      visibility: "visible",
+      onComplete: () => {
+        console.log("done");
+      },
+    });
     parallax.from(
       ".selected-main-trailer",
       {
