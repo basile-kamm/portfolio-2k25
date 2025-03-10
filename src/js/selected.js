@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
 
   const body = document.querySelector("body");
-  console.log("Selected details count:", selectedDetails.length);
-  selectedDetails.forEach((detail) => console.log("Found:", detail.classList));
+  // console.log("Selected details count:", selectedDetails.length);
+  // selectedDetails.forEach((detail) => console.log("Found:", detail.classList));
 
   const observer = new MutationObserver(() => {
     const selectedDetails = document.querySelectorAll(
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     if (selectedDetails.length >= 6) {
       // Remplace 6 par le bon nombre
-      console.log("All details are loaded:", selectedDetails.length);
+      // console.log("All details are loaded:", selectedDetails.length);
       observer.disconnect(); // Arrêter l'observation une fois chargé
     }
   });
