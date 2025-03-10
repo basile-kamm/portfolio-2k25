@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function openWorkDetail(selectedWorkDetail, selectedDetailClose) {
+  function openWorkDetail(selectedWorkDetail) {
     const tl = gsap.timeline({
       onReverseComplete: () => {
         gsap.set(selectedWorkDetail, { display: "none" });
@@ -102,14 +102,14 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("no-scroll");
     tl.set(selectedWorkDetail, { display: "block" });
     tl.set(selectedCloseMap, { display: "block" });
-    tl.to(selectedWorkDetail, { translateY: 0 });
+    tl.to(selectedWorkDetail, { translateY: 0, translateX: 0 });
     tl.fromTo(
       selectedWorkDetail.querySelectorAll(".open-anim"),
       { x: 600 },
       { x: 0, stagger: 0.1 },
       "<"
     );
-    tl.to(selectedDetailClose, { x: 0 }, "<");
+    tl.to(selectedDetailClose, { translateY: 0, translateX: 0 }, "<");
     tl.to(selectedCloseMap, { opacity: 1 }, "<");
 
     return tl;
