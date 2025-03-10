@@ -72,6 +72,16 @@ header {
 .header-language {
   font-family: "founders grotesk";
   text-transform: uppercase;
+
+  span {
+    transform-origin: center;
+    transition: transform 0.4s;
+    display: inline-block;
+  }
+
+  &:hover span {
+    transform: rotateY(180deg);
+  }
 }
 
 @include breakpoint("small") {
