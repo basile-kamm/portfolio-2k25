@@ -1,66 +1,50 @@
 .loader-container {
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: $dark;
-  color: $white;
-  padding: 5vh 2vw;
-  transition: transform 0.5s 0.5s;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1vw;
+  transition: transform 1s 0.5s;
+  // background: $white;
+  background-image: url(/src/asset/img/loader-background.jpg?as=webp);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  clip-path: polygon(
+    0 100%,
+    0 0,
+    100% 0,
+    100% 100%,
+    90% 85%,
+    80% 100%,
+    70% 85%,
+    60% 100%,
+    50% 85%,
+    40% 100%,
+    30% 85%,
+    20% 100%,
+    10% 85%
+  );
 
   &.hidden {
-    transition: transform 0.5s 0.5s;
+    transition: transform 1s 0.5s;
     transform: translateY(-100%);
   }
 }
 
-.loader-text-container {
-  height: fit-content;
-  display: flex;
-  gap: 1.2vw;
-  align-items: center;
-  opacity: 0.3;
+.loader-elem {
+  position: absolute;
+  mix-blend-mode: difference;
+  color: $dark;
+  font-size: 10vw;
+  font-family: "Humane";
+
+  white-space: nowrap;
 }
 
-.loader-text {
-  font-family: "humane";
-  font-size: 4.2vw;
-}
-
-.loader-dots {
-  width: 30px;
-  aspect-ratio: 1.154;
-  --_g: no-repeat radial-gradient(farthest-side, #ffffff 90%, #ffffff00);
-  background: var(--_g) 50% 0, var(--_g) 0 100%, var(--_g) 100% 100%;
-  background-size: 35% calc(35% * 1.154);
-  animation: l16 1s infinite;
-}
-@keyframes l16 {
-  50%,
-  100% {
-    background-position: 100% 100%, 50% 0, 0 100%;
+@include breakpoint("small") {
+  .loader-elem {
+    font-size: 15vw;
   }
 }
-// .loader-dots {
-//   width: 20px;
-//   aspect-ratio: 4;
-//   background: $white;
-
-//   // background: radial-gradient(circle closest-side, #ffffff 90%, #ffffff00) 0 /
-//   //   calc(100% / 3) 100% space;
-//   clip-path: inset(0 100% 0 0);
-//   animation: l1 1s steps(4) infinite;
-// }
-// @keyframes l1 {
-//   to {
-//     clip-path: inset(0 -34% 0 0);
-//   }
-// }

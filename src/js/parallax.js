@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   parallax.set(".selected-trailer", { zIndex: 10 });
 
   if (window.innerWidth <= 678) {
-    console.log("mobile");
+    // console.log("mobile");
     parallax.from(
       ".selected-background",
       {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "<0.6"
     );
   } else {
-    console.log("desktop");
+    // console.log("desktop");
     parallax.to(".layer-1", {
       y: "-6vw",
       duration: 1,
