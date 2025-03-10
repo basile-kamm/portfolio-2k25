@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
   //   zIndex: 100,
   // });
   parallax.set(".selected-trailer", { zIndex: 10 });
-  if (window.screen.width <= 678) {
+
+  if (window.innerWidth <= 678) {
+    console.log("mobile");
     parallax.from(
       ".selected-background",
       {
@@ -32,6 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
         y: "-170vw",
         rotate: -45,
 
+        duration: 1,
+      },
+      "<"
+    );
+    parallax.from(
+      ".selected-main-trailer",
+      {
+        opacity: 0,
         duration: 1,
       },
       "<"
@@ -46,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "<0.6"
     );
   } else {
+    console.log("desktop");
     parallax.to(".layer-1", {
       y: "-6vw",
       duration: 1,
@@ -137,18 +148,12 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "<1.3"
     );
-    parallax.set(".selected-main-trailer", {
-      visibility: "visible",
-      onComplete: () => {
-        console.log("done");
-      },
-    });
+
     parallax.from(
       ".selected-main-trailer",
       {
         opacity: 0,
         duration: 1,
-        zIndex: "-3",
       },
       "<"
     );

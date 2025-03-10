@@ -353,6 +353,7 @@
   .selected-detail-close {
     top: 10vh;
     right: 3vw;
+    transform: translateX(0) translateY(100vh);
   }
 
   .selected-detail-topics {

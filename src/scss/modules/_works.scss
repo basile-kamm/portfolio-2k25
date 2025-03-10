@@ -123,6 +123,7 @@ input:checked + p {
 
   .works-input-container {
     flex-direction: column;
+    padding-left: 2.5vw;
 
     label p {
       font-size: 3.5vh;
@@ -143,5 +144,13 @@ input:checked + p {
 
   input:checked + p {
     transform: translateY(1%);
+  }
+
+  .works-display {
+    padding-bottom: 3vh;
+  }
+
+  .works-deco {
+    width: 80%;
   }
 }
