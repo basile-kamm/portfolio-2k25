@@ -59,15 +59,24 @@ document.addEventListener("DOMContentLoaded", function () {
           const selectedTitle = document.querySelector(
             ".selected-detail-title"
           );
-          let fontSize = 100;
-          console.log(selectedTitle.clientWidth, selectedWorkDetail.innerWidth);
+          // let fontSize = 100;
+          // selectedTitle.style.fontSize = fontSize + "px"; // Assigner une taille initiale
+
+          // console.log(
+          //   selectedTitle.clientWidth,
+          //   selectedWorkDetail.clientWidth
+          // );
+
           // while (
-          //   selectedTitleContainer.clientWidth > selectedWorkDetail.innerWidth
+          //   selectedTitleContainer.clientWidth >
+          //     selectedWorkDetail.clientWidth &&
+          //   fontSize > 10 // Ajout d'une taille minimale pour éviter la boucle infinie
           // ) {
           //   console.log(selectedTitleContainer.clientWidth);
           //   fontSize -= 1;
           //   selectedTitle.style.fontSize = fontSize + "px";
           // }
+
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
             playVimeoVideos();
@@ -151,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
           end: `+=${maxScrollDistance}`, // Scroll duration based on the longest row
           pin: ".works-scroll",
           scrub: 1,
-          markers: true,
+          // markers: true,
         });
 
         // Animate each row at its own speed, moving 50px further
@@ -164,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
               start: "bottom bottom",
               end: `+=${maxScrollDistance}`,
               scrub: 1,
-              markers: true,
+              // markers: true,
             },
           });
         });
