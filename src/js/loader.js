@@ -10,7 +10,7 @@ let loadedAnim;
 let loaderState;
 const loader = document.querySelector(".loader-container");
 
-console.log(loaderState);
+// console.log(loaderState);
 addLoaderElem();
 
 window.addEventListener("load", () => {
@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
 
 function addLoaderElem() {
   const texts = ["Welcome to", "Basile Kamm's", "Portfolio"];
-  console.log(texts);
+  // console.log(texts);
 
   addInterval = setInterval(() => {
     if (loaderState != "transitioned") {
@@ -53,14 +53,14 @@ function addLoaderElem() {
               .toString(16)
               .padStart(2, "0");
 
-          console.log(m);
+          // console.log(m);
           return m;
         })(),
       });
-      console.log(loaderState);
+      // console.log(loaderState);
     } else {
       clearInterval(addInterval);
-      console.log("interval has been cleared");
+      // console.log("interval has been cleared");
     }
   }, 100);
 }
