@@ -80,6 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
         if (selectedWorkDetail.classList.contains(hoverValue)) {
           const openDetailAnim = openWorkDetail(selectedWorkDetail);
+
+          // Load iframe
+          const lazyIframes = selectedWorkDetail.querySelectorAll(
+            ".detail-iframe-lazy"
+          );
+          lazyIframes.forEach((iframe) => {
+            const src = iframe.getAttribute("data-src");
+            iframe.setAttribute("src", src);
+          });
+
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
             playVimeoVideos();

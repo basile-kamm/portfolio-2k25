@@ -16,6 +16,20 @@ import "./credits";
 
 document.addEventListener("DOMContentLoaded", function () {
   {
+    const trailerIframes = document.querySelectorAll(".selected-trailer-js");
+
+    function onFirstScroll() {
+      trailerIframesIframes.forEach((iframe) => {
+        const src = iframe.getAttribute("data-src");
+        iframe.setAttribute("src", src);
+      });
+
+      // Supprime l'écouteur après la première détection
+      window.removeEventListener("scroll", onFirstScroll);
+    }
+  }
+
+  {
     //hover Btn effect
     const btnCont = document.querySelector(".banner-cta-container");
     const mainBtn = document.querySelector(".banner-cta.main");
