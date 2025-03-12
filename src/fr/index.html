@@ -1,0 +1,433 @@
+<extends src="fr/base-layout.html" locals='{"script": "main.js"}'>
+  <block name="content">
+    <main>
+      <section class="heading">
+        <div class="parallax-container">
+          <div class="banner-container">
+            <img
+              src="../asset/img/banner/whole.webp"
+              class="layer-background"
+              alt=""
+              srcset="
+                ../asset/img/banner/whole.webp?width=3000 3000w,
+                ../asset/img/banner/whole.webp?width=1500 1500w,
+                ../asset/img/banner/whole.webp?width=700   700w
+              "
+            />
+            <img
+              src="../asset/img/banner/layer-5.webp"
+              alt=""
+              class="desktop layer-5"
+            />
+            <img
+              src="../asset/img/banner/layer-4.webp"
+              alt=""
+              class="desktop layer-4"
+            />
+            <img
+              src="../asset/img/banner/layer-3.webp"
+              alt=""
+              class="desktop layer-3"
+            />
+
+            <div class="container">
+              <div class="row">
+                <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
+                  <div class="banner-texts">
+                    <p class="banner-text">
+                      Je suis un étudiant en Interactive Media Designer à la
+                      recherche d'un stage... J'adore
+                      <i>le développement et le design web</i>. J'aime la
+                      nature, les free party et les chats.
+                    </p>
+                    <a href="contact.html" class="banner-cta main"
+                      >Contactez moi</a
+                    >
+                  </div>
+                </div>
+                <div class="banner-cta-container"></div>
+                <div class="col-12 col-md-6">
+                  <div class="banner-titles">
+                    <p class="banner-subtitle banner-title-letter">Étudiant</p>
+                    <h1 class="banner-title">
+                      <div class="banner-title-word">
+                        <span class="banner-title-letter">I</span>
+                        <span class="banner-title-letter">n</span>
+                        <span class="banner-title-letter">t</span>
+                        <span class="banner-title-letter">e</span>
+                        <span class="banner-title-letter">r</span>
+                        <span class="banner-title-letter">a</span>
+                        <span class="banner-title-letter">c</span>
+                        <span class="banner-title-letter">t</span>
+                        <span class="banner-title-letter">i</span>
+                        <span class="banner-title-letter">v</span>
+                        <span class="banner-title-letter">e</span>
+                      </div>
+
+                      <div class="banner-title-line">
+                        <div class="banner-title-word">
+                          <span class="banner-title-letter">M</span>
+                          <span class="banner-title-letter">e</span>
+                          <span class="banner-title-letter">d</span>
+                          <span class="banner-title-letter">i</span>
+                          <span class="banner-title-letter">a</span>
+                        </div>
+                        <div class="banner-title-word">
+                          <span class="banner-title-letter">D</span>
+                          <span class="banner-title-letter">e</span>
+                          <span class="banner-title-letter">s</span>
+                          <span class="banner-title-letter">i</span>
+                          <span class="banner-title-letter">g</span>
+                          <span class="banner-title-letter">n</span>
+                          <span class="banner-title-letter">e</span>
+                          <span class="banner-title-letter">r</span>
+                        </div>
+                      </div>
+                      <!-- Interactive <br />Media Designer -->
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img
+              src="../asset/img/banner/layer-2.webp"
+              alt=""
+              class="desktop layer-2"
+            />
+            <img
+              src="../asset/img/banner/layer-1.webp"
+              alt=""
+              class="desktop layer-1"
+            />
+            <img
+              src="../asset/img/banner/layer-1-2.webp"
+              alt=""
+              id="layer-1-2"
+              class="desktop layer-1-2"
+            />
+            <div class="container">
+              <div class="row">
+                <div class="col-8 col-md-4 order-md-1"></div>
+                <div class="col-10 col-md-5"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <img
+            src="../asset/img/forest-desktop.png"
+            class="selected-background"
+            alt=""
+            srcset="
+              ../asset/img/forest-desktop.png?width=3000&as=webp 3000w,
+              ../asset/img/forest-desktop.png?width=1500&as=webp 1500w,
+              ../asset/img/forest-mobile.png?width=700&as=webp    800w
+            "
+          /> -->
+          <div class="selected-background">
+            <div class="selected-background-img"></div>
+
+            <div class="selected-trailers">
+              <iframe
+                class="selected-main-trailer selected-trailer-js"
+                data-src="https://player.vimeo.com/video/1065206344?h=e2371ebfa7&background=1"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+
+              <iframe
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                class="selected-trailer desktop grenouche selected-trailer-js"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop licorne"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop tatitotu selected-trailer-js"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop mirage selected-trailer-js"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop furieuse selected-trailer-js"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop nitecore selected-trailer-js"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                class="selected-trailer desktop lauriane selected-trailer-js"
+                title="vimeo-player"
+                data-src="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+
+              <iframe
+                class="selected-trailer-glitch selected-trailer-js"
+                data-src="https://player.vimeo.com/video/1049300697?h=42d4946021&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div class="selected-works">
+            <h2 class="selected-works-title">Projets selectionnés</h2>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Licorne", "topic1": "", "topic2": "Frontend",
+              "topic3": "UI Design", "value": "licorne" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
+              "Game Design", "value": "grenouche" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Portfolio de Lauriane", "topic1": "", "topic2": "",
+              "topic3": "Frontend", "value": "lauriane" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Mirage Festival", "topic1": "", "topic2": "Graphisme
+              ", "topic3": "UI Design", "value": "mirage" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
+              "topic3": "Motion", "value": "furieuse" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Tatitotu", "topic1": "", "topic2": "Frontend",
+              "topic3": "UI Design", "value": "tatitotu" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Nitecore", "topic1": "", "topic2": "", "topic3":
+              "Vidéo", "value": "nitecore" }
+            </include>
+            <a href="works.html" class="selected-works-cta"
+              >Voir tous mes projets</a
+            >
+          </div>
+        </div>
+        <div class="selected-works-details">
+          <include src="fr/selected-detail-pages/selected-detail-furieuse.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-lauriane.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-mirage.html">
+          </include>
+          <include
+            src="fr/selected-detail-pages/selected-detail-grenouche.html"
+          >
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-tatitotu.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-licorne.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-nitecore.html">
+          </include>
+          <div class="selected-detail-close-map"></div>
+          <button
+            aria-label="Overlay-close-button"
+            class="selected-detail-close"
+          >
+            <div class="selected-detail-close-bar"></div>
+            <div class="selected-detail-close-bar"></div>
+          </button>
+        </div>
+      </section>
+      <section class="resume">
+        <div class="container-fluid g-0">
+          <div class="row g-0">
+            <div class="col-4 desktop">
+              <a href="mailto:hello@basile-kamm.ch" class="resume-box contact">
+                <p class="resume-contact">hello@basile-kamm.ch</p>
+              </a>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="resume-box title">
+                <h2 class="resume-title">
+                  À propos de moi<span> et de ma vie</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="row g-0">
+            <div class="col-12 col-md-9 order-md-1">
+              <div class="resume-box about">
+                <p class="resume-about-text">
+                  Né le 19 mai 2006, j’ai grandi entouré par la beauté sauvage
+                  de la région de la Gruyère, en Suisse, où nature et chevaux
+                  faisaient partie de ma vie quotidienne. Très tôt, j’ai
+                  développé une passion pour les jeux vidéos et les médias
+                  digitaux, ce qui m'a amené à poursuivre mes études à
+                  <a href="https://www.eikon.ch" target="_blank"
+                    >l'eikon à Fribourg</a
+                  >. Dès mes débuts, j’ai très vite découvert un fort intérêt
+                  pour le développement web—une passion qui continue de grandir.
+                  <br />
+                  Actuellement en 3e année d’apprentissage d’
+                  <i>Interactive Media Designer</i>, je recherche un stage pour
+                  me spécialiser dans le web design et surtout dans le
+                  développement frontend et backend.
+                </p>
+
+                <a href="resume.html" class="resume-btn">Voir tout mon CV</a>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="resume-box skills">
+                <h3 class="resume-skills-title">compétences</h3>
+                <ul class="resume-skills-list">
+                  <li>identitées visuelles</li>
+                  <li>web design</li>
+                  <li>UI & UX</li>
+                  <li>HTML & CSS</li>
+                  <li>JavaScript</li>
+                  <li>GSAP & Three.js</li>
+                  <li>Drupal</li>
+                  <li>Unity C#</li>
+                  <li><i>plus en cours...</i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-cta-container">
+        <p class="footer-sub-cta">Si j'ai piquer votre attention,</p>
+        <a href="contact.html" class="footer-cta"
+          >Prenons <br class="mobile" />
+          contact
+        </a>
+      </div>
+      <div class="footer-links-container">
+        <nav class="footer-socials">
+          <a
+            href="https://github.com/basile-kamm"
+            target="_blank"
+            class="footer-social"
+            >Github</a
+          >
+          <a
+            href="https://www.instagram.com/bazikk__/"
+            target="_blank"
+            class="footer-social"
+            >Instagram</a
+          >
+          <a
+            href="https://www.linkedin.com/in/basile-kamm-486b01222/"
+            target="_blank"
+            class="footer-social"
+            >Linkedin</a
+          >
+        </nav>
+        <div class="footer-infos">
+          <a
+            href="https://2024.basile-kamm.ch"
+            target="_blank"
+            class="footer-info"
+            >v1</a
+          >
+          <p class="footer-info credits">crédits</p>
+        </div>
+      </div>
+      <div class="credits-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="credits-title" data-creditAnim>Crédits</h3>
+            </div>
+            <div class="col-7">
+              <div class="credits-fonts-container">
+                <h4 class="credits-fonts-title">Fonts</h4>
+                <ul class="credits-fonts">
+                  <li>
+                    <a
+                      href="https://gumroad.com/d/fc28be7ecbed6a834fe176976ccbbfc8"
+                      target="_blank"
+                      class="credits-font humane"
+                      >Humane</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://befonts.com/migra-font-family.html"
+                      target="_blank"
+                      class="credits-font migra"
+                      >Migra</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://befonts.com/founders-grotesk-font-family.html"
+                      target="_blank"
+                      class="credits-font grotesk"
+                      >Founders Grotesk</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="credits-infos">
+                <div class="credits-close">
+                  <div class="credits-close-bar"></div>
+                  <div class="credits-close-bar"></div>
+                </div>
+                <p class="credits-info">designé et developpé par moi</p>
+                <p class="credits-info">
+                  code source disponible sur
+                  <a href="https://github.com/basile-kamm/portfolio-2k25"
+                    >Github</a
+                  >
+                </p>
+                <p class="credits-info">
+                  usage personnel uniquement. pas d'utilisation commerciale ©
+                  2025
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </block>
+</extends>
