@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
 });
 
 function addLoaderElem() {
-  const texts = ["Welcome to", "Basile Kamm's", "Portfolio"];
+  const texts = ["Welcome to", "Basile Kamm's", "Basile Kamm's", "Portfolio"];
   // console.log(texts);
 
   addInterval = setInterval(() => {
