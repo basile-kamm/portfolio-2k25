@@ -18,6 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
   const body = document.querySelector("body");
 
+  const displayIframes = document.querySelectorAll(".display-iframe-lazy");
+
+  function onFirstScroll() {
+    displayIframes.forEach((iframe) => {
+      const src = iframe.getAttribute("data-src");
+      iframe.setAttribute("src", src);
+    });
+
+    // Supprime l'écouteur après la première détection
+    window.removeEventListener("scroll", onFirstScroll);
+  }
+
+  // Ajoute l'écouteur au chargement de la page
+  window.addEventListener("scroll", onFirstScroll, { once: true });
+
   radioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
       cards.forEach((card) => {
@@ -49,10 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("click", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
         if (selectedWorkDetail.classList.contains(itemValue)) {
-          const openDetailAnim = openWorkDetail(
-            selectedWorkDetail,
-            selectedDetailClose
+          const openDetailAnim = openWorkDetail(selectedWorkDetail);
+          // Load iframe
+          const lazyIframes = selectedWorkDetail.querySelectorAll(
+            ".detail-iframe-lazy"
           );
+          lazyIframes.forEach((iframe) => {
+            const src = iframe.getAttribute("data-src");
+            iframe.setAttribute("src", src);
+          });
           const selectedTitleContainer = document.querySelector(
             ".selected-detail-title-container"
           );
