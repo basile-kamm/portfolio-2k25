@@ -26,7 +26,17 @@ window.addEventListener("load", () => {
 });
 
 function addLoaderElem() {
-  const texts = ["Welcome to", "Basile Kamm's", "Basile Kamm's", "Portfolio"];
+  let texts;
+  if (loader.classList.contains("fr")) {
+    texts = [
+      "Bienvenue sur",
+      "le portfolio",
+      "de Basile Kamm",
+      "de Basile Kamm",
+    ];
+  } else {
+    texts = ["Welcome to", "Basile Kamm's", "Basile Kamm's", "Portfolio"];
+  }
   // console.log(texts);
 
   addInterval = setInterval(() => {
