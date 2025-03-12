@@ -1,0 +1,973 @@
+<extends src="fr/base-layout.html" locals='{"script": "works.js"}'>
+  <block name="content">
+    <div class="works-page">
+      <div class="works-scroll">
+        <div class="works-heading">
+          <h1 class="works-title">Projets</h1>
+          <div class="works-input-container">
+            <label
+              ><input type="radio" name="filter" value="works-item" checked />
+              <p>tous</p>
+            </label>
+            <label
+              ><input type="radio" name="filter" value="frontend" />
+              <p>frontend</p></label
+            >
+            <label
+              ><input type="radio" name="filter" value="ui" />
+              <p>UI</p></label
+            >
+            <label
+              ><input type="radio" name="filter" value="video" />
+              <p>viéeo/motion</p></label
+            >
+            <label
+              ><input type="radio" name="filter" value="3d" />
+              <p>3D</p></label
+            >
+            <label
+              ><input type="radio" name="filter" value="graphism" />
+              <p>graphisme</p></label
+            >
+            <label
+              ><input type="radio" name="filter" value="photo" />
+              <p>photo</p></label
+            >
+          </div>
+        </div>
+        <img src="../asset/img/vines.png?as=webp" alt="" class="works-deco" />
+        <section class="works-display">
+          <div class="works-display-row">
+            <div
+              class="selected-detail-iframe-container thumbnail video 3d works-item r19-6"
+              data-works-item-value="glitch"
+            >
+              <iframe
+                title="vimeo-player"
+                src="https://player.vimeo.com/video/1055922487?h=377235a7aa&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <img
+              src="../asset/img/works/photo/venice-1.png?as=webp&width=500"
+              alt=""
+              loading="lazy"
+              class="works-item photo"
+              data-works-item-value="venice"
+            />
+
+            <img
+              src="../asset/img/works/frontend/damn-cookies.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item frontend"
+              data-works-item-value="damn-cookies"
+            />
+            <img
+              src="../asset/img/works/graphism/melting-down.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item graphism"
+              data-works-item-value="melting-down"
+            />
+            <div
+              class="selected-detail-iframe-container video thumbnail works-item r16-9"
+              data-works-item-value="the-one"
+            >
+              <iframe
+                title="vimeo-player"
+                src="https://player.vimeo.com/video/1031445240?h=c68552adfa&background=1&autopause=0"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r19-6"
+              data-works-item-value="licorne"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <img
+              src="../asset/img/works/ui/beetle.jpg?as=webp&width=500"
+              alt=""
+              loading="lazy"
+              class="works-item ui"
+              data-works-item-value="beetle"
+            />
+            <img
+              src="../asset/img/works/photo/moutain-3.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item photo"
+              data-works-item-value="moutain"
+            />
+
+            <img
+              src="../asset/img/works/graphism/terrine-1.jpg?as=webp&width=500"
+              alt=""
+              loading="lazy"
+              class="works-item graphism"
+              data-works-item-value="terrine"
+            />
+          </div>
+          <div class="works-display-row">
+            <img
+              src="../asset/img/works/photo/tekos-1.png?as=webp&width=500"
+              alt=""
+              loading="lazy"
+              class="works-item photo"
+              data-works-item-value="tekos"
+            />
+            <div
+              class="selected-detail-iframe-container thumbnail video r4-5 works-item"
+              data-works-item-value="bordergame"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1059172333?h=9673aa5b4b&background=1&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div
+              class="selected-detail-iframe-container frontend ui thumbnail works-item r16-9"
+              data-works-item-value="furieuse"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <img
+              src="../asset/img/works/3d/green-room.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item 3d"
+              data-works-item-value="green-room"
+            />
+            <div
+              class="selected-detail-iframe-container video thumbnail works-item r1-1"
+              data-works-item-value="beyler"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1031446116?h=cf542a2d58&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div
+              class="selected-detail-iframe-container ui graphism video thumbnail works-item r16-9"
+              data-works-item-value="mirage"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r16-9"
+              data-works-item-value="grenouche"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
+                allow="autoplay"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <img
+              src="../asset/img/works/graphism/cervin.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item graphism"
+              data-works-item-value="cervin"
+            />
+          </div>
+          <div class="works-display-row last">
+            <img
+              src="../asset/img/works/graphism/kitty-kat.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item graphism"
+              data-works-item-value="kitty-kat"
+            />
+            <div
+              class="selected-detail-iframe-container video thumbnail works-item r19-6"
+              data-works-item-value="urban-echo"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1055913236?h=d39c597835&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <img
+              src="../asset/img/works/photo/frib-1.png?as=webp&width=500"
+              alt=""
+              loading="lazy"
+              class="works-item photo"
+              data-works-item-value="frib"
+            />
+
+            <img
+              src="../asset/img/works/graphism/gentille-hess.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item graphism"
+              data-works-item-value="gentille-hess"
+            />
+            <div
+              class="selected-detail-iframe-container video thumbnail works-item r19-6"
+              data-works-item-value="nitecore"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div
+              class="selected-detail-iframe-container thumbnail video rgrief works-item"
+              data-works-item-value="grief"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1031444403?h=bfc8d21e19&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r19-6"
+              data-works-item-value="lauriane"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <img
+              src="../asset/img/works/3d/invader-city.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item 3d"
+              data-works-item-value="invader-city"
+            />
+            <img
+              src="../asset/img/works/frontend/what-da-duck.webp?width=500"
+              alt=""
+              loading="lazy"
+              class="works-item frontend"
+              data-works-item-value="what-da-duck"
+            />
+
+            <div
+              class="selected-detail-iframe-container frontend ui thumbnail works-item r19-6"
+              data-works-item-value="tatitotu"
+            >
+              <iframe
+                title="vimeo-player"
+                class="display-iframe-lazy"
+                data-src="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="works-details">
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "grief", "detailTitle": "The Grief","detailTopic1": "Vidéo", "detailTopic2": "", "detailText": "Court-métrage sur une pomme", "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab">
+            Projet en collaboration avec
+            <a href="https://lauriane-sauteur.ch">Lauriane Sauteur</a>
+          </block>
+          <block name="detailContent">
+            <iframe
+              title="vimeo-player"
+              class="detail-iframe-lazy"
+              data-src="https://player.vimeo.com/video/1031444403?h=bfc8d21e19"
+              width="1280"
+              height="720"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "terrine", "detailTitle": "Les terrines", 
+          "detailTopic1": "Graphisme", "detailTopic2": "", 
+          "detailText": "", 
+          "detailTool1": "Photoshop", "detailTool2": "Illustrator", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/graphism/terrine-1.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/graphism/terrine-2.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "gentille-hess", "detailTitle": "la Gentille-hess",
+          "detailTopic1": "Graphisme", "detailTopic2": "", 
+          "detailText": "", 
+          "detailTool1": "Photoshop", "detailTool2": "Illustrator", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/graphism/gentille-hess.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "green-room", "detailTitle": "The Green room",
+        "detailTopic1": "3D", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Blender", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/3d/green-room.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "tekos", "detailTitle": "Tekos",
+        "detailTopic1": "Photo", "detailTopic2": "", 
+        "detailText": "Les free party sont un paradis pour moi. Un endroit où tous mes problèmes sont oubliés et je vis juste le moment", 
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-1.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-5.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-3.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-4.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-2.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-6.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-7.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/tekos-8.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "frib", "detailTitle": "Fribourg",
+        "detailTopic1": "Photo", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-1.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-2.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-3.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-4.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-5.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-6.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/frib-7.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "moutain", "detailTitle": "Montagnes",
+        "detailTopic1": "Photo", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-3.webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-1.jpeg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-2.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-4.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-5.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/moutain-6.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "venice", "detailTitle": "Venice",
+        "detailTopic1": "Photo", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/venice-1.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/venice-3.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/venice-2.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/venice-4.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-6">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/photo/venice-5.jpg?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "cervin", "detailTitle": "le Cervin",
+        "detailTopic1": "Graphisme", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="../asset/img/works/graphism/cervin.webp"
+                loading="lazy"
+              />
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/graphism/cervin.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "urban-echo", "detailTitle": "Urban Echo",
+        "detailTopic1": "Vidéo", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "After Effects", "detailTool2": "Premiere Pro", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  title="vimeo-player"
+                  class="detail-iframe-lazy"
+                  data-src="https://player.vimeo.com/video/1055913236?h=d39c597835"
+                  width="640"
+                  height="360"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "beetle", "detailTitle": "Beetle Connect",
+        "detailTopic1": "UI / UX", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Figma", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  class="detail-iframe-lazy"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                  width="800"
+                  height="450"
+                  data-src="https://embed.figma.com/proto/3B8KAg5C6ez9LCFOY1DAqZ/BeetleConnect?page-id=65%3A881&node-id=67-1925&p=f&viewport=532%2C199%2C0.33&scaling=scale-down&content-scaling=fixed&starting-point-node-id=65%3A1331&embed-host=share&footer=0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="col-10 right">
+              <img
+                src="../asset/img/works/ui/beetle.jpg?as=webp"
+                alt=""
+                class="selected-detail-img"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "bordergame", "detailTitle": "Adscape Retina",
+        "detailTopic1": "Vidéo", "detailTopic2": "Motion", 
+        "detailText": "Vidéo expérimentale sur la pollution visuelle", 
+        "detailTool1": "Premiere Pro", "detailTool2": "After Effects", "detailTool3": ""}'
+        >
+          <block name="detailCollab"
+            >Projet en collaboration avec
+            <a href="https://lauriane-sauteur.ch"
+              >Lucie Baillod changer href</a
+            ></block
+          >
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  title="vimeo-player"
+                  class="detail-iframe-lazy"
+                  data-src="https://player.vimeo.com/video/1059172333?h=9673aa5b4b"
+                  width="640"
+                  height="360"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-furieuse.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-grenouche.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-lauriane.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-licorne.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-mirage.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-nitecore.html"
+        ></extends>
+        <extends
+          src="fr/selected-detail-pages/selected-detail-tatitotu.html"
+        ></extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "invader-city", "detailTitle": "Invader City",
+        "detailTopic1": "3D", "detailTopic2": "", 
+        "detailText": "Futur utopique", 
+        "detailTool1": "Cinéma 4D", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="../asset/img/works/3d/invader-city.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "melting-down", "detailTitle": "Melting Down",
+        "detailTopic1": "Graphisme", "detailTopic2": "", 
+        "detailText": "", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="../asset/img/works/graphism/melting-down.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "the-one", "detailTitle": "The One",
+        "detailTopic1": "video", "detailTopic2": "", 
+        "detailText": "Vidéo expérimentale", 
+        "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  title="vimeo-player"
+                  class="detail-iframe-lazy"
+                  data-src="https://player.vimeo.com/video/1031445240?h=c68552adfa"
+                  width="640"
+                  height="360"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </block>
+        </extends>
+
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "beyler", "detailTitle": "Beyler",
+        "detailTopic1": "Motion", "detailTopic2": "", 
+        "detailText": "Montage mettant en valeur la citation de Egon Schiele - { Art cannot be modern, art is eternal }", 
+        "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  title="vimeo-player"
+                  class="detail-iframe-lazy"
+                  data-src="https://player.vimeo.com/video/1031446116?h=cf542a2d58"
+                  width="640"
+                  height="360"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "glitch", "detailTitle": "Glitch",
+        "detailTopic1": "Motion", "detailTopic2": "3D", 
+        "detailText": "Son recommandé", 
+        "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <div class="selected-detail-iframe-container">
+                <iframe
+                  title="vimeo-player"
+                  class="detail-iframe-lazy"
+                  data-src="https://player.vimeo.com/video/1055922487?h=377235a7aa"
+                  width="640"
+                  height="360"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-nolink.html"
+          locals='{"detailValue": "kitty-kat", "detailTitle": "Kitty Invasion",
+        "detailTopic1": "Graphisme", "detailTopic2": "Matte painting", 
+        "detailText": "Dans un monde où les chats noirs ont prit le dessus", 
+        "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img window-height"
+                src="../asset/img/works/graphism/kitty-kat.webp"
+                loading="lazy"
+              />
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/graphism/kitty-kat.webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-link.html"
+          locals='{"detailCtaText": "visit website", "detailValue": "what-da-duck", "detailTitle": "What Da Duck",
+          "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://what-da-duck.basile-kamm.ch/",
+          "detailText": "Site web expérimental utilisant Three.js en le combinant avec GSAP ScrollTrigger", 
+          "detailTool1": "VS Code", "detailTool2": "Blender", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/frontend/what-da-duck.webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/frontend/what-da-duck-2.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+        <extends
+          src="./html-modules/selected-detail-link.html"
+          locals='{"detailCtaText": "visit website", "detailValue": "damn-cookies", "detailTitle": "Damn Cookies",
+          "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://damn-cookies.basile-kamm.ch/",
+          "detailText": "Premier site web expérimental utilisant GSAP ScrollTrigger", 
+          "detailTool1": "VS Code", "detailTool2": "", "detailTool3": ""}'
+        >
+          <block name="detailCollab"></block>
+          <block name="detailContent">
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/frontend/damn-cookies.webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/frontend/damn-cookies-2.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                class="selected-detail-img"
+                src="../asset/img/works/frontend/damn-cookies-3.png?as=webp"
+                loading="lazy"
+              />
+            </div>
+          </block>
+        </extends>
+
+        <div class="selected-detail-close-map"></div>
+        <button aria-label="Overlay-close-button" class="selected-detail-close">
+          <div class="selected-detail-close-bar"></div>
+          <div class="selected-detail-close-bar"></div>
+        </button>
+      </section>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </block>
+</extends>
