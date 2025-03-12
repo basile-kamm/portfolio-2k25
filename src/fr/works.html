@@ -1,13 +1,13 @@
-<extends src="en/base-layout.html" locals='{"script": "works.js"}'>
+<extends src="fr/base-layout.html" locals='{"script": "works.js"}'>
   <block name="content">
     <div class="works-page">
       <div class="works-scroll">
         <div class="works-heading">
-          <h1 class="works-title">Work</h1>
+          <h1 class="works-title">Projets</h1>
           <div class="works-input-container">
             <label
               ><input type="radio" name="filter" value="works-item" checked />
-              <p>all</p>
+              <p>tous</p>
             </label>
             <label
               ><input type="radio" name="filter" value="frontend" />
@@ -19,7 +19,7 @@
             >
             <label
               ><input type="radio" name="filter" value="video" />
-              <p>video/motion</p></label
+              <p>viéeo/motion</p></label
             >
             <label
               ><input type="radio" name="filter" value="3d" />
@@ -27,7 +27,7 @@
             >
             <label
               ><input type="radio" name="filter" value="graphism" />
-              <p>graphism</p></label
+              <p>graphisme</p></label
             >
             <label
               ><input type="radio" name="filter" value="photo" />
@@ -335,10 +335,10 @@
       <section class="works-details">
         <extends
           src="./html-modules/selected-detail-nolink.html"
-          locals='{"detailValue": "grief", "detailTitle": "The Grief","detailTopic1": "Video", "detailTopic2": "", "detailText": "A short movie about an apple", "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
+          locals='{"detailValue": "grief", "detailTitle": "The Grief","detailTopic1": "Vidéo", "detailTopic2": "", "detailText": "Court-métrage sur une pomme", "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab">
-            Project in collaboration with
+            Projet en collaboration avec
             <a href="https://lauriane-sauteur.ch">Lauriane Sauteur</a>
           </block>
           <block name="detailContent">
@@ -356,7 +356,7 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "terrine", "detailTitle": "Les terrines", 
-          "detailTopic1": "Graphism", "detailTopic2": "", 
+          "detailTopic1": "Graphisme", "detailTopic2": "", 
           "detailText": "", 
           "detailTool1": "Photoshop", "detailTool2": "Illustrator", "detailTool3": ""}'
         >
@@ -381,7 +381,7 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "gentille-hess", "detailTitle": "la Gentille-hess",
-          "detailTopic1": "Graphism", "detailTopic2": "", 
+          "detailTopic1": "Graphisme", "detailTopic2": "", 
           "detailText": "", 
           "detailTool1": "Photoshop", "detailTool2": "Illustrator", "detailTool3": ""}'
         >
@@ -418,8 +418,8 @@
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "tekos", "detailTitle": "Tekos",
         "detailTopic1": "Photo", "detailTopic2": "", 
-        "detailText": "Free party is like heaven for me. A place where I forgot all my problems and just live in the moment", 
-        "detailTool1": "Camera", "detailTool2": "", "detailTool3": ""}'
+        "detailText": "Les free party sont un paradis pour moi. Un endroit où tous mes problèmes sont oubliés et je vis juste le moment", 
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
           <block name="detailContent">
@@ -484,10 +484,10 @@
         </extends>
         <extends
           src="./html-modules/selected-detail-nolink.html"
-          locals='{"detailValue": "frib", "detailTitle": "Fribourg City",
+          locals='{"detailValue": "frib", "detailTitle": "Fribourg",
         "detailTopic1": "Photo", "detailTopic2": "", 
         "detailText": "", 
-        "detailTool1": "Camera", "detailTool2": "", "detailTool3": ""}'
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
           <block name="detailContent">
@@ -545,10 +545,10 @@
         </extends>
         <extends
           src="./html-modules/selected-detail-nolink.html"
-          locals='{"detailValue": "moutain", "detailTitle": "Moutains",
+          locals='{"detailValue": "moutain", "detailTitle": "Montagnes",
         "detailTopic1": "Photo", "detailTopic2": "", 
         "detailText": "", 
-        "detailTool1": "Camera", "detailTool2": "", "detailTool3": ""}'
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
           <block name="detailContent">
@@ -601,7 +601,7 @@
           locals='{"detailValue": "venice", "detailTitle": "Venice",
         "detailTopic1": "Photo", "detailTopic2": "", 
         "detailText": "", 
-        "detailTool1": "Camera", "detailTool2": "", "detailTool3": ""}'
+        "detailTool1": "", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
           <block name="detailContent">
@@ -644,8 +644,8 @@
         </extends>
         <extends
           src="./html-modules/selected-detail-nolink.html"
-          locals='{"detailValue": "cervin", "detailTitle": "The Cervin",
-        "detailTopic1": "Graphism", "detailTopic2": "", 
+          locals='{"detailValue": "cervin", "detailTitle": "le Cervin",
+        "detailTopic1": "Graphisme", "detailTopic2": "", 
         "detailText": "", 
         "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
         >
@@ -668,7 +668,7 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "urban-echo", "detailTitle": "Urban Echo",
-        "detailTopic1": "Video", "detailTopic2": "", 
+        "detailTopic1": "Vidéo", "detailTopic2": "", 
         "detailText": "", 
         "detailTool1": "After Effects", "detailTool2": "Premiere Pro", "detailTool3": ""}'
         >
@@ -723,12 +723,12 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "bordergame", "detailTitle": "Adscape Retina",
-        "detailTopic1": "Video", "detailTopic2": "Motion", 
-        "detailText": "experimental video about visual pollution", 
+        "detailTopic1": "Vidéo", "detailTopic2": "Motion", 
+        "detailText": "Vidéo expérimentale sur la pollution visuelle", 
         "detailTool1": "Premiere Pro", "detailTool2": "After Effects", "detailTool3": ""}'
         >
           <block name="detailCollab"
-            >Project in collaboration with
+            >Projet en collaboration avec
             <a href="https://lauriane-sauteur.ch"
               >Lucie Baillod changer href</a
             ></block
@@ -750,32 +750,32 @@
           </block>
         </extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-furieuse.html"
+          src="fr/selected-detail-pages/selected-detail-furieuse.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-grenouche.html"
+          src="fr/selected-detail-pages/selected-detail-grenouche.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-lauriane.html"
+          src="fr/selected-detail-pages/selected-detail-lauriane.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-licorne.html"
+          src="fr/selected-detail-pages/selected-detail-licorne.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-mirage.html"
+          src="fr/selected-detail-pages/selected-detail-mirage.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-nitecore.html"
+          src="fr/selected-detail-pages/selected-detail-nitecore.html"
         ></extends>
         <extends
-          src="en/selected-detail-pages/selected-detail-tatitotu.html"
+          src="fr/selected-detail-pages/selected-detail-tatitotu.html"
         ></extends>
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "invader-city", "detailTitle": "Invader City",
         "detailTopic1": "3D", "detailTopic2": "", 
-        "detailText": "Modeling of an utopic location", 
-        "detailTool1": "Cinema 4D", "detailTool2": "", "detailTool3": ""}'
+        "detailText": "Futur utopique", 
+        "detailTool1": "Cinéma 4D", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
           <block name="detailContent">
@@ -792,7 +792,7 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "melting-down", "detailTitle": "Melting Down",
-        "detailTopic1": "Graphism", "detailTopic2": "", 
+        "detailTopic1": "Graphisme", "detailTopic2": "", 
         "detailText": "", 
         "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
         >
@@ -811,7 +811,7 @@
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "the-one", "detailTitle": "The One",
         "detailTopic1": "video", "detailTopic2": "", 
-        "detailText": "", 
+        "detailText": "Vidéo expérimentale", 
         "detailTool1": "Premiere Pro", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
@@ -836,7 +836,7 @@
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "beyler", "detailTitle": "Beyler",
         "detailTopic1": "Motion", "detailTopic2": "", 
-        "detailText": "Editing showcasing the citation of Egon Schiele - { Art cannot be modern, art is eternal }", 
+        "detailText": "Montage mettant en valeur la citation de Egon Schiele - { Art cannot be modern, art is eternal }", 
         "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
@@ -860,7 +860,7 @@
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "glitch", "detailTitle": "Glitch",
         "detailTopic1": "Motion", "detailTopic2": "3D", 
-        "detailText": "Sound recommended", 
+        "detailText": "Son recommandé", 
         "detailTool1": "After effect", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
@@ -883,8 +883,8 @@
         <extends
           src="./html-modules/selected-detail-nolink.html"
           locals='{"detailValue": "kitty-kat", "detailTitle": "Kitty Invasion",
-        "detailTopic1": "Graphism", "detailTopic2": "Matte painting", 
-        "detailText": "In a world where black cats have taken over...", 
+        "detailTopic1": "Graphisme", "detailTopic2": "Matte painting", 
+        "detailText": "Dans un monde où les chats noirs ont prit le dessus", 
         "detailTool1": "Photoshop", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
@@ -907,7 +907,7 @@
           src="./html-modules/selected-detail-link.html"
           locals='{"detailCtaText": "visit website", "detailValue": "what-da-duck", "detailTitle": "What Da Duck",
           "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://what-da-duck.basile-kamm.ch/",
-          "detailText": "Experimental website using Three.js and mixing it with GSAP ScrollTrigger", 
+          "detailText": "Site web expérimental utilisant Three.js en le combinant avec GSAP ScrollTrigger", 
           "detailTool1": "VS Code", "detailTool2": "Blender", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
@@ -932,7 +932,7 @@
           src="./html-modules/selected-detail-link.html"
           locals='{"detailCtaText": "visit website", "detailValue": "damn-cookies", "detailTitle": "Damn Cookies",
           "detailTopic1": "Frontend", "detailTopic2": "", "detailLink": "https://damn-cookies.basile-kamm.ch/",
-          "detailText": "First experimental website using GSAP ScrollTrigger", 
+          "detailText": "Premier site web expérimental utilisant GSAP ScrollTrigger", 
           "detailTool1": "VS Code", "detailTool2": "", "detailTool3": ""}'
         >
           <block name="detailCollab"></block>
