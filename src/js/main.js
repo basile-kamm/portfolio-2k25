@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const trailerIframes = document.querySelectorAll(".selected-trailer-js");
 
     function onFirstScroll() {
-      trailerIframesIframes.forEach((iframe) => {
+      trailerIframes.forEach((iframe) => {
         const src = iframe.getAttribute("data-src");
         iframe.setAttribute("src", src);
       });
@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Supprime l'écouteur après la première détection
       window.removeEventListener("scroll", onFirstScroll);
     }
+
+    onFirstScroll();
   }
 
   {
