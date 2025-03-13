@@ -44,6 +44,10 @@
 }
 
 @include breakpoint("small") {
+  .loader-container {
+    background-image: url(/src/asset/img/loader-background-mobile.jpg?as=webp);
+  }
+
   .loader-elem {
     font-size: 15vw;
   }

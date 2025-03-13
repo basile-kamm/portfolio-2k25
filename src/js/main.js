@@ -3,6 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 import "./loader";
+import "./contact";
+import "./works";
 
 import "./parallax";
 import "./selected";
@@ -35,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let hoverAnim = null;
     let hoverAnimLeave = null;
 
+    let addedText;
+    if (mainBtn.classList.contains("fr")) {
+      addedText = "Contactez-moi";
+    } else {
+      addedText = "Contact me";
+    }
+
     mainBtn.addEventListener("mouseover", () => {
       clearInterval(removeInterval); // Stop removal if hovering again
       if (hoverAnimLeave) {
@@ -47,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Only add if less than 20
           const newElem = document.createElement("p");
           newElem.classList.add("banner-cta", "added");
-          newElem.textContent = "Contact me";
+          newElem.textContent = addedText;
           btnCont.appendChild(newElem);
 
           gsap.set(newElem, {

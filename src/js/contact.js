@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-import "./loader";
+// import "./loader";
 
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".contact-slide");

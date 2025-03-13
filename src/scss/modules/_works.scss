@@ -119,6 +119,10 @@ input:checked + p {
     font-size: 32vh;
     transform: scaleY(1.4);
     transform-origin: top;
+
+    &.fr {
+      font-size: 25vh;
+    }
   }
 
   .works-input-container {

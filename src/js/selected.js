@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
     let hoverLeaveAnim = null;
+    let hoverGlitch = null;
     const hoverValue = selectedWork.getAttribute("data-selected-value");
 
     selectedWork.addEventListener("mouseenter", function () {
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Create and play the enter animation
-      const hoverEnterAnim = createHoverEnterAnimation(selectedWork);
-      const hoverGlitch = hoverGlitchAnim();
+      hoverEnterAnim = createHoverEnterAnimation(selectedWork);
+      hoverGlitch = hoverGlitchAnim();
 
       // Show the related trailer
       selectedTrailers.forEach((trailer) => {
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectedWork.addEventListener("mouseleave", function () {
       // Kill the enter animation if it's running
+      console.log("Mouse leave");
       if (hoverEnterAnim) {
         hoverEnterAnim.kill();
         hoverEnterAnim = null;
