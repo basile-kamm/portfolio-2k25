@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Create and play the enter animation
-      hoverEnterAnim = createHoverEnterAnimation(selectedWork);
-      hoverGlitch = hoverGlitchAnim();
+      const hoverEnterAnim = createHoverEnterAnimation(selectedWork);
+      const hoverGlitch = hoverGlitchAnim();
 
       // Show the related trailer
       selectedTrailers.forEach((trailer) => {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Create and play the leave animation
-      hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
+      const hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
 
       hoverLeaveAnim.eventCallback("onComplete", () => {
         selectedTrailers.forEach((trailer) => {

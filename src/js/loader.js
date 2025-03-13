@@ -1,11 +1,5 @@
 import gsap from "gsap";
 
-gsap.to(".loader-text-container", {
-  opacity: 1,
-  duration: 0.5,
-  stagger: 0.3,
-});
-
 let loadedAnim;
 let loaderState;
 const loader = document.querySelector(".loader-container");
@@ -16,6 +10,7 @@ addLoaderElem();
 window.addEventListener("load", () => {
   setTimeout(() => {
     loadedAnim = loadedAnimTl();
+    console.log("loadedAnim has been played");
     // Optional delay for smoother experience
   }, 500);
 
@@ -39,7 +34,7 @@ function addLoaderElem() {
   }
   // console.log(texts);
 
-  addInterval = setInterval(() => {
+  const addInterval = setInterval(() => {
     if (loaderState != "transitioned") {
       const newElem = document.createElement("p");
       newElem.classList.add("loader-elem");
@@ -67,10 +62,10 @@ function addLoaderElem() {
           return m;
         })(),
       });
-      // console.log(loaderState);
+      console.log(loaderState);
     } else {
       clearInterval(addInterval);
-      // console.log("interval has been cleared");
+      console.log("interval has been cleared");
     }
   }, 100);
 }
@@ -120,7 +115,5 @@ function loadedAnimTl() {
       },
       "<1"
     );
-  } else {
-    console.log("paralax not");
   }
 }
