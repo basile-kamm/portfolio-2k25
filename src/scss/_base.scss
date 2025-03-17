@@ -27,12 +27,12 @@ h3 {
 
 @media (max-width: 767px) {
   .desktop {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 768px) {
   .mobile {
-    display: none;
+    display: none !important;
   }
 }
 

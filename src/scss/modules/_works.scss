@@ -122,6 +122,7 @@ input:checked + p {
 
     &.fr {
       font-size: 25vh;
+      transform: scaleY(1.8);
     }
   }
 

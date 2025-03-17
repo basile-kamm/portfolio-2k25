@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
       y: "-6vw",
       duration: 1,
     });
+    parallax.to(
+      ".banner-scroll-cta",
+      {
+        opacity: 0,
+        duration: 0.8,
+        y: -20,
+      },
+      "<"
+    );
     parallax.fromTo(
       ".layer-1-2",
       {

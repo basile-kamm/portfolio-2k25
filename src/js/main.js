@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
       trailerIframes.forEach((iframe) => {
         const src = iframe.getAttribute("data-src");
         iframe.setAttribute("src", src);
+        console.log("iframe src loaded");
       });
 
+      console.log("First scroll");
       // Supprime l'écouteur après la première détection
       window.removeEventListener("scroll", onFirstScroll);
     }
 
-    onFirstScroll();
+    if (window.screen.width >= 678) {
+      window.addEventListener("scroll", onFirstScroll);
+    }
   }
 
   {
