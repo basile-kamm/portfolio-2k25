@@ -126,9 +126,3 @@
     }
   }
 }
-
-@include breakpoint("small") {
-  .credits-info {
-    font-size: 2vw;
-  }
-}
