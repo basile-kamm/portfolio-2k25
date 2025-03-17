@@ -16,12 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function onFirstScroll() {
       trailerIframes.forEach((iframe) => {
-        const src = iframe.getAttribute("data-src");
-        iframe.setAttribute("src", src);
-        console.log("iframe src loaded");
+        if (!iframe.getAttribute("src")) {
+          // Vérifie si src est déjà défini
+          const src = iframe.getAttribute("data-src");
+          if (src) {
+            iframe.setAttribute("src", src);
+          }
+        }
       });
 
-      console.log("First scroll");
       // Supprime l'écouteur après la première détection
       window.removeEventListener("scroll", onFirstScroll);
     }
