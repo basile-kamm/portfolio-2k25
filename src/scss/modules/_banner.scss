@@ -34,6 +34,25 @@
     }
   }
 }
+
+.banner-scroll-cta {
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $white;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+
+  svg {
+    width: 1vw;
+    height: 1vw;
+  }
+}
+
 .banner-cta-container {
   position: fixed;
   top: 0;
@@ -106,6 +125,7 @@
 
 .banner-title-word {
   display: flex;
+  // gap: 0.1vw;
 }
 
 .banner-title-line {

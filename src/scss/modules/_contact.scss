@@ -139,7 +139,19 @@
       color: rgba($white, 1);
       -webkit-text-stroke: 0px;
     }
+
+    ::after {
+      content: "";
+      position: absolute;
+      top: 0;
+
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background: $white;
+    }
   }
+
   .contact-underline {
     display: none;
   }

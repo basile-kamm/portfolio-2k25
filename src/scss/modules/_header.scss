@@ -48,24 +48,11 @@ header {
   transform-style: preserve-3d;
   transition: transform 0.4s;
   font-weight: 600;
-  animation: changeWeight infinite 10s;
+  opacity: 0.9;
 
   &:hover {
     transform: perspective(50px) rotateX(40deg) scale(1.05);
-  }
-}
-
-@keyframes changeWeight {
-  0% {
-    font-weight: 300;
-  }
-
-  50% {
-    font-weight: 600;
-  }
-
-  100% {
-    font-weight: 300;
+    opacity: 1;
   }
 }
 
@@ -95,5 +82,9 @@ header {
 
   .header-nav {
     font-size: 18px;
+  }
+
+  .header-name {
+    font-weight: 300;
   }
 }

@@ -229,6 +229,12 @@
 @include breakpoint("medium") {
   .selected-trailer-glitch {
     width: 40vw;
-    margin-left: -15vw;
+    margin-left: -5vw;
+  }
+
+  .selected-trailers {
+    width: 40vw;
+    margin-top: 2vw;
+    margin-left: -1vw;
   }
 }
