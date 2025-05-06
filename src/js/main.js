@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function onFirstScroll() {
       trailerIframes.forEach((iframe) => {
         if (!iframe.getAttribute("src")) {
-          // Vérifie si src est déjà défini
           const src = iframe.getAttribute("data-src");
           if (src) {
             iframe.setAttribute("src", src);
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.addEventListener("scroll", onFirstScroll);
     }
   }
-
   {
     //hover Btn effect
     const btnCont = document.querySelector(".banner-cta-container");
@@ -69,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
           gsap.set(newElem, {
             x: "random(0, 100, 5)vw",
             y: "random(0, 80, 1)vh",
-            // rotate: "random(0, 360)",
             opacity: "random(0.5, 1)",
           });
 
