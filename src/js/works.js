@@ -79,23 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
           const selectedTitle = document.querySelector(
             ".selected-detail-title"
           );
-          // let fontSize = 100;
-          // selectedTitle.style.fontSize = fontSize + "px"; // Assigner une taille initiale
-
-          // console.log(
-          //   selectedTitle.clientWidth,
-          //   selectedWorkDetail.clientWidth
-          // );
-
-          // while (
-          //   selectedTitleContainer.clientWidth >
-          //     selectedWorkDetail.clientWidth &&
-          //   fontSize > 10 // Ajout d'une taille minimale pour éviter la boucle infinie
-          // ) {
-          //   console.log(selectedTitleContainer.clientWidth);
-          //   fontSize -= 1;
-          //   selectedTitle.style.fontSize = fontSize + "px";
-          // }
 
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
@@ -193,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
               start: "bottom bottom",
               end: `+=${maxScrollDistance}`,
               scrub: 1,
-              // markers: true,
+              markers: true,
             },
           });
         });
