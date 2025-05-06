@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // parallax.set(".banner-title-overlay", {
-  //   zIndex: 100,
-  // });
   parallax.set(".selected-trailer", { zIndex: 10 });
 
   if (window.innerWidth <= 678) {

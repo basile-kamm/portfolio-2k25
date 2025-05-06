@@ -11,21 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
 
   const body = document.querySelector("body");
-  // console.log("Selected details count:", selectedDetails.length);
-  // selectedDetails.forEach((detail) => console.log("Found:", detail.classList));
-
-  // const observer = new MutationObserver(() => {
-  //   const selectedDetails = document.querySelectorAll(
-  //     ".selected-detail-container"
-  //   );
-  //   if (selectedDetails.length >= 6) {
-  //     // Remplace 6 par le bon nombre
-  //     // console.log("All details are loaded:", selectedDetails.length);
-  //     observer.disconnect(); // Arrêter l'observation une fois chargé
-  //   }
-  // });
-
-  // observer.observe(document.body, { childList: true, subtree: true });
 
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
@@ -54,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectedWork.addEventListener("mouseleave", function () {
       // Kill the enter animation if it's running
-      console.log("Mouse leave");
+      // console.log("Mouse leave");
       if (hoverEnterAnim) {
         hoverEnterAnim.kill();
         hoverEnterAnim = null;

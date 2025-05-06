@@ -10,8 +10,7 @@ addLoaderElem();
 window.addEventListener("load", () => {
   setTimeout(() => {
     loadedAnim = loadedAnimTl();
-    console.log("loadedAnim has been played");
-    // Optional delay for smoother experience
+    // console.log("loadedAnim has been played");
   }, 500);
 
   loader.addEventListener("transitionend", () => {
@@ -62,10 +61,10 @@ function addLoaderElem() {
           return m;
         })(),
       });
-      console.log(loaderState);
+      // console.log(loaderState);
     } else {
       clearInterval(addInterval);
-      console.log("interval has been cleared");
+      // console.log("interval has been cleared");
     }
   }, 100);
 }

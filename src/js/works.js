@@ -3,10 +3,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// import "./loader";
-
-// console.log("js loaded");
-
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".works-item");
   const radioButtons = document.querySelectorAll('input[name="filter"]');
@@ -21,12 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const displayIframes = document.querySelectorAll(".display-iframe-lazy");
 
   function onFirstScroll() {
-    displayIframes.forEach((iframe) => {
+    let loadedCount = 0;
+
+    displayIframes.forEach((iframe, index) => {
       const src = iframe.getAttribute("data-src");
+      if (!src) return;
+
       iframe.setAttribute("src", src);
+
+      iframe.addEventListener("load", () => {
+        loadedCount++;
+        // Attendre que tous soient chargés
+        if (loadedCount === displayIframes.length) {
+          // Petit délai pour être sûr que le DOM est mis à jour
+          setTimeout(() => {
+            ScrollTrigger.killAll();
+            workHorizontalScroll();
+          }, 100);
+        }
+      });
     });
 
-    // Supprime l'écouteur après la première détection
+    // Supprime l’écouteur après le premier scroll
     window.removeEventListener("scroll", onFirstScroll);
   }
 
@@ -73,12 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const src = iframe.getAttribute("data-src");
             iframe.setAttribute("src", src);
           });
-          const selectedTitleContainer = document.querySelector(
-            ".selected-detail-title-container"
-          );
-          const selectedTitle = document.querySelector(
-            ".selected-detail-title"
-          );
 
           selectedDetailClose.onclick = function () {
             openDetailAnim.reverse();
@@ -133,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function workHorizontalScroll() {
     if (window.innerWidth > 768) {
-      const worksContainer = document.querySelector(".works-display"); // Section where pinning starts
       const worksRows = document.querySelectorAll(".works-display-row");
       const worksLastRow = document.querySelector(".works-display-row.last");
 
@@ -148,15 +153,13 @@ document.addEventListener("DOMContentLoaded", function () {
         height: `${windowHeight}px`,
       });
 
-      console.log(maxScrollDistance, window.innerWidth);
+      // console.log(maxScrollDistance, window.innerWidth);
 
       if (maxScrollDistance > window.innerWidth) {
-        // Create a scrollable space so the animation has enough room to happen
         gsap.set("body", {
           height: `${maxScrollDistance + windowHeight}px`,
         });
 
-        // Pin the entire page when reaching .works-display
         ScrollTrigger.create({
           trigger: worksLastRow,
           start: "bottom bottom",
@@ -166,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
           // markers: true,
         });
 
-        // Animate each row at its own speed, moving 50px further
         worksRows.forEach((worksRow) => {
           gsap.to(worksRow, {
             x: () => `-${worksRow.scrollWidth - window.innerWidth + 30}px`,
@@ -176,13 +178,11 @@ document.addEventListener("DOMContentLoaded", function () {
               start: "bottom bottom",
               end: `+=${maxScrollDistance}`,
               scrub: 1,
-              markers: true,
+              // markers: true,
             },
           });
         });
       }
     }
   }
-
-  workHorizontalScroll();
 });
