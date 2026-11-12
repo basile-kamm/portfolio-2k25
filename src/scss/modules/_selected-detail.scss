@@ -1,3 +1,5 @@
+@use "../var" as *;
+
 .selected-detail-container {
   background: $dark;
   color: $white;

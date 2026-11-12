@@ -1,17 +1,22 @@
-@import "bootstrap/scss/bootstrap-grid";
+// $is-dev is prepended by .sassrc.js under Parcel; false when compiled without it
+$is-dev: false !default;
+@use "var" with (
+  $is-dev: $is-dev
+);
 
-@import "font";
-@import "base";
-@import "layout";
-@import "var";
-@import "modules/loader";
-@import "modules/banner";
-@import "modules/header";
-@import "modules/button";
-@import "modules/selected";
-@import "modules/selected-detail";
-@import "modules/resume";
-@import "modules/footer";
-@import "modules/credits";
-@import "modules/contact";
-@import "modules/works";
+@use "bootstrap/scss/bootstrap-grid";
+
+@use "font";
+@use "base";
+@use "layout";
+@use "modules/loader";
+@use "modules/banner";
+@use "modules/header";
+@use "modules/button";
+@use "modules/selected";
+@use "modules/selected-detail";
+@use "modules/resume";
+@use "modules/footer";
+@use "modules/credits";
+@use "modules/contact";
+@use "modules/works";

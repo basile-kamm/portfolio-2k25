@@ -22,8 +22,5 @@ module.exports = {
       strict: false,
       expressions: { locals: { isDev } }, // used by the loader in base-layout.html
     },
-    "posthtml-inline-svg": {
-      cwd: "src",
-    },
   },
 };

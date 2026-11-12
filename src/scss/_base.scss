@@ -1,3 +1,8 @@
+// Before the @use migration, this file was imported before _var.scss and got
+// Bootstrap's $dark/$white, not the project's: kept as is so nothing changes.
+$bs-dark: #212529;
+$white: #fff;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -49,10 +54,10 @@ body.no-scroll {
 
 body {
   overflow-x: hidden;
-  background: $dark;
+  background: $bs-dark;
 }
 
 *::selection {
-  background: $dark;
+  background: $bs-dark;
   color: $white;
 }
