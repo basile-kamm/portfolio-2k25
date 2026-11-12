@@ -4,6 +4,9 @@ import { pauseVideosIn } from "./videos";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// How much faster the project detail closes than it opens (2 = twice as fast)
+const DETAIL_CLOSE_SPEED = 2;
+
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".works-item");
   const radioButtons = document.querySelectorAll('input[name="filter"]');
@@ -99,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // onclick (not addEventListener) so reopening a project doesn't
           // stack listeners that would reverse previous animations too
           const closeDetail = function () {
-            openDetailAnim.reverse();
+            // Close faster than it opened (same animation, played backwards)
+            openDetailAnim.timeScale(DETAIL_CLOSE_SPEED).reverse();
             pauseVideosIn(selectedWorkDetail);
             playVimeoVideos();
           };

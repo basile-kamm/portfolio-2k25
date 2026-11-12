@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "ClaudeInChromeDomain(localhost:1235)"
+      "ClaudeInChromeDomain(localhost:1235)",
+      "ClaudeInChromeDomain(localhost:1234)",
+      "ClaudeInChromeDomain(basile-kamm.ch)",
+      "ClaudeInChromeDomain(player.vimeo.com)"
     ]
   }
 }

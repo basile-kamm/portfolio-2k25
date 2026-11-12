@@ -124,6 +124,7 @@ function loadedAnimTl() {
       ".banner-texts > *",
       {
         x: 500,
+        opacity: 0,
         stagger: 0.4,
         duration: 1.5,
       },
@@ -136,6 +137,18 @@ function loadedAnimTl() {
         duration: 1,
       },
       "<1"
+    );
+    // Animates the CTA's content, not .banner-scroll-cta itself: the scrubbed
+    // parallax timeline (parallax.js) also tweens its opacity, and its
+    // ScrollTrigger.refresh() would otherwise show it right away
+    tl.from(
+      ".banner-scroll-cta > *",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+      },
+      "<" // Same time as the header
     );
   }
 }
