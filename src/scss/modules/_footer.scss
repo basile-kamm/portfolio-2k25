@@ -1,5 +1,4 @@
 footer {
-  background-image: url(../asset/img/footer-whole-desktop.jpg?as=webp);
   background-size: cover;
   background-position: center top;
   height: 100vh;
@@ -8,6 +7,7 @@ footer {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  @include responsive-bg("../asset/img/footer-whole-desktop.jpg", (960, 1600, 2400));
 }
 
 .footer-cta-container {

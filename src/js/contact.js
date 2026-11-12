@@ -127,15 +127,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the next slide
   }
 
-  // Initial display of the first slide
-  showSlide(currentSlide);
+  // Slideshow only exists on the contact page; needs 2+ slides to rotate
+  if (slides.length > 0) {
+    // Initial display of the first slide
+    showSlide(currentSlide);
 
-  // Change slide every 6 seconds
-  setInterval(showNextSlide, 4000);
+    // Change slide every 4 seconds
+    if (slides.length > 1) setInterval(showNextSlide, 4000);
+  }
 
-  if (window.innerWidth >= 678) {
-    const contactCta = document.querySelector(".contact-cta");
-    const contactCtaEl = document.querySelectorAll(".contact-cta b");
+  const contactCta = document.querySelector(".contact-cta");
+
+  if (contactCta && window.innerWidth >= 678) {
+    const contactCtaEl = contactCta.querySelectorAll("b");
 
     let hoverAnim;
 
@@ -143,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hoverAnim = HoverCta();
     });
     contactCta.addEventListener("mouseleave", function () {
-      hoverAnim.reverse();
+      if (hoverAnim) hoverAnim.reverse();
     });
 
     function HoverCta() {

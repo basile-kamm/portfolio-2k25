@@ -6,31 +6,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
   const creditsClose = document.querySelector(".credits-close");
 
-  let openCreditsAnim;
+  // Credits only exist on the homepage
+  if (!creditsCta || !creditsCont) return;
+
+  let openCreditsAnim = null;
+
+  function closeCredits() {
+    // The close map is shared with the project details: only act if the
+    // credits are actually open
+    if (!openCreditsAnim) return;
+    openCreditsAnim.reverse();
+    openCreditsAnim = null;
+  }
 
   creditsCta.addEventListener("click", function () {
     openCreditsAnim = openCredits(); // Create the animation instance
   });
 
-  creditsClose.addEventListener("click", function () {
-    openCreditsAnim.reverse();
-    openCreditsAnim == null;
-  });
-  selectedCloseMap.addEventListener("click", function () {
-    openCreditsAnim.reverse();
-    openCreditsAnim == null;
-  });
+  if (creditsClose) creditsClose.addEventListener("click", closeCredits);
+  if (selectedCloseMap) selectedCloseMap.addEventListener("click", closeCredits);
 
   function openCredits() {
     const tl = gsap.timeline({
       onReverseComplete: () => {
-        tl.set(creditsCont, { display: "none" });
-        tl.set(selectedCloseMap, { display: "none" });
+        gsap.set(creditsCont, { display: "none" });
+        if (selectedCloseMap) gsap.set(selectedCloseMap, { display: "none" });
       },
     });
 
     tl.set(creditsCont, { display: "block" });
-    tl.set(selectedCloseMap, { display: "block" });
+    if (selectedCloseMap) tl.set(selectedCloseMap, { display: "block" });
     tl.to(creditsCont, { translateY: 0, duration: 0.5 });
 
     return tl;

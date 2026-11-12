@@ -1,23 +1,38 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// The loader leaves as soon as the page has loaded, but stays at least this
+// long (counted from the start of the navigation) so it never just flashes
+const LOADER_MIN_DURATION = 2000; // ms
+// Extra wait on the homepage once loaded, so the banner is ready when revealed
+const HOMEPAGE_LOADER_DELAY = 200; // ms
 
 let loadedAnim;
 let loaderState;
 const loader = document.querySelector(".loader-container");
 
-// console.log(loaderState);
-addLoaderElem();
+if (loader) {
+  // Block scrolling while the loader covers the page
+  document.body.classList.add("no-scroll");
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    loadedAnim = loadedAnimTl();
-    // console.log("loadedAnim has been played");
-  }, 500);
+  addLoaderElem();
 
-  loader.addEventListener("transitionend", () => {
-    loaderState = "transitioned";
-    loader.remove();
-  });
-});
+  const hideLoader = () => {
+    // performance.now() = time elapsed since the navigation started
+    const remaining = Math.max(0, LOADER_MIN_DURATION - performance.now());
+    const isHomepage = document.querySelector(".parallax-container");
+    const delay = isHomepage ? remaining + HOMEPAGE_LOADER_DELAY : remaining;
+    setTimeout(() => {
+      loadedAnim = loadedAnimTl();
+    }, delay);
+  };
+
+  if (document.readyState === "complete") {
+    hideLoader();
+  } else {
+    window.addEventListener("load", hideLoader, { once: true });
+  }
+}
 
 function addLoaderElem() {
   let texts;
@@ -76,6 +91,14 @@ function loadedAnimTl() {
     translateY: "-100%",
     duration: 1,
     ease: "power2.inOut",
+    onComplete: () => {
+      // Loader is gone: stop adding texts, remove it, allow scrolling again
+      // and let ScrollTrigger re-measure
+      loaderState = "transitioned";
+      loader.remove();
+      document.body.classList.remove("no-scroll");
+      ScrollTrigger.refresh();
+    },
   });
 
   if (parallaxCont) {
@@ -83,6 +106,7 @@ function loadedAnimTl() {
       ".banner-title-letter",
       {
         y: 200,
+        opacity: 0,
         stagger: 0.05,
       },
       ">0.5"

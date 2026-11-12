@@ -1,0 +1,62 @@
+<script locals>
+  // Responsive <picture>: AVIF source + WebP <img>, several widths generated
+  // by Parcel's image transformer (?as=…&width=…). Rendered at build time by
+  // posthtml, no JavaScript in the browser.
+  //
+  // Locals:
+  //   src       image path, relative to the page (../asset/img/…)       required
+  //   preset    full | thumb | detail | slide                           required
+  //   max       intrinsic width of the source, so it's never upscaled   required
+  //   class     classes on the <img>                                    optional
+  //   alt       alternative text (default: "")                          optional
+  //   loading   lazy | eager (default: lazy)                            optional
+  //   fetchpriority  high | low | auto (default: auto)                  optional
+  //   sizes     overrides the preset's sizes                            optional
+  //   value     data-works-item-value (works page thumbnails)           optional
+  const PRESETS = {
+    full: { widths: [960, 1600, 2400], sizes: "100vw" },
+    slide: { widths: [960, 1600, 2400], sizes: "(max-aspect-ratio: 4/3) 134vh, 100vw" },
+    thumb: { widths: [400, 800], sizes: "(max-width: 767px) 100vw, 50vh" },
+    detail: { widths: [800, 1400, 2000], sizes: "(max-width: 767px) 100vw, 75vw" },
+  };
+  const preset = PRESETS[locals.preset];
+  // Widths the source can provide; its own width when it's narrower than the largest preset width
+  let widths = preset.widths.filter((w) => w < locals.max);
+  if (locals.max < Math.max(...preset.widths)) widths.push(locals.max);
+  const srcset = (as) =>
+    widths.map((w) => `${locals.src}?as=${as}&width=${w} ${w}w`).join(", ");
+  const fallbackWidth = widths[Math.min(1, widths.length - 1)];
+
+  // `npm run dev` (isDev, from .posthtmlrc.js): plain <img> of the original,
+  // so the dev server doesn't generate dozens of AVIF/WebP files
+  module.exports = {
+    isDev: Boolean(locals.isDev),
+    avifSrcset: srcset("avif"),
+    webpSrcset: srcset("webp"),
+    fallbackSrc: `${locals.src}?as=webp&width=${fallbackWidth}`,
+    sizesAttr: locals.sizes || preset.sizes,
+    imgClass: locals.class || "",
+    altText: locals.alt || "",
+    loadingAttr: locals.loading || "lazy",
+    priorityAttr: locals.fetchpriority || "auto",
+    hasValue: Boolean(locals.value),
+    valueAttr: locals.value || "",
+  };
+</script>
+<if condition="isDev && hasValue">
+  <img src="{{ src }}" alt="{{ altText }}" class="{{ imgClass }}" loading="{{ loadingAttr }}" data-works-item-value="{{ valueAttr }}" />
+</if>
+<elseif condition="isDev">
+  <img src="{{ src }}" alt="{{ altText }}" class="{{ imgClass }}" loading="{{ loadingAttr }}" />
+</elseif>
+<else>
+<picture>
+  <source type="image/avif" srcset="{{ avifSrcset }}" sizes="{{ sizesAttr }}" />
+  <if condition="hasValue">
+    <img src="{{ fallbackSrc }}" srcset="{{ webpSrcset }}" sizes="{{ sizesAttr }}" alt="{{ altText }}" class="{{ imgClass }}" loading="{{ loadingAttr }}" fetchpriority="{{ priorityAttr }}" decoding="async" data-works-item-value="{{ valueAttr }}" />
+  </if>
+  <else>
+    <img src="{{ fallbackSrc }}" srcset="{{ webpSrcset }}" sizes="{{ sizesAttr }}" alt="{{ altText }}" class="{{ imgClass }}" loading="{{ loadingAttr }}" fetchpriority="{{ priorityAttr }}" decoding="async" />
+  </else>
+</picture>
+</else>

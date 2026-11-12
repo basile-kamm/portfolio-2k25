@@ -11,12 +11,23 @@
   align-items: center;
   overflow: hidden;
 
+  // Transparent TV screen in forest-desktop.png (fractions of the image size).
+  // Keep in sync with TV_SCREEN in js/parallax.js.
+  --img-ratio: calc(3000 / 1688);
+  --screen-x: 0.5047; // centre
+  --screen-y: 0.6019;
+  --screen-w: 0.1783; // width of the screen hole
+  --screen-rot: 2.15deg; // the TV is slightly tilted
+  // Rendered size of the image with `background-size: cover`
+  --cover-w: max(100vw, 100vh * var(--img-ratio));
+  --cover-h: calc(var(--cover-w) / var(--img-ratio));
+
   .selected-background-img {
-    background-image: url("../asset/img/forest-desktop.png?as=webp&width=2000");
     background-position: center center;
     background-size: cover;
     width: 100%;
     height: 100%;
+    @include responsive-bg("../asset/img/forest-desktop.png", (960, 1600, 2400));
   }
 }
 
@@ -50,15 +61,18 @@
   position: relative;
 }
 
+// Sits behind the forest image and shows through the transparent TV screen.
+// Positioned from the same cover maths as the background, so it stays on the
+// screen at every viewport size.
 .selected-trailers {
-  // background: red;
-  width: 22vw;
-  margin-top: 2vw;
-  // margin-left: -1vw;
-  aspect-ratio: 16/9;
-  transform: translateY(50%);
-  rotate: 2.5deg;
   position: absolute;
+  left: calc(50% + (var(--screen-x) - 0.5) * var(--cover-w));
+  top: calc(50% + (var(--screen-y) - 0.5) * var(--cover-h));
+  // +8%: overflows under the TV frame so no gap shows around the video
+  width: calc(var(--screen-w) * var(--cover-w) * 1.08);
+  aspect-ratio: 16/9;
+  translate: -50% -50%;
+  rotate: var(--screen-rot);
   z-index: -3;
 }
 
@@ -66,10 +80,11 @@
 .selected-main-trailer {
   width: 100%;
   height: 100%;
-  scale: 1.1;
+  object-fit: cover; // when it's a <video>: fill the TV screen
   display: none;
   position: absolute;
   top: 0;
+  left: 0;
 }
 
 .selected-main-trailer {
@@ -77,12 +92,12 @@
 }
 
 .selected-trailer-glitch {
-  width: 40vw;
-  top: 0;
-  left: 0;
-  margin-top: -2vw;
-  margin-left: -5vw;
+  width: 180%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
   aspect-ratio: 16/9;
+  object-fit: cover;
   position: absolute;
   opacity: 0;
   z-index: 100;
@@ -142,8 +157,8 @@
   padding-left: 2vw;
   font-family: "Humane";
   font-size: 3vw;
-  letter-spacing: 0.1rem;
-  font-weight: 300;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
 }
 
 .selected-works-cta {
@@ -166,22 +181,18 @@
   }
 }
 
-@include breakpoint("medium") {
-  .selected-trailer-glitch {
-    width: 40vw;
-    margin-left: -5vw;
-  }
-
-  .selected-trailers {
-    width: 40vw;
-    margin-top: 2vw;
-    margin-left: -1vw;
-  }
-}
-
 @include breakpoint("small") {
+  // Transparent TV screen in forest-mobile.png
+  .selected-background {
+    --img-ratio: calc(1018 / 1810);
+    --screen-x: 0.5059;
+    --screen-y: 0.5472;
+    --screen-w: 0.265;
+    --screen-rot: 2.25deg;
+  }
+
   .selected-background-img {
-    background-image: url("../asset/img/forest-mobile.png?as=webp");
+    @include responsive-bg("../asset/img/forest-mobile.png", (1018));
   }
 
   .selected-works-title {
@@ -189,17 +200,13 @@
   }
 
   .selected-trailers {
-    width: 60vw;
     visibility: hidden;
   }
 
-  .selected-main-trailer {
-    visibility: visible;
-  }
-
+  // The main trailer and the glitch that reveals it on scroll stay visible
+  .selected-main-trailer,
   .selected-trailer-glitch {
-    width: 60vw;
-    margin-left: -15vw;
+    visibility: visible;
   }
 
   .selected-work-title {

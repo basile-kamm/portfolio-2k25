@@ -6,11 +6,45 @@
   right: 0;
   overflow: hidden;
   img {
-    width: 100vw;
+    // Slightly oversized so the mouse-follow effect never reveals an edge
+    // (max drift: 1.5vw horizontally, 0.75vw vertically — see --depth below)
+    width: 104vw;
+    left: -2vw;
+    bottom: -1vw;
     position: absolute;
-    bottom: 0;
     pointer-events: none;
     user-select: none;
+
+    // Mouse-follow offset (--mouse-x / --mouse-y set by js/banner-mouse.js).
+    // Uses `translate`, independent from the GSAP scroll parallax `transform`.
+    // !important: GSAP writes an inline `translate: none` on every element it
+    // animates; here we want both offsets to add up.
+    --depth: 0;
+    translate: calc(var(--mouse-x, 0) * var(--depth) * 1vw)
+      calc(var(--mouse-y, 0) * var(--depth) * 0.5vw) !important;
+
+    // Front layers move more than back ones
+    &.layer-1-2 {
+      --depth: 1.5;
+    }
+    &.layer-1 {
+      --depth: 1.2;
+    }
+    &.layer-2 {
+      --depth: 0.9;
+    }
+    &.layer-3 {
+      --depth: 0.6;
+    }
+    &.layer-4 {
+      --depth: 0.45;
+    }
+    &.layer-5 {
+      --depth: 0.3;
+    }
+    &.layer-background {
+      --depth: 0.2;
+    }
 
     // &.layer-1,
     // &.layer-1-2,
@@ -112,11 +146,12 @@
 
 .banner-titles {
   margin-left: 1vw;
+  padding-bottom: 4vh;
 }
 
 .banner-title {
   font-size: 15vw;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   line-height: 75%; /* 179.481px */
   z-index: 50;
@@ -181,6 +216,9 @@
     img {
       height: 110vh;
       width: unset;
+      left: auto;
+      bottom: 0;
+      translate: none !important;
     }
 
     .container {

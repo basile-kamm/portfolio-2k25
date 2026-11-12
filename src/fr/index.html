@@ -4,41 +4,30 @@
       <section class="heading">
         <div class="parallax-container">
           <div class="banner-container">
-            <img
-              src="../asset/img/banner/whole.webp"
-              class="layer-background"
-              alt=""
-              srcset="
-                ../asset/img/banner/whole.webp?width=3000 3000w,
-                ../asset/img/banner/whole.webp?width=1500 1500w,
-                ../asset/img/banner/whole.webp?width=700   700w
-              "
-            />
-            <img
-              src="../asset/img/banner/layer-5.webp"
-              alt=""
-              class="desktop layer-5"
-            />
-            <img
-              src="../asset/img/banner/layer-4.webp"
-              alt=""
-              class="desktop layer-4"
-            />
-            <img
-              src="../asset/img/banner/layer-3.webp"
-              alt=""
-              class="desktop layer-3"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/whole.webp", "preset": "full", "max": 3000, "class": "layer-background", "loading": "eager", "sizes": "(max-width: 991px) 115vh, 100vw"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-5.webp", "preset": "full", "max": 3000, "class": "desktop layer-5", "sizes": "104vw"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-4.webp", "preset": "full", "max": 3000, "class": "desktop layer-4", "sizes": "104vw"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-3.webp", "preset": "full", "max": 3000, "class": "desktop layer-3", "sizes": "104vw"}'
+            ></include>
 
             <div class="container">
               <div class="row">
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
                   <div class="banner-texts">
                     <p class="banner-text">
-                      Je suis un étudiant suisse en Interactive Media Designer à
-                      la recherche d'un stage... J'adore
-                      <i>le développement et le design web</i>. J'aime la
-                      nature, les free party et les chats.
+                      Fraichement diplômé en Interactive Media Design, je me suis <i>spécialisé dans le développement web et le design créatif</i> mais reste touche-à-tout. J'adore utiliser les outils numériques pour créer des expériences uniques et immersives. <br>
+                      Je suis actuellement à la recherche d'un travail où je peux utiliser mes compétences et les développer.
                     </p>
                     <a href="contact.html" class="banner-cta main fr"
                       >Contactez moi</a
@@ -48,7 +37,7 @@
                 <div class="banner-cta-container"></div>
                 <div class="col-12 col-md-6">
                   <div class="banner-titles">
-                    <p class="banner-subtitle banner-title-letter">Étudiant</p>
+                    <!-- <p class="banner-subtitle banner-title-letter">Étudiant</p> -->
                     <h1 class="banner-title">
                       <div class="banner-title-word">
                         <span class="banner-title-letter">I</span>
@@ -89,22 +78,18 @@
                 </div>
               </div>
             </div>
-            <img
-              src="../asset/img/banner/layer-2.webp"
-              alt=""
-              class="desktop layer-2"
-            />
-            <img
-              src="../asset/img/banner/layer-1.webp"
-              alt=""
-              class="desktop layer-1"
-            />
-            <img
-              src="../asset/img/banner/layer-1-2.webp"
-              alt=""
-              id="layer-1-2"
-              class="desktop layer-1-2"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-2.webp", "preset": "full", "max": 3648, "class": "desktop layer-2", "sizes": "104vw"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-1.webp", "preset": "full", "max": 3648, "class": "desktop layer-1", "sizes": "104vw"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/banner/layer-1-2.webp", "preset": "full", "max": 3648, "class": "desktop layer-1-2", "sizes": "104vw"}'
+            ></include>
             <div class="banner-scroll-cta desktop">
               <svg
                 width="16"
@@ -135,95 +120,118 @@
             <div class="selected-background-img"></div>
 
             <div class="selected-trailers">
-              <iframe
+              <video
                 class="selected-main-trailer selected-trailer-js"
-                src="https://player.vimeo.com/video/1065206344?h=e2371ebfa7&background=1"
-                allow="autoplay"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+                src="../asset/video/trailer-showreel.webm"
+                data-fallback="https://player.vimeo.com/video/1065206344?h=e2371ebfa7&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
 
-              <iframe
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
-                allow="autoplay"
-                frameborder="0"
-                allowfullscreen
-                loading="lazy"
+              <video
                 class="selected-trailer desktop grenouche selected-trailer-js"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-grenouche.webm"
+                data-fallback="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop licorne"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-licorne.webm"
+                data-fallback="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop tatitotu selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-tatitotu.webm"
+                data-fallback="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop mirage selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-mirage.webm"
+                data-fallback="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop furieuse selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-furieuse.webm"
+                data-fallback="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop nitecore selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-nitecore.webm"
+                data-fallback="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop lauriane selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
-              <iframe
+                src="../asset/video/trailer-lauriane.webm"
+                data-fallback="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
                 class="selected-trailer desktop globalies selected-trailer-js"
-                title="vimeo-player"
-                data-src="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+                src="../asset/video/trailer-globalies.webm"
+                data-fallback="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
 
-              <iframe
+              <video
                 class="selected-trailer-glitch selected-trailer-js"
-                data-src="https://player.vimeo.com/video/1049300697?h=42d4946021&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+                src="../asset/video/trailer-glitch.webm"
+                data-fallback="https://player.vimeo.com/video/1049300697?h=42d4946021&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
           </div>
           <div class="selected-works">
@@ -371,12 +379,6 @@
             target="_blank"
             class="footer-social"
             >Github</a
-          >
-          <a
-            href="https://www.instagram.com/bazikk__/"
-            target="_blank"
-            class="footer-social"
-            >Instagram</a
           >
           <a
             href="https://www.linkedin.com/in/basile-kamm-486b01222/"

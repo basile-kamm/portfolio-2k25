@@ -5,12 +5,10 @@
   top: 0;
   left: 0;
   z-index: 9999;
-  transition: transform 1s 0.5s;
+  // No CSS transition: the exit is animated by GSAP (js/loader.js), a
+  // transition here would delay it by 0.5s and make it stutter
   // background: $white;
   background: rgb(44, 44, 44);
-  background-image: url(/src/asset/img/loader-background.jpg?as=webp&width=1200);
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
   clip-path: polygon(
     0 100%,
@@ -34,6 +32,17 @@
   }
 }
 
+// Background photo (<picture> in base-layout.html), behind the loader texts
+.loader-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
 .loader-elem {
   position: absolute;
   mix-blend-mode: difference;
@@ -45,10 +54,6 @@
 }
 
 @include breakpoint("small") {
-  .loader-container {
-    background-image: url(/src/asset/img/loader-background-mobile.jpg?as=webp&width=600);
-  }
-
   .loader-elem {
     font-size: 15vw;
   }

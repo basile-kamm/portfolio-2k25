@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { pauseVideosIn } from "./videos";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,20 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
   const body = document.querySelector("body");
 
-  const displayIframes = document.querySelectorAll(".display-iframe-lazy");
+  // Works grid only exists on the works page
+  if (cards.length === 0) return;
+
+  const displayIframes = [
+    ...document.querySelectorAll(".display-iframe-lazy"),
+  ].filter((iframe) => iframe.getAttribute("data-src"));
 
   function onFirstScroll() {
     let loadedCount = 0;
 
-    displayIframes.forEach((iframe, index) => {
-      const src = iframe.getAttribute("data-src");
-      if (!src) return;
+    // No lazy iframe left to wait for (videos are handled by videos.js)
+    if (displayIframes.length === 0) {
+      ScrollTrigger.killAll();
+      workHorizontalScroll();
+      return;
+    }
 
-      iframe.setAttribute("src", src);
+    displayIframes.forEach((iframe) => {
+      iframe.setAttribute("src", iframe.getAttribute("data-src"));
 
       iframe.addEventListener("load", () => {
         loadedCount++;
-        // Attendre que tous soient chargés
+        // Attendre que tous soient chargés (only the ones that have a src,
+        // otherwise the count would never be reached)
         if (loadedCount === displayIframes.length) {
           // Petit délai pour être sûr que le DOM est mis à jour
           setTimeout(() => {
@@ -54,11 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
           card.classList.add("hidden");
         }
       });
-      if (window.innerWidth > 768) {
+      const lastRow = document.querySelector(".works-display-row.last");
+      if (window.innerWidth > 768 && lastRow) {
         ScrollTrigger.killAll();
-        const elementBox = document
-          .querySelector(".works-display-row.last")
-          .getBoundingClientRect();
+        const elementBox = lastRow.getBoundingClientRect();
         const bottomPosition =
           window.scrollY + elementBox.top + elementBox.height;
         window.scrollTo({ top: bottomPosition - window.innerHeight });
@@ -83,30 +93,33 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           lazyIframes.forEach((iframe) => {
             const src = iframe.getAttribute("data-src");
-            iframe.setAttribute("src", src);
+            if (src && !iframe.getAttribute("src")) iframe.setAttribute("src", src);
           });
 
-          selectedDetailClose.onclick = function () {
+          // onclick (not addEventListener) so reopening a project doesn't
+          // stack listeners that would reverse previous animations too
+          const closeDetail = function () {
             openDetailAnim.reverse();
+            pauseVideosIn(selectedWorkDetail);
             playVimeoVideos();
           };
-          selectedCloseMap.addEventListener("click", function () {
-            openDetailAnim.reverse();
-            playVimeoVideos();
-          });
+          if (selectedDetailClose) selectedDetailClose.onclick = closeDetail;
+          if (selectedCloseMap) selectedCloseMap.onclick = closeDetail;
         }
       });
     });
   });
 
   function playVimeoVideos() {
+    if (typeof Vimeo === "undefined") return; // Vimeo API script not loaded
     const iframes = document.querySelectorAll(
       ".selected-detail-iframe-container.thumbnail iframe"
     );
 
     iframes.forEach((iframe) => {
+      if (!iframe.getAttribute("src")) return; // Not loaded yet
       const vimeoPlayer = new Vimeo.Player(iframe);
-      vimeoPlayer.play(); // Play the video
+      vimeoPlayer.play().catch(() => {}); // Play the video
     });
   }
 
@@ -119,16 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     body.classList.add("no-scroll");
     tl.set(selectedWorkDetail, { display: "block" });
-    tl.set(selectedCloseMap, { display: "block" });
+    if (selectedCloseMap) tl.set(selectedCloseMap, { display: "block" });
     tl.to(selectedWorkDetail, { translateY: 0, translateX: 0 });
-    tl.fromTo(
-      selectedWorkDetail.querySelectorAll(".open-anim"),
-      { x: 600 },
-      { x: 0, stagger: 0.1 },
-      "<"
-    );
-    tl.to(selectedDetailClose, { translateY: 0, translateX: 0 }, "<");
-    tl.to(selectedCloseMap, { opacity: 1 }, "<");
+    const openAnimEls = selectedWorkDetail.querySelectorAll(".open-anim");
+    if (openAnimEls.length) {
+      tl.fromTo(openAnimEls, { x: 600 }, { x: 0, stagger: 0.1 }, "<");
+    }
+    if (selectedDetailClose) {
+      tl.to(selectedDetailClose, { translateY: 0, translateX: 0 }, "<");
+    }
+    if (selectedCloseMap) tl.to(selectedCloseMap, { opacity: 1 }, "<");
 
     return tl;
   }
@@ -141,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 768) {
       const worksRows = document.querySelectorAll(".works-display-row");
       const worksLastRow = document.querySelector(".works-display-row.last");
+      if (!worksLastRow || worksRows.length === 0) return;
 
       let maxScrollDistance = 0;
 

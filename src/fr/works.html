@@ -35,44 +35,40 @@
             >
           </div>
         </div>
-        <img src="../asset/img/vines.png?as=webp" alt="" class="works-deco" />
+        <include
+          src="./html-modules/picture.html"
+          locals='{"src": "../asset/img/vines.png", "preset": "full", "max": 996, "class": "works-deco", "loading": "eager", "sizes": "(max-width: 767px) 80vw, 43vw"}'
+        ></include>
         <section class="works-display">
           <div class="works-display-row">
             <div
               class="selected-detail-iframe-container thumbnail video 3d works-item r19-6"
               data-works-item-value="glitch"
             >
-              <iframe
-                title="vimeo-player"
-                src="https://player.vimeo.com/video/1055922487?h=377235a7aa&background=1"
-                width="640"
-                height="360"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+              <video
+                src="../asset/video/glitch-thumb.webm"
+                data-fallback="https://player.vimeo.com/video/1055922487?h=377235a7aa&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
-            <img
-              src="../asset/img/works/photo/venice-1.png?as=webp&width=500"
-              alt=""
-              loading="lazy"
-              class="works-item photo"
-              data-works-item-value="venice"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/photo/venice-1.png", "preset": "thumb", "max": 2736, "class": "works-item photo", "value": "venice"}'
+            ></include>
 
-            <img
-              src="../asset/img/works/frontend/damn-cookies.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item frontend"
-              data-works-item-value="damn-cookies"
-            />
-            <img
-              src="../asset/img/works/graphism/melting-down.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item graphism"
-              data-works-item-value="melting-down"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/frontend/damn-cookies.webp", "preset": "thumb", "max": 1864, "class": "works-item frontend", "value": "damn-cookies"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/graphism/melting-down.webp", "preset": "thumb", "max": 564, "class": "works-item graphism", "value": "melting-down"}'
+            ></include>
             <div
               class="selected-detail-iframe-container video thumbnail works-item r19-6"
               data-works-item-value="the-one"
@@ -90,84 +86,72 @@
               class="selected-detail-iframe-container frontend thumbnail works-item r19-6"
               data-works-item-value="licorne"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-licorne.webm"
+                data-fallback="https://player.vimeo.com/video/1053410642?h=020a149963&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
 
-            <img
-              src="../asset/img/works/ui/beetle.jpg?as=webp&width=500"
-              alt=""
-              loading="lazy"
-              class="works-item ui"
-              data-works-item-value="beetle"
-            />
-            <img
-              src="../asset/img/works/photo/moutain-3.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item photo"
-              data-works-item-value="moutain"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/ui/beetle.jpg", "preset": "thumb", "max": 1766, "class": "works-item ui", "value": "beetle"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/photo/moutain-3.webp", "preset": "thumb", "max": 2627, "class": "works-item photo", "value": "moutain"}'
+            ></include>
 
-            <img
-              src="../asset/img/works/graphism/terrine-1.jpg?as=webp&width=500"
-              alt=""
-              loading="lazy"
-              class="works-item graphism"
-              data-works-item-value="terrine"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/graphism/terrine-1.jpg", "preset": "thumb", "max": 3000, "class": "works-item graphism", "value": "terrine"}'
+            ></include>
           </div>
           <div class="works-display-row">
-            <img
-              src="../asset/img/works/photo/tekos-1.png?as=webp&width=500"
-              alt=""
-              loading="lazy"
-              class="works-item photo"
-              data-works-item-value="tekos"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/photo/tekos-1.png", "preset": "thumb", "max": 2250, "class": "works-item photo", "value": "tekos"}'
+            ></include>
             <div
               class="selected-detail-iframe-container thumbnail video r4-5 works-item"
               data-works-item-value="bordergame"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1059172333?h=9673aa5b4b&background=1&background=1"
-                width="640"
-                height="360"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+              <video
+                src="../asset/video/bordergame-thumb.webm"
+                data-fallback="https://player.vimeo.com/video/1059172333?h=9673aa5b4b&background=1&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
 
             <div
               class="selected-detail-iframe-container frontend ui thumbnail works-item r16-9"
               data-works-item-value="furieuse"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-furieuse.webm"
+                data-fallback="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
-            <img
-              src="../asset/img/works/3d/green-room.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item 3d"
-              data-works-item-value="green-room"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/3d/green-room.webp", "preset": "thumb", "max": 1720, "class": "works-item 3d", "value": "green-room"}'
+            ></include>
             <div
               class="selected-detail-iframe-container video thumbnail works-item r1-1"
               data-works-item-value="beyler"
@@ -186,90 +170,82 @@
               class="selected-detail-iframe-container ui graphism video thumbnail works-item r16-9"
               data-works-item-value="mirage"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-mirage.webm"
+                data-fallback="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
             <div
               class="selected-detail-iframe-container frontend thumbnail works-item r16-9"
               data-works-item-value="grenouche"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
-                allow="autoplay"
-                frameborder="0"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-grenouche.webm"
+                data-fallback="https://player.vimeo.com/video/1053410621?h=b6716f5776&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
 
-            <img
-              src="../asset/img/works/graphism/cervin.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item graphism"
-              data-works-item-value="cervin"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/graphism/cervin.webp", "preset": "thumb", "max": 1236, "class": "works-item graphism", "value": "cervin"}'
+            ></include>
           </div>
           <div class="works-display-row last">
-            <img
-              src="../asset/img/works/graphism/kitty-kat.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item graphism"
-              data-works-item-value="kitty-kat"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/graphism/kitty-kat.webp", "preset": "thumb", "max": 994, "class": "works-item graphism", "value": "kitty-kat"}'
+            ></include>
             <div
               class="selected-detail-iframe-container video thumbnail works-item r19-6"
               data-works-item-value="urban-echo"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1055913236?h=d39c597835&background=1"
-                width="640"
-                height="360"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+              <video
+                src="../asset/video/urban-echo-thumb.webm"
+                data-fallback="https://player.vimeo.com/video/1055913236?h=d39c597835&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
 
-            <img
-              src="../asset/img/works/photo/frib-1.png?as=webp&width=500"
-              alt=""
-              loading="lazy"
-              class="works-item photo"
-              data-works-item-value="frib"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/photo/frib-1.png", "preset": "thumb", "max": 3000, "class": "works-item photo", "value": "frib"}'
+            ></include>
 
-            <img
-              src="../asset/img/works/graphism/gentille-hess.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item graphism"
-              data-works-item-value="gentille-hess"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/graphism/gentille-hess.webp", "preset": "thumb", "max": 1651, "class": "works-item graphism", "value": "gentille-hess"}'
+            ></include>
             <div
               class="selected-detail-iframe-container video thumbnail works-item r19-6"
               data-works-item-value="nitecore"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-nitecore.webm"
+                data-fallback="https://player.vimeo.com/video/1060136902?h=cb9f5b5524&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
             <div
               class="selected-detail-iframe-container thumbnail video rgrief works-item"
@@ -290,44 +266,40 @@
               class="selected-detail-iframe-container frontend thumbnail works-item r19-6"
               data-works-item-value="lauriane"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-lauriane.webm"
+                data-fallback="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
-            <img
-              src="../asset/img/works/3d/invader-city.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item 3d"
-              data-works-item-value="invader-city"
-            />
-            <img
-              src="../asset/img/works/frontend/what-da-duck.webp?width=500"
-              alt=""
-              loading="lazy"
-              class="works-item frontend"
-              data-works-item-value="what-da-duck"
-            />
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/3d/invader-city.webp", "preset": "thumb", "max": 1024, "class": "works-item 3d", "value": "invader-city"}'
+            ></include>
+            <include
+              src="./html-modules/picture.html"
+              locals='{"src": "../asset/img/works/frontend/what-da-duck.webp", "preset": "thumb", "max": 1848, "class": "works-item frontend", "value": "what-da-duck"}'
+            ></include>
 
             <div
               class="selected-detail-iframe-container frontend ui thumbnail works-item r19-6"
               data-works-item-value="tatitotu"
             >
-              <iframe
-                title="vimeo-player"
-                class="display-iframe-lazy"
-                data-src="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+              <video
+                src="../asset/video/trailer-tatitotu.webm"
+                data-fallback="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
             </div>
           </div>
         </section>
@@ -363,18 +335,16 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/graphism/terrine-1.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/terrine-1.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/graphism/terrine-2.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/terrine-2.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -388,11 +358,10 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/graphism/gentille-hess.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/gentille-hess.webp", "preset": "detail", "max": 1651, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -406,11 +375,10 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/3d/green-room.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/3d/green-room.webp", "preset": "detail", "max": 1720, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -424,61 +392,53 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-1.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-1.png", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-5.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-5.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-3.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-3.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
 
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-4.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-4.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-2.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-2.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-6.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-6.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-7.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-7.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/tekos-8.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/tekos-8.jpg", "preset": "detail", "max": 960, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -492,54 +452,47 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-1.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-1.png", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-2.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-2.png", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-3.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-3.png", "preset": "detail", "max": 1368, "class": "selected-detail-img"}'
+              ></include>
             </div>
 
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-4.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-4.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-5.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-5.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-6.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-6.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/frib-7.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/frib-7.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -553,46 +506,40 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-3.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-3.webp", "preset": "detail", "max": 2627, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-1.jpeg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-1.jpeg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-2.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-2.png", "preset": "detail", "max": 1368, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-4.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-4.jpg", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-5.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-5.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/moutain-6.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/moutain-6.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -606,39 +553,34 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/venice-1.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/venice-1.png", "preset": "detail", "max": 2736, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/venice-3.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/venice-3.png", "preset": "detail", "max": 2736, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/venice-2.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/venice-2.png", "preset": "detail", "max": 3000, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/venice-4.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/venice-4.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-6">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/photo/venice-5.jpg?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/photo/venice-5.jpg", "preset": "detail", "max": 2250, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -652,16 +594,14 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img window-height"
-                src="../asset/img/works/graphism/cervin.webp"
-                loading="lazy"
-              />
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/graphism/cervin.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/cervin.webp", "preset": "detail", "max": 1236, "class": "selected-detail-img window-height"}'
+              ></include>
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/cervin.webp", "preset": "detail", "max": 1236, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -676,15 +616,13 @@
           <block name="detailContent">
             <div class="col-12">
               <div class="selected-detail-iframe-container">
-                <iframe
-                  title="vimeo-player"
-                  class="detail-iframe-lazy"
-                  data-src="https://player.vimeo.com/video/1055913236?h=d39c597835"
-                  width="640"
-                  height="360"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <video
+                  src="../asset/video/urban-echo.webm"
+                  data-fallback="https://player.vimeo.com/video/1055913236?h=d39c597835"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
               </div>
             </div>
           </block>
@@ -711,12 +649,10 @@
               </div>
             </div>
             <div class="col-10 right">
-              <img
-                src="../asset/img/works/ui/beetle.jpg?as=webp"
-                alt=""
-                class="selected-detail-img"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/ui/beetle.jpg", "preset": "detail", "max": 1766, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -736,15 +672,13 @@
           <block name="detailContent">
             <div class="col-12">
               <div class="selected-detail-iframe-container">
-                <iframe
-                  title="vimeo-player"
-                  class="detail-iframe-lazy"
-                  data-src="https://player.vimeo.com/video/1059172333?h=9673aa5b4b"
-                  width="640"
-                  height="360"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <video
+                  src="../asset/video/bordergame.webm"
+                  data-fallback="https://player.vimeo.com/video/1059172333?h=9673aa5b4b"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
               </div>
             </div>
           </block>
@@ -780,11 +714,10 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img window-height"
-                src="../asset/img/works/3d/invader-city.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/3d/invader-city.webp", "preset": "detail", "max": 1024, "class": "selected-detail-img window-height"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -799,11 +732,10 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img window-height"
-                src="../asset/img/works/graphism/melting-down.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/melting-down.webp", "preset": "detail", "max": 564, "class": "selected-detail-img window-height"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -867,15 +799,13 @@
           <block name="detailContent">
             <div class="col-12">
               <div class="selected-detail-iframe-container">
-                <iframe
-                  title="vimeo-player"
-                  class="detail-iframe-lazy"
-                  data-src="https://player.vimeo.com/video/1055922487?h=377235a7aa"
-                  width="640"
-                  height="360"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <video
+                  src="../asset/video/glitch.webm"
+                  data-fallback="https://player.vimeo.com/video/1055922487?h=377235a7aa"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
               </div>
             </div>
           </block>
@@ -890,16 +820,14 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img window-height"
-                src="../asset/img/works/graphism/kitty-kat.webp"
-                loading="lazy"
-              />
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/graphism/kitty-kat.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/kitty-kat.webp", "preset": "detail", "max": 994, "class": "selected-detail-img window-height"}'
+              ></include>
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/graphism/kitty-kat.webp", "preset": "detail", "max": 994, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -913,18 +841,16 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/frontend/what-da-duck.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/frontend/what-da-duck.webp", "preset": "detail", "max": 1848, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/frontend/what-da-duck-2.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/frontend/what-da-duck-2.png", "preset": "detail", "max": 2976, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>
@@ -938,25 +864,22 @@
           <block name="detailCollab"></block>
           <block name="detailContent">
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/frontend/damn-cookies.webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/frontend/damn-cookies.webp", "preset": "detail", "max": 1864, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/frontend/damn-cookies-2.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/frontend/damn-cookies-2.png", "preset": "detail", "max": 2982, "class": "selected-detail-img"}'
+              ></include>
             </div>
             <div class="col-12">
-              <img
-                class="selected-detail-img"
-                src="../asset/img/works/frontend/damn-cookies-3.png?as=webp"
-                loading="lazy"
-              />
+              <include
+                src="./html-modules/picture.html"
+                locals='{"src": "../asset/img/works/frontend/damn-cookies-3.png", "preset": "detail", "max": 2968, "class": "selected-detail-img"}'
+              ></include>
             </div>
           </block>
         </extends>

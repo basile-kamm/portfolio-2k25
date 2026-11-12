@@ -17,3 +17,36 @@ $green: #167446;
     }
   }
 }
+
+// Responsive CSS background: AVIF with WebP fallback, at a width matching the
+// viewport. Parcel's image transformer generates each size (?as=…&width=…).
+// $widths: ascending list, never wider than the source image.
+// Example: @include responsive-bg("../asset/img/brik-wall.jpg", (960, 1600, 2400));
+$is-dev: false !default; // set by .sassrc.js
+
+@mixin responsive-bg($src, $widths) {
+  // Dev: original image, no AVIF/WebP generation (faster `npm run dev`)
+  @if $is-dev {
+    background-image: url($src);
+  } @else {
+    @for $i from 1 through length($widths) {
+      $w: nth($widths, $i);
+      @if $i == 1 {
+        @include _bg-image-set($src, $w);
+      } @else {
+        @media (min-width: #{nth($widths, $i - 1) + 1}px) {
+          @include _bg-image-set($src, $w);
+        }
+      }
+    }
+  }
+}
+
+@mixin _bg-image-set($src, $w) {
+  // Fallback for browsers without image-set() type() support
+  background-image: url("#{$src}?as=webp&width=#{$w}");
+  background-image: image-set(
+    url("#{$src}?as=avif&width=#{$w}") type("image/avif"),
+    url("#{$src}?as=webp&width=#{$w}") type("image/webp")
+  );
+}

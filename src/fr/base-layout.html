@@ -21,7 +21,51 @@
         </nav>
       </div>
     </header>
-    <div class="loader-container fr"></div>
+    <div class="loader-container fr">
+      <!-- Loader background: first image the visitor sees, fetched with high priority -->
+      <!-- npm run dev (isDev): original image, no AVIF/WebP generation -->
+      <if condition="isDev">
+        <img class="loader-background" src="../asset/img/loader-background.jpg" alt="" />
+      </if>
+      <else>
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            type="image/avif"
+            srcset="../asset/img/loader-background-mobile.jpg?as=avif&width=600 600w"
+            sizes="100vw"
+          />
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="../asset/img/loader-background-mobile.jpg?as=webp&width=600 600w"
+            sizes="100vw"
+          />
+          <source
+            type="image/avif"
+            srcset="
+              ../asset/img/loader-background.jpg?as=avif&width=960   960w,
+              ../asset/img/loader-background.jpg?as=avif&width=1600 1600w,
+              ../asset/img/loader-background.jpg?as=avif&width=2400 2400w
+            "
+            sizes="(max-aspect-ratio: 10/9) 160vh, 100vw"
+          />
+          <img
+            class="loader-background"
+            src="../asset/img/loader-background.jpg?as=webp&width=1600"
+            srcset="
+              ../asset/img/loader-background.jpg?as=webp&width=960   960w,
+              ../asset/img/loader-background.jpg?as=webp&width=1600 1600w,
+              ../asset/img/loader-background.jpg?as=webp&width=2400 2400w
+            "
+            sizes="(max-aspect-ratio: 10/9) 160vh, 100vw"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </else>
+    </div>
     <block name="content"></block>
     <script src="../js/main.js" type="module"></script>
   </body>

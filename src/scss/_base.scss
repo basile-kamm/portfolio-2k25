@@ -36,6 +36,13 @@ h3 {
   }
 }
 
+// <picture> (html-modules/picture.html) only picks the image source: it must
+// not affect layout, so the <img> inside behaves as a direct child of the
+// parent (flex rows on the works page, absolute layers in the banner…)
+picture {
+  display: contents;
+}
+
 body.no-scroll {
   overflow: hidden;
 }

@@ -19,7 +19,8 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.contact-slide:first-child {
+// Each slide is wrapped in a <picture>
+.contact-slideshow-container > picture:first-child .contact-slide {
   opacity: 1;
 }
 

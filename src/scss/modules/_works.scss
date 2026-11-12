@@ -1,8 +1,8 @@
 .works-scroll {
-  background-image: url(/src/asset/img/brik-wall.jpg?as=webp);
   background-repeat: repeat-y;
   background-size: contain;
   user-select: none;
+  @include responsive-bg("../asset/img/brik-wall.jpg", (960, 1600, 2400));
 }
 
 .works-heading {

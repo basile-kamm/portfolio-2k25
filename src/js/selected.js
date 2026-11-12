@@ -1,9 +1,13 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { pauseVideosIn } from "./videos";
+import { playGlitch } from "./glitch";
 
 document.addEventListener("DOMContentLoaded", function () {
   const selectedWorks = document.querySelectorAll(".selected-work");
-  const selectedTrailers = document.querySelectorAll(".selected-trailer");
+  // Looked up on demand: a trailer <video> may be swapped for its Vimeo
+  // fallback iframe after page load (see videos.js)
+  const getTrailers = () => document.querySelectorAll(".selected-trailer");
   const selectedDetails = document.querySelectorAll(
     ".selected-detail-container"
   );
@@ -12,10 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const body = document.querySelector("body");
 
+  // Selected works only exist on the homepage
+  if (selectedWorks.length === 0) return;
+
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
     let hoverLeaveAnim = null;
-    let hoverGlitch = null;
     const hoverValue = selectedWork.getAttribute("data-selected-value");
 
     selectedWork.addEventListener("mouseenter", function () {
@@ -27,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Create and play the enter animation
       hoverEnterAnim = createHoverEnterAnimation(selectedWork);
-      hoverGlitch = hoverGlitchAnim();
+      playGlitch();
 
       // Show the related trailer
-      selectedTrailers.forEach((trailer) => {
+      getTrailers().forEach((trailer) => {
         if (trailer.classList.contains(hoverValue)) {
           gsap.set(trailer, { display: "block" });
         }
@@ -44,17 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
         hoverEnterAnim.kill();
         hoverEnterAnim = null;
       }
-      if (hoverGlitch) {
-        hoverGlitch.restart();
-      } else {
-        hoverGlitch = hoverGlitchAnim();
-      }
+      playGlitch();
 
-      // Create and play the leave animation
-      const hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
+      // Create and play the leave animation (stored so mouseenter can kill it)
+      hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
 
       hoverLeaveAnim.eventCallback("onComplete", () => {
-        selectedTrailers.forEach((trailer) => {
+        getTrailers().forEach((trailer) => {
           if (trailer.classList.contains(hoverValue)) {
             gsap.set(trailer, { display: "none" });
           }
@@ -74,27 +76,32 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           lazyIframes.forEach((iframe) => {
             const src = iframe.getAttribute("data-src");
-            iframe.setAttribute("src", src);
+            if (src && !iframe.getAttribute("src")) iframe.setAttribute("src", src);
           });
 
-          selectedDetailClose.onclick = function () {
+          // onclick (not addEventListener) so reopening a project doesn't
+          // stack listeners that would reverse previous animations too
+          const closeDetail = function () {
             openDetailAnim.reverse();
+            pauseVideosIn(selectedWorkDetail);
             playVimeoVideos();
           };
-          selectedCloseMap.addEventListener("click", function () {
-            openDetailAnim.reverse();
-            playVimeoVideos();
-          });
+          if (selectedDetailClose) selectedDetailClose.onclick = closeDetail;
+          if (selectedCloseMap) selectedCloseMap.onclick = closeDetail;
         }
       });
     });
 
+    // Resume trailers that fell back to Vimeo iframes (Vimeo pauses them when
+    // another player starts). Native <video> trailers are handled by videos.js
     function playVimeoVideos() {
-      const iframes = document.querySelectorAll(".selected-trailer-js");
+      if (typeof Vimeo === "undefined") return; // Vimeo API script not loaded
+      const iframes = document.querySelectorAll("iframe.selected-trailer-js");
 
       iframes.forEach((iframe) => {
+        if (!iframe.getAttribute("src")) return; // Not loaded yet
         const vimeoPlayer = new Vimeo.Player(iframe);
-        vimeoPlayer.play(); // Play the video
+        vimeoPlayer.play().catch(() => {}); // Play the video
       });
     }
 
@@ -134,23 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
           );
       }
       return tl;
-    }
-
-    function hoverGlitchAnim() {
-      const tl = gsap.timeline();
-
-      tl.to(".selected-trailer-glitch", {
-        opacity: 1,
-        duration: 0.3,
-      });
-      tl.to(
-        ".selected-trailer-glitch",
-        {
-          opacity: 0,
-          duration: 0.3,
-        },
-        "0.7"
-      );
     }
 
     function createHoverLeaveAnimation(selectedWork) {
@@ -205,23 +195,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     body.classList.add("no-scroll");
     tl.set(selectedWorkDetail, { display: "block" });
-    tl.set(selectedCloseMap, { display: "block" });
+    if (selectedCloseMap) tl.set(selectedCloseMap, { display: "block" });
     tl.to(selectedWorkDetail, { translateY: 0, translateX: 0 });
-    tl.fromTo(
-      selectedWorkDetail.querySelectorAll(".open-anim"),
-      { x: 600 },
-      { x: 0, stagger: 0.1 },
-      "<"
-    );
-    tl.to(
-      selectedDetailClose,
-      {
-        translateY: 0,
-        translateX: 0,
-      },
-      "<"
-    );
-    tl.to(selectedCloseMap, { opacity: 1 }, "<");
+    const openAnimEls = selectedWorkDetail.querySelectorAll(".open-anim");
+    if (openAnimEls.length) {
+      tl.fromTo(openAnimEls, { x: 600 }, { x: 0, stagger: 0.1 }, "<");
+    }
+    if (selectedDetailClose) {
+      tl.to(selectedDetailClose, { translateY: 0, translateX: 0 }, "<");
+    }
+    if (selectedCloseMap) tl.to(selectedCloseMap, { opacity: 1 }, "<");
 
     return tl;
   }
