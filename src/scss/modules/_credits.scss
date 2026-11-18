@@ -56,7 +56,7 @@
 }
 
 .credits-fonts-title {
-  font-family: "founders Grotesk";
+  font-family: var(--font-main);
   font-size: 4vh;
 }
 
@@ -75,12 +75,17 @@
   opacity: 0.8;
   white-space: nowrap;
 
+  // Font previews: always the real font they name, not the variables
   &.migra {
-    font-family: "migra";
+    font-family: "Migra";
+  }
+
+  &.host-grotesk {
+    font-family: "Host Grotesk";
   }
 
   &.humane {
-    font-family: "humane";
+    font-family: "Humane";
     font-weight: 400;
     letter-spacing: 0.6vh;
     font-size: 4.5vh;

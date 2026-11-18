@@ -11,17 +11,17 @@
 const WEBM_TYPE = 'video/webm; codecs="vp9, opus"';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const videos = [...document.querySelectorAll("video[data-fallback]")];
+  // Every self-hosted video; the Vimeo fallback is optional (some trailers
+  // only exist as WebM)
+  const videos = [...document.querySelectorAll("video")];
   if (videos.length === 0) return;
 
+  const withFallback = videos.filter((video) => video.dataset.fallback);
   const canPlayWebm = document.createElement("video").canPlayType(WEBM_TYPE) !== "";
 
-  if (!canPlayWebm) {
-    videos.forEach(swapToIframe);
-    return;
-  }
+  if (!canPlayWebm) withFallback.forEach(swapToIframe);
 
-  videos.forEach((video) => {
+  withFallback.forEach((video) => {
     video.addEventListener("error", () => swapToIframe(video), { once: true });
   });
 
@@ -63,6 +63,37 @@ function swapToIframe(video) {
   video.load();
 
   video.replaceWith(iframe);
+}
+
+// Start a video (optionally from its first frame) and resolve once it has a
+// frame to display. Resolves right away for anything that isn't a native
+// <video> (e.g. the Vimeo fallback iframe), so callers never wait on those.
+export function playWhenReady(el, { restart = false } = {}) {
+  if (!(el instanceof HTMLVideoElement)) return Promise.resolve();
+
+  const ready = new Promise((resolve) => {
+    const done = () => {
+      el.removeEventListener("loadeddata", onData);
+      el.removeEventListener("seeked", onData);
+      el.removeEventListener("error", done);
+      resolve();
+    };
+    const onData = () => {
+      if (el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && !el.seeking) done();
+    };
+    el.addEventListener("loadeddata", onData);
+    el.addEventListener("seeked", onData);
+    el.addEventListener("error", done); // videos.js swaps it for the iframe
+  });
+
+  if (restart && el.currentTime !== 0) el.currentTime = 0;
+  el.play().catch(() => {});
+
+  // Already has a frame (and no seek pending): nothing to wait for
+  if (el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && !el.seeking) {
+    return Promise.resolve();
+  }
+  return ready;
 }
 
 // Pause every self-hosted video inside an element (e.g. a closed project detail)

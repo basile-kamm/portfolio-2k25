@@ -1,4 +1,4 @@
-<extends src="fr/base-layout.html" locals='{"script": "main.js"}'>
+<extends src="fr/base-layout.html" locals='{"script": "main.js", "page": "index"}'>
   <block name="content">
     <main>
       <section class="heading">
@@ -26,8 +26,7 @@
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
                   <div class="banner-texts">
                     <p class="banner-text">
-                      Fraichement diplômé en Interactive Media Design, je me suis <i>spécialisé dans le développement web et le design créatif</i> mais reste touche-à-tout. J'adore utiliser les outils numériques pour créer des expériences uniques et immersives. <br>
-                      Je suis actuellement à la recherche d'un travail où je peux utiliser mes compétences et les développer.
+                      Fraichement diplômé en Interactive Media Design, je me suis <i>spécialisé dans le développement web</i> mais reste touche-à-tout. Je suis actuellement à la recherche de projets où je pourrais développer mes compétences.
                     </p>
                     <a href="contact.html" class="banner-cta main fr"
                       >Contactez moi</a
@@ -36,7 +35,7 @@
                 </div>
                 <div class="banner-cta-container"></div>
                 <div class="col-12 col-md-6">
-                  <div class="banner-titles">
+                  <div class="banner-titles"> 
                     <!-- <p class="banner-subtitle banner-title-letter">Étudiant</p> -->
                     <h1 class="banner-title">
                       <div class="banner-title-word">
@@ -155,31 +154,9 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop tatitotu selected-trailer-js"
-                src="../asset/video/trailer-tatitotu.webm"
-                data-fallback="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
-                data-autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                aria-hidden="true"
-              ></video>
-              <video
                 class="selected-trailer desktop mirage selected-trailer-js"
                 src="../asset/video/trailer-mirage.webm"
                 data-fallback="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
-                data-autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                aria-hidden="true"
-              ></video>
-              <video
-                class="selected-trailer desktop furieuse selected-trailer-js"
-                src="../asset/video/trailer-furieuse.webm"
-                data-fallback="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
                 data-autoplay
                 muted
                 loop
@@ -199,9 +176,9 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop lauriane selected-trailer-js"
-                src="../asset/video/trailer-lauriane.webm"
-                data-fallback="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                class="selected-trailer desktop globalies selected-trailer-js"
+                src="../asset/video/trailer-globalies.webm"
+                data-fallback="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
                 data-autoplay
                 muted
                 loop
@@ -210,9 +187,28 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop globalies selected-trailer-js"
-                src="../asset/video/trailer-globalies.webm"
-                data-fallback="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
+                class="selected-trailer desktop kuki selected-trailer-js"
+                src="../asset/video/trailer-kuki.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
+                class="selected-trailer desktop tl selected-trailer-js"
+                src="../asset/video/trailer-tl.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
+                class="selected-trailer desktop hos selected-trailer-js"
+                src="../asset/video/trailer-hos.webm"
                 data-autoplay
                 muted
                 loop
@@ -241,28 +237,27 @@
               "topic3": "UI Design", "value": "licorne" }
             </include>
             <include src="./html-modules/selected-work.html">
+              { "title": "Énergie Vaud", "topic1": "", "topic2": "", "topic3":
+              "Dev", "value": "kuki" }
+            </include>
+            <include src="./html-modules/selected-work.html">
               { "title": "Globalies", "topic1": "", "topic2": "Frontend",
               "topic3": "UI Design", "value": "globalies" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "House of Switzerland", "topic1": "", "topic2": "", "topic3":
+              "Dev", "value": "hos" }
             </include>
             <include src="./html-modules/selected-work.html">
               { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
               "Game Design", "value": "grenouche" }
             </include>
             <include src="./html-modules/selected-work.html">
-              { "title": "Portfolio de Lauriane", "topic1": "", "topic2": "",
-              "topic3": "Frontend", "value": "lauriane" }
+              { "title": "Transports lausannois", "topic1": "", "topic2": "", "topic3": "Dev", "value": "tl" }
             </include>
             <include src="./html-modules/selected-work.html">
               { "title": "Mirage Festival", "topic1": "", "topic2": "Graphisme
               ", "topic3": "UI Design", "value": "mirage" }
-            </include>
-            <include src="./html-modules/selected-work.html">
-              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
-              "topic3": "Motion", "value": "furieuse" }
-            </include>
-            <include src="./html-modules/selected-work.html">
-              { "title": "Tatitotu", "topic1": "", "topic2": "Frontend",
-              "topic3": "UI Design", "value": "tatitotu" }
             </include>
             <include src="./html-modules/selected-work.html">
               { "title": "Nitecore", "topic1": "", "topic2": "", "topic3":
@@ -274,13 +269,9 @@
           </div>
         </div>
         <div class="selected-works-details">
-          <include src="fr/selected-detail-pages/selected-detail-furieuse.html">
-          </include>
           <include
             src="fr/selected-detail-pages/selected-detail-globalies.html"
           >
-          </include>
-          <include src="fr/selected-detail-pages/selected-detail-lauriane.html">
           </include>
           <include src="fr/selected-detail-pages/selected-detail-mirage.html">
           </include>
@@ -288,11 +279,15 @@
             src="fr/selected-detail-pages/selected-detail-grenouche.html"
           >
           </include>
-          <include src="fr/selected-detail-pages/selected-detail-tatitotu.html">
-          </include>
           <include src="fr/selected-detail-pages/selected-detail-licorne.html">
           </include>
           <include src="fr/selected-detail-pages/selected-detail-nitecore.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-kuki.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-hos.html">
+          </include>
+          <include src="fr/selected-detail-pages/selected-detail-tl.html">
           </include>
           <div class="selected-detail-close-map"></div>
           <button
@@ -425,10 +420,10 @@
                   </li>
                   <li>
                     <a
-                      href="https://befonts.com/founders-grotesk-font-family.html"
+                      href="https://github.com/Element-Type/HostGrotesk"
                       target="_blank"
-                      class="credits-font grotesk"
-                      >Founders Grotesk</a
+                      class="credits-font host-grotesk"
+                      >Host Grotesk</a
                     >
                   </li>
                 </ul>

@@ -4,6 +4,9 @@ import { pauseVideosIn } from "./videos";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// How much faster the project detail closes than it opens (2 = twice as fast)
+const DETAIL_CLOSE_SPEED = 2;
+
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".works-item");
   const radioButtons = document.querySelectorAll('input[name="filter"]');
@@ -15,8 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedCloseMap = document.querySelector(".selected-detail-close-map");
   const body = document.querySelector("body");
 
+  // Close function of the currently open project detail (null when closed)
+  let activeCloseDetail = null;
+
   // Works grid only exists on the works page
   if (cards.length === 0) return;
+
+  // Escape closes the open project detail
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeCloseDetail) activeCloseDetail();
+  });
 
   const displayIframes = [
     ...document.querySelectorAll(".display-iframe-lazy"),
@@ -59,10 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
   radioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
       cards.forEach((card) => {
-        if (card.classList.contains(radio.value)) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
+        const hide = !card.classList.contains(radio.value);
+        card.classList.toggle("hidden", hide);
+        // Images are wrapped in a <picture> (html-modules/picture.html): hide
+        // the wrapper too, otherwise it stays in the row and keeps its flex gap
+        const wrapper = card.parentElement;
+        if (wrapper && wrapper.tagName === "PICTURE") {
+          wrapper.classList.toggle("hidden", hide);
         }
       });
       const lastRow = document.querySelector(".works-display-row.last");
@@ -99,12 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
           // onclick (not addEventListener) so reopening a project doesn't
           // stack listeners that would reverse previous animations too
           const closeDetail = function () {
-            openDetailAnim.reverse();
+            if (activeCloseDetail !== closeDetail) return; // Already closed
+            activeCloseDetail = null;
+            // Close faster than it opened (same animation, played backwards)
+            openDetailAnim.timeScale(DETAIL_CLOSE_SPEED).reverse();
             pauseVideosIn(selectedWorkDetail);
             playVimeoVideos();
           };
           if (selectedDetailClose) selectedDetailClose.onclick = closeDetail;
           if (selectedCloseMap) selectedCloseMap.onclick = closeDetail;
+          activeCloseDetail = closeDetail;
         }
       });
     });

@@ -5,7 +5,7 @@
   border-radius: 16px;
   border: 1px solid $white;
   background: rgba($white, 0.15);
-  font-family: "migra";
+  font-family: var(--font-accent);
   font-size: 2vw;
   text-transform: uppercase;
   cursor: pointer;

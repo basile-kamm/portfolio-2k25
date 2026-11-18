@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { playGlitch } from "./glitch";
+import { playWhenReady } from "./videos";
 
 // Scroll progress of the homepage parallax (0 → 1) at which the main trailer
 // appears in the TV, through a glitch. Scrolling back above it hides it the
@@ -52,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const trailer = getMainTrailer();
     if (!trailer) return;
     gsap.set(trailer, { opacity: visible ? 1 : 0 });
-    if (visible) restartTrailer(trailer);
+    // Returned so the glitch holds until the first frame is on screen
+    if (visible) return restartTrailer(trailer);
   }
 
   function updateTrailerReveal(progress, { instant = false } = {}) {
@@ -153,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     parallax.to(
       ".layer-4",
       {
-        y: 20,
+        y: 5,
         duration: 1,
       },
       "<"
@@ -161,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     parallax.to(
       ".layer-5",
       {
-        y: 50,
+        y: 20,
         duration: 1,
       },
       "<"
@@ -169,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     parallax.to(
       ".layer-background",
       {
-        y: 70,
+        y: 30,
         duration: 1,
       },
       "<"
@@ -206,11 +208,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Restart the trailer from its first frame (native <video>, or the Vimeo
-// iframe fallback from videos.js)
+// iframe fallback from videos.js). Resolves once the first frame is ready.
 function restartTrailer(trailer) {
   if (trailer instanceof HTMLVideoElement) {
-    trailer.currentTime = 0;
-    trailer.play().catch(() => {});
+    return playWhenReady(trailer, { restart: true });
   } else if (typeof Vimeo !== "undefined" && trailer.getAttribute("src")) {
     const player = new Vimeo.Player(trailer);
     player.setCurrentTime(0).then(() => player.play()).catch(() => {});

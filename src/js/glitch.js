@@ -8,6 +8,10 @@ import gsap from "gsap";
 // where content behind it can be swapped invisibly. If a glitch is killed
 // before its peak, its `onPeak` still runs right away so the state it was
 // meant to apply (e.g. trailer shown/hidden) is never lost.
+//
+// `onPeak` may return a Promise (e.g. "the new video has a frame to show"):
+// the glitch then stays fully visible until it resolves, at most MAX_HOLD
+// seconds, so the swap never shows after the glitch is gone.
 
 // Total duration of every glitch (hover, trailer reveal and hide), in seconds.
 // Split as 30% fade in, 40% fully visible, 30% fade out.
@@ -17,12 +21,16 @@ const FADE_IN = GLITCH_DURATION * 0.3;
 const FADE_OUT_AT = GLITCH_DURATION * 0.7;
 const FADE_OUT = GLITCH_DURATION * 0.3;
 
-let current = null; // { tl, onPeak, peaked }
+// Longest time the glitch waits at its peak for `onPeak`'s Promise, in seconds
+const MAX_HOLD = 1.5;
+
+let current = null; // { tl, onPeak, peaked, killed }
 
 export function playGlitch({ onPeak } = {}) {
   const el = document.querySelector(".selected-trailer-glitch");
 
   if (current) {
+    current.killed = true;
     current.tl.kill();
     if (!current.peaked && current.onPeak) current.onPeak();
     current = null;
@@ -33,11 +41,21 @@ export function playGlitch({ onPeak } = {}) {
     return null;
   }
 
-  const run = { tl: gsap.timeline(), onPeak, peaked: false };
+  const run = { tl: gsap.timeline(), onPeak, peaked: false, killed: false };
   run.tl.to(el, { opacity: 1, duration: FADE_IN });
   run.tl.call(() => {
     run.peaked = true;
-    if (onPeak) onPeak();
+    const ready = onPeak ? onPeak() : null;
+    if (!ready || typeof ready.then !== "function") return;
+
+    // Hold at the peak until the new content is ready (or MAX_HOLD is over)
+    run.tl.pause();
+    const timeout = new Promise((resolve) => setTimeout(resolve, MAX_HOLD * 1000));
+    Promise.race([ready, timeout])
+      .catch(() => {})
+      .then(() => {
+        if (!run.killed) run.tl.resume();
+      });
   });
   run.tl.to(el, { opacity: 0, duration: FADE_OUT }, FADE_OUT_AT);
   run.tl.eventCallback("onComplete", () => {

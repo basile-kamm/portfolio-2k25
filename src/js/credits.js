@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (creditsClose) creditsClose.addEventListener("click", closeCredits);
   if (selectedCloseMap) selectedCloseMap.addEventListener("click", closeCredits);
+  // Escape closes the credits (no-op when they aren't open)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCredits();
+  });
 
   function openCredits() {
     const tl = gsap.timeline({

@@ -1,7 +1,10 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pauseVideosIn } from "./videos";
+import { pauseVideosIn, playWhenReady } from "./videos";
 import { playGlitch } from "./glitch";
+
+// How much faster the project detail closes than it opens (2 = twice as fast)
+const DETAIL_CLOSE_SPEED = 1.5;
 
 document.addEventListener("DOMContentLoaded", function () {
   const selectedWorks = document.querySelectorAll(".selected-work");
@@ -16,8 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const body = document.querySelector("body");
 
+  // Close function of the currently open project detail (null when closed)
+  let activeCloseDetail = null;
+
   // Selected works only exist on the homepage
   if (selectedWorks.length === 0) return;
+
+  // Escape closes the open project detail
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeCloseDetail) activeCloseDetail();
+  });
 
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
@@ -33,13 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Create and play the enter animation
       hoverEnterAnim = createHoverEnterAnimation(selectedWork);
-      playGlitch();
 
-      // Show the related trailer
-      getTrailers().forEach((trailer) => {
-        if (trailer.classList.contains(hoverValue)) {
-          gsap.set(trailer, { display: "block" });
-        }
+      // Start loading the trailer now (during the glitch fade-in), show it
+      // at the glitch peak, and keep the glitch up until it has a frame
+      const trailers = getRelatedTrailers();
+      const ready = Promise.all(trailers.map((t) => playWhenReady(t)));
+      playGlitch({
+        onPeak: () => {
+          trailers.forEach((t) => gsap.set(t, { display: "block" }));
+          return ready;
+        },
       });
     });
 
@@ -50,20 +64,20 @@ document.addEventListener("DOMContentLoaded", function () {
         hoverEnterAnim.kill();
         hoverEnterAnim = null;
       }
-      playGlitch();
+      // Hide the related trailer at the glitch peak, while it's covered
+      playGlitch({
+        onPeak: () => {
+          getRelatedTrailers().forEach((t) => gsap.set(t, { display: "none" }));
+        },
+      });
 
       // Create and play the leave animation (stored so mouseenter can kill it)
       hoverLeaveAnim = createHoverLeaveAnimation(selectedWork);
-
-      hoverLeaveAnim.eventCallback("onComplete", () => {
-        getTrailers().forEach((trailer) => {
-          if (trailer.classList.contains(hoverValue)) {
-            gsap.set(trailer, { display: "none" });
-          }
-        });
-      });
-      // Hide the related trailer after the animation completes
     });
+
+    function getRelatedTrailers() {
+      return [...getTrailers()].filter((t) => t.classList.contains(hoverValue));
+    }
 
     selectedWork.addEventListener("click", function () {
       selectedDetails.forEach((selectedWorkDetail) => {
@@ -82,12 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
           // onclick (not addEventListener) so reopening a project doesn't
           // stack listeners that would reverse previous animations too
           const closeDetail = function () {
-            openDetailAnim.reverse();
+            if (activeCloseDetail !== closeDetail) return; // Already closed
+            activeCloseDetail = null;
+            // Close faster than it opened (same animation, played backwards)
+            openDetailAnim.timeScale(DETAIL_CLOSE_SPEED).reverse();
             pauseVideosIn(selectedWorkDetail);
             playVimeoVideos();
           };
           if (selectedDetailClose) selectedDetailClose.onclick = closeDetail;
           if (selectedCloseMap) selectedCloseMap.onclick = closeDetail;
+          activeCloseDetail = closeDetail;
         }
       });
     });
@@ -110,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (window.screen.width >= 678) {
         tl.to(selectedWork.querySelector(".selected-work-title.main"), {
-          translateY: "-100%",
+          translateY: "-110%",
           duration: 0.5,
           ease: "back.out(1.7)",
         })

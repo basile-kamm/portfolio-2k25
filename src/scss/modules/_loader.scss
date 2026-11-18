@@ -50,7 +50,7 @@
   mix-blend-mode: difference;
   color: $dark;
   font-size: 10vw;
-  font-family: "Humane";
+  font-family: var(--font-title);
 
   white-space: nowrap;
 }

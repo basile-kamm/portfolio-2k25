@@ -38,7 +38,7 @@
 }
 
 .contact-text {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.5vw;
   font-weight: 200;
   line-height: 74.166%; /* 17.8px */
@@ -47,7 +47,7 @@
 }
 
 .contact-cta {
-  font-family: "Humane";
+  font-family: var(--font-title);
   font-size: 20vw;
   font-weight: 700;
   line-height: 74.166%; /* 225.802px */
@@ -88,7 +88,7 @@
 
 .contact-social {
   text-align: right;
-  font-family: "Migra ";
+  font-family: var(--font-accent);
   font-size: 2vw;
   font-style: italic;
   font-weight: 200;
