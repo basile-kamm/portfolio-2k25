@@ -43,7 +43,7 @@
 }
 
 .resume-contact {
-  font-family: "Founders Grotesk";
+  font-family: var(--font-main);
   font-size: 2vw;
   font-style: italic;
   font-weight: 500;
@@ -57,13 +57,13 @@
 }
 
 .resume-title {
-  font-family: "Humane";
+  font-family: var(--font-title);
   font-size: 16vw;
   line-height: 50%;
   margin-top: 15vh;
 
   span {
-    font-family: "Migra";
+    font-family: var(--font-accent);
     font-size: 2vw;
     font-weight: 200;
     line-height: 74.166%;
@@ -71,13 +71,13 @@
 }
 
 .resume-skills-title {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 2vw;
   font-weight: 800;
 }
 
 .resume-skills-list {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.8vw;
   font-weight: 200;
   padding-left: 2vw;
@@ -90,7 +90,7 @@
 
 .resume-about-text {
   text-align: right;
-  font-family: "Founders Grotesk";
+  font-family: var(--font-main);
   font-size: 2vw;
   font-weight: 300;
   line-height: 95%;
@@ -108,7 +108,7 @@
   }
 
   i {
-    font-family: "Migra";
+    font-family: var(--font-accent);
     font-size: 2vw;
     font-style: italic;
     font-weight: 200;
@@ -116,7 +116,7 @@
 }
 
 .resume-btn {
-  font-family: "humane";
+  font-family: var(--font-title);
   font-weight: 300;
   font-size: 6vw;
   transition: all 0.3s;
@@ -140,8 +140,8 @@
 }
 
 .resume-experiences-title {
-  text-align: right;
-  font-size: 16vw;
+  margin-top: 16px;
+  font-size: 10vw;
   font-style: normal;
   font-weight: 700;
   line-height: 90%; /* 148.332px */
@@ -151,27 +151,32 @@
 .resume-experiences-container {
   display: flex;
   flex-direction: column;
+  gap: 4px;
   margin-top: 3vh;
 }
 
 .resume-experiences-texts {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: last baseline;
 }
 
 .resume-experiences-topics {
   display: flex;
   gap: 0.5vw;
   align-items: last baseline;
+
+  &.sub {
+    flex-direction: column;
+    gap:0;
+  }
 }
 
 .resume-experiences-time {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.8vw;
   font-weight: 800;
   line-height: 74.166%; /* 17.8px */
-  text-transform: uppercase;
   margin-bottom: 5px;
 }
 
@@ -183,11 +188,11 @@
 .resume-experiences-type {
   font-size: 1.4vw;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .resume-experiences-place {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.8vw;
   font-style: italic;
   font-weight: 200;
@@ -195,7 +200,6 @@
 .resume-experiences-underline {
   height: 2px;
   background: $white;
-  transform: translateY(-300%);
 }
 
 .resume-software-title {
@@ -213,7 +217,7 @@
   align-items: flex-end;
   gap: 0.7vh;
   margin-bottom: 1vh;
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 2.2vw;
   font-weight: 200;
   line-height: 90%; /* 23.733px */
@@ -226,7 +230,7 @@
 }
 
 .resume-language {
-  font-family: "Humane";
+  font-family: var(--font-title);
   font-size: 3vw;
   font-weight: 600;
   line-height: 90%; /* 26.7px */
@@ -236,7 +240,7 @@
 }
 
 .resume-language-level {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.6vw;
   font-style: italic;
   font-weight: 200;
@@ -245,7 +249,7 @@
 
 .resume-education-title {
   align-self: flex-end;
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 2.5vw;
   font-style: italic;
   font-weight: 800;
@@ -255,7 +259,7 @@
 
 .resume-education-time {
   margin: 3vh 0 1vh;
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.5vw;
   font-weight: 800;
   line-height: 90%; /* 17.8px */
@@ -265,17 +269,24 @@
 .resume-education-texts {
   display: flex;
   align-items: baseline;
+  flex-direction: column;
   gap: 0.5vw;
-  font-family: "Founders Grotesk";
-  font-size: 1.4vw;
-  font-weight: 400;
+  font-family: var(--font-main);
+  font-size: 1.8vw;
+  font-weight: 300;
   line-height: 74.166%; /* 17.8px */
 }
 
 .resume-education-place {
   font-style: italic;
-  font-family: "Migra";
   font-weight: 300;
+  font-size: 1.4vw;
+}
+
+.resume-refs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .resume-ref-texts {
@@ -290,7 +301,7 @@
 }
 
 .resume-ref {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 2vw;
   font-weight: 800;
   line-height: 90%; /* 23.733px */
@@ -303,7 +314,7 @@
 }
 
 .resume-ref-mail {
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.4vw;
   font-weight: 200;
   margin-bottom: 0.5vh;
@@ -311,12 +322,8 @@
 }
 
 .resume-ref-title {
-  font-family: "Founders Grotesk";
-  -webkit-text-stroke: 1.3px $white;
-  color: rgba($white, 0);
-  font-size: 3vw;
-  font-style: italic;
-  font-weight: 700;
+  font-size: 7vw;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -325,7 +332,7 @@
   overflow: hidden;
   // order: 1;
   transition: max-width 0.8s;
-  font-family: "Migra";
+  font-family: var(--font-accent);
   font-size: 1.4vw;
   font-style: normal;
   font-weight: 200;

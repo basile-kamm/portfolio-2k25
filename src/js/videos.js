@@ -11,17 +11,17 @@
 const WEBM_TYPE = 'video/webm; codecs="vp9, opus"';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const videos = [...document.querySelectorAll("video[data-fallback]")];
+  // Every self-hosted video; the Vimeo fallback is optional (some trailers
+  // only exist as WebM)
+  const videos = [...document.querySelectorAll("video")];
   if (videos.length === 0) return;
 
+  const withFallback = videos.filter((video) => video.dataset.fallback);
   const canPlayWebm = document.createElement("video").canPlayType(WEBM_TYPE) !== "";
 
-  if (!canPlayWebm) {
-    videos.forEach(swapToIframe);
-    return;
-  }
+  if (!canPlayWebm) withFallback.forEach(swapToIframe);
 
-  videos.forEach((video) => {
+  withFallback.forEach((video) => {
     video.addEventListener("error", () => swapToIframe(video), { once: true });
   });
 

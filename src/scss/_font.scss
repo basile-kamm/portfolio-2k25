@@ -68,60 +68,64 @@
   font-weight: 200;
 }
 
-// FOUNDERS GROTESK
+// HOST GROTESK (OFL, asset/font/host_grotesk/OFL.txt): variable woff2,
+// wght 300–800 + real italic, latin / latin-ext subsets (from Fontsource).
+// size-adjust: the site's text sizes were set for Founders Grotesk, and Host
+// Grotesk is bigger at the same font-size (per 100px: x-height 49.6 vs 43.7,
+// text 18 % wider). 88.1 % (= 43.7 / 49.6) gives it Founders Grotesk's
+// x-height, so the layout stays the same (lines ~4 % longer).
 @font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-Regular.woff2")
-    format("woff2");
-  font-weight: 400;
+  font-family: "Host Grotesk";
+  src: url("../asset/font/host_grotesk/HostGrotesk-Variable-latin.woff2")
+    format("woff2-variations");
+  font-weight: 300 800;
   font-style: normal;
+  font-display: swap;
+  size-adjust: 88.1%;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-RegularItalic.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-Medium.woff2")
-    format("woff2");
-  font-weight: 500;
+  font-family: "Host Grotesk";
+  src: url("../asset/font/host_grotesk/HostGrotesk-Variable-latin-ext.woff2")
+    format("woff2-variations");
+  font-weight: 300 800;
   font-style: normal;
+  font-display: swap;
+  size-adjust: 88.1%;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-MediumItalic.woff2")
-    format("woff2");
-  font-weight: 500;
+  font-family: "Host Grotesk";
+  src: url("../asset/font/host_grotesk/HostGrotesk-VariableItalic-latin.woff2")
+    format("woff2-variations");
+  font-weight: 300 800;
   font-style: italic;
+  font-display: swap;
+  size-adjust: 88.1%;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-Semibold.woff2")
-    format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-SemiboldItalic.woff2")
-    format("woff2");
-  font-weight: 600;
+  font-family: "Host Grotesk";
+  src: url("../asset/font/host_grotesk/HostGrotesk-VariableItalic-latin-ext.woff2")
+    format("woff2-variations");
+  font-weight: 300 800;
   font-style: italic;
+  font-display: swap;
+  size-adjust: 88.1%;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-@font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-Light.woff2")
-    format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Founders Grotesk";
-  src: url("../asset/font/founders_grotesk/FoundersGrotesk-LightItalic.woff2")
-    format("woff2");
-  font-weight: 300;
-  font-style: italic;
+
+// FONTS — change a typeface here, the whole site follows
+:root {
+  --font-main: "Host Grotesk", system-ui, sans-serif; // text and UI
+  --font-title: "Humane", "Arial Narrow", sans-serif; // condensed titles
+  --font-accent: "Migra", Georgia, serif; // italic serif accents
 }

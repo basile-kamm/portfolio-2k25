@@ -92,6 +92,11 @@
   text-transform: uppercase;
   font-weight: 400;
   line-height: 105%;
+
+  &.small {
+    font-size: 14vw;
+    line-height: 180%;
+  }
 }
 
 .selected-detail-title-container {
@@ -215,7 +220,7 @@
   margin-bottom: 12px;
   i,
   a {
-    font-family: "Migra";
+    font-family: var(--font-accent);
   }
 
   a {
@@ -238,7 +243,7 @@
   margin: auto;
   display: block;
   font-size: 4vw;
-  font-family: "humane";
+  font-family: var(--font-title);
   font-weight: 600;
   margin-top: 5vh;
   letter-spacing: 0.2vw;
@@ -269,7 +274,7 @@
   text-align: right;
   list-style: none;
   font-style: italic;
-  font-family: "migra";
+  font-family: var(--font-accent);
   font-size: 24px;
 }
 
@@ -308,7 +313,7 @@
 }
 
 .selected-detail-main-link-cta {
-  font-family: "migra";
+  font-family: var(--font-accent);
   font-style: italic;
   font-size: 2vw;
   transform: translateX(-110%);

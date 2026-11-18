@@ -1,4 +1,4 @@
-<extends src="en/base-layout.html" locals='{"script": "works.js"}'>
+<extends src="en/base-layout.html" locals='{"script": "works.js", "page": "works"}'>
   <block name="content">
     <div class="works-page">
       <div class="works-scroll">
@@ -7,31 +7,31 @@
           <div class="works-input-container">
             <label
               ><input type="radio" name="filter" value="works-item" checked />
-              <p>all</p>
+              <span>all</span>
             </label>
             <label
               ><input type="radio" name="filter" value="frontend" />
-              <p>frontend</p></label
+              <span>frontend</span></label
             >
             <label
               ><input type="radio" name="filter" value="ui" />
-              <p>UI</p></label
+              <span>UI</span></label
             >
             <label
               ><input type="radio" name="filter" value="video" />
-              <p>video/motion</p></label
+              <span>video/motion</span></label
             >
             <label
               ><input type="radio" name="filter" value="3d" />
-              <p>3D</p></label
+              <span>3D</span></label
             >
             <label
               ><input type="radio" name="filter" value="graphism" />
-              <p>graphism</p></label
+              <span>graphism</span></label
             >
             <label
               ><input type="radio" name="filter" value="photo" />
-              <p>photo</p></label
+              <span>photo</span></label
             >
           </div>
         </div>
@@ -69,6 +69,20 @@
               src="./html-modules/picture.html"
               locals='{"src": "../asset/img/works/graphism/melting-down.webp", "preset": "thumb", "max": 564, "class": "works-item graphism", "value": "melting-down"}'
             ></include>
+            <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r16-9"
+              data-works-item-value="hos"
+            >
+              <video
+                src="../asset/video/trailer-hos.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+            </div>
             <div
               class="selected-detail-iframe-container video thumbnail works-item r16-9"
               data-works-item-value="the-one"
@@ -167,6 +181,20 @@
               ></iframe>
             </div>
             <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r16-9"
+              data-works-item-value="kuki"
+            >
+              <video
+                src="../asset/video/trailer-kuki.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+            </div>
+            <div
               class="selected-detail-iframe-container ui graphism video thumbnail works-item r16-9"
               data-works-item-value="mirage"
             >
@@ -203,6 +231,7 @@
             ></include>
           </div>
           <div class="works-display-row last">
+            
             <include
               src="./html-modules/picture.html"
               locals='{"src": "../asset/img/works/graphism/kitty-kat.webp", "preset": "thumb", "max": 994, "class": "works-item graphism", "value": "kitty-kat"}'
@@ -293,6 +322,20 @@
               <video
                 src="../asset/video/trailer-tatitotu.webm"
                 data-fallback="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+            </div>
+            <div
+              class="selected-detail-iframe-container frontend thumbnail works-item r16-9"
+              data-works-item-value="tl"
+            >
+              <video
+                src="../asset/video/trailer-tl.webm"
                 data-autoplay
                 muted
                 loop
@@ -703,6 +746,15 @@
         ></extends>
         <extends
           src="en/selected-detail-pages/selected-detail-tatitotu.html"
+        ></extends>
+        <extends
+          src="en/selected-detail-pages/selected-detail-hos.html"
+        ></extends>
+        <extends
+          src="en/selected-detail-pages/selected-detail-kuki.html"
+        ></extends>
+        <extends
+          src="en/selected-detail-pages/selected-detail-tl.html"
         ></extends>
         <extends
           src="./html-modules/selected-detail-nolink.html"

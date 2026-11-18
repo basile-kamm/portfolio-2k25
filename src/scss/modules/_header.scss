@@ -46,7 +46,7 @@ header {
 }
 
 .header-name {
-  font-family: "migra";
+  font-family: var(--font-accent);
   transform-style: preserve-3d;
   transition: transform 0.4s;
   font-weight: 600;
@@ -59,7 +59,7 @@ header {
 }
 
 .header-language {
-  font-family: "founders grotesk";
+  font-family: var(--font-main);
   text-transform: uppercase;
 
   span {

@@ -22,7 +22,7 @@ footer {
 }
 
 .footer-cta {
-  font-family: "Humane";
+  font-family: var(--font-title);
   font-size: 20vw;
   font-weight: 367;
   line-height: 85%;
@@ -66,7 +66,7 @@ footer {
 }
 
 .footer-sub-cta {
-  font-family: "Migra ";
+  font-family: var(--font-accent);
   font-size: 32px;
   font-style: italic;
   font-weight: 200;
@@ -94,7 +94,7 @@ footer {
 
 .footer-social {
   text-align: right;
-  font-family: "Migra ";
+  font-family: var(--font-accent);
   font-size: 32px;
   font-style: italic;
   font-weight: 200;
