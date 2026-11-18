@@ -1,4 +1,4 @@
-<extends src="en/base-layout.html" locals='{"script": "main.js"}'>
+<extends src="en/base-layout.html" locals='{"script": "main.js", "page": "index"}'>
   <block name="content">
     <main>
       <section class="heading">
@@ -26,10 +26,7 @@
                 <div class="col-8 offset-4 col-md-4 offset-md-2 order-md-1">
                   <div class="banner-texts">
                     <p class="banner-text">
-                      I am a swiss Interactive Media Designer student looking
-                      for an internship... I love
-                      <i>web design & development</i>. I love nature, free party
-                      and cats.
+                      Freshly graduated in Interactive Media Design, I specialized in <i>web development</i> but remain a jack-of-all-trades. I am currently looking for projects where I can develop my skills.
                     </p>
                     <a href="contact.html" class="banner-cta main en"
                       >Contact me</a
@@ -157,31 +154,9 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop tatitotu selected-trailer-js"
-                src="../asset/video/trailer-tatitotu.webm"
-                data-fallback="https://player.vimeo.com/video/1053410742?h=c9e8fe3ed7&background=1"
-                data-autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                aria-hidden="true"
-              ></video>
-              <video
                 class="selected-trailer desktop mirage selected-trailer-js"
                 src="../asset/video/trailer-mirage.webm"
                 data-fallback="https://player.vimeo.com/video/1053410677?h=292fd2c606&background=1"
-                data-autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                aria-hidden="true"
-              ></video>
-              <video
-                class="selected-trailer desktop furieuse selected-trailer-js"
-                src="../asset/video/trailer-furieuse.webm"
-                data-fallback="https://player.vimeo.com/video/1053410578?h=4c835d936b&background=1"
                 data-autoplay
                 muted
                 loop
@@ -201,9 +176,9 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop lauriane selected-trailer-js"
-                src="../asset/video/trailer-lauriane.webm"
-                data-fallback="https://player.vimeo.com/video/1058153956?h=bdc1af2d04&background=1"
+                class="selected-trailer desktop globalies selected-trailer-js"
+                src="../asset/video/trailer-globalies.webm"
+                data-fallback="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
                 data-autoplay
                 muted
                 loop
@@ -212,9 +187,28 @@
                 aria-hidden="true"
               ></video>
               <video
-                class="selected-trailer desktop globalies selected-trailer-js"
-                src="../asset/video/trailer-globalies.webm"
-                data-fallback="https://player.vimeo.com/video/1081436316?h=4a216c70e5&background=1"
+                class="selected-trailer desktop kuki selected-trailer-js"
+                src="../asset/video/trailer-kuki.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
+                class="selected-trailer desktop tl selected-trailer-js"
+                src="../asset/video/trailer-tl.webm"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+              ></video>
+              <video
+                class="selected-trailer desktop hos selected-trailer-js"
+                src="../asset/video/trailer-hos.webm"
                 data-autoplay
                 muted
                 loop
@@ -243,28 +237,25 @@
               "topic3": "UI Design", "value": "licorne" }
             </include>
             <include src="./html-modules/selected-work.html">
+              { "title": "Énergie Vaud", "topic1": "", "topic2": "", "topic3": "Dev", "value": "kuki" }
+            </include>
+            <include src="./html-modules/selected-work.html">
               { "title": "Globalies", "topic1": "", "topic2": "Frontend",
               "topic3": "UI Design", "value": "globalies" }
             </include>
             <include src="./html-modules/selected-work.html">
-              { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
-              "Game Design", "value": "grenouche" }
+              { "title": "House of Switzerland", "topic1": "", "topic2": "", "topic3": "Dev", "value": "hos" }
             </include>
             <include src="./html-modules/selected-work.html">
-              { "title": "Lauriane's Portfolio", "topic1": "", "topic2": "",
-              "topic3": "Frontend", "value": "lauriane" }
+              { "title": "Grenouche", "topic1": "", "topic2": "Dev", "topic3":
+              "Game Design", "value": "greno uche" }
+            </include>
+            <include src="./html-modules/selected-work.html">
+              { "title": "Transports lausannois", "topic1": "", "topic2": "", "topic3": "Dev", "value": "tl" }
             </include>
             <include src="./html-modules/selected-work.html">
               { "title": "Mirage Festival", "topic1": "", "topic2": "Graphic
               design", "topic3": "UI Design", "value": "mirage" }
-            </include>
-            <include src="./html-modules/selected-work.html">
-              { "title": "Furieuse", "topic1": "UI", "topic2": "Frontend",
-              "topic3": "Motion", "value": "furieuse" }
-            </include>
-            <include src="./html-modules/selected-work.html">
-              { "title": "Tatitotu", "topic1": "", "topic2": "Frontend",
-              "topic3": "UI Design", "value": "tatitotu" }
             </include>
             <include src="./html-modules/selected-work.html">
               { "title": "Nitecore", "topic1": "", "topic2": "Video", "topic3":
@@ -274,13 +265,9 @@
           </div>
         </div>
         <div class="selected-works-details">
-          <include src="en/selected-detail-pages/selected-detail-furieuse.html">
-          </include>
           <include
             src="en/selected-detail-pages/selected-detail-globalies.html"
           >
-          </include>
-          <include src="en/selected-detail-pages/selected-detail-lauriane.html">
           </include>
           <include src="en/selected-detail-pages/selected-detail-mirage.html">
           </include>
@@ -288,11 +275,15 @@
             src="en/selected-detail-pages/selected-detail-grenouche.html"
           >
           </include>
-          <include src="en/selected-detail-pages/selected-detail-tatitotu.html">
-          </include>
           <include src="en/selected-detail-pages/selected-detail-licorne.html">
           </include>
           <include src="en/selected-detail-pages/selected-detail-nitecore.html">
+          </include>
+          <include src="en/selected-detail-pages/selected-detail-kuki.html">
+          </include>
+          <include src="en/selected-detail-pages/selected-detail-hos.html">
+          </include>
+          <include src="en/selected-detail-pages/selected-detail-tl.html">
           </include>
           <div class="selected-detail-close-map"></div>
           <button
@@ -423,10 +414,10 @@
                   </li>
                   <li>
                     <a
-                      href="https://befonts.com/founders-grotesk-font-family.html"
+                      href="https://github.com/Element-Type/HostGrotesk"
                       target="_blank"
-                      class="credits-font grotesk"
-                      >Founders Grotesk</a
+                      class="credits-font host-grotesk"
+                      >Host Grotesk</a
                     >
                   </li>
                 </ul>

@@ -21,13 +21,13 @@ video {
 
 p,
 a {
-  font-family: "Founders Grotesk";
+  font-family: var(--font-main);
 }
 
 h1,
 h2,
 h3 {
-  font-family: "humane";
+  font-family: var(--font-title);
 }
 
 @media (max-width: 767px) {

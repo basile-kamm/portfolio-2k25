@@ -19,8 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const body = document.querySelector("body");
 
+  // Close function of the currently open project detail (null when closed)
+  let activeCloseDetail = null;
+
   // Selected works only exist on the homepage
   if (selectedWorks.length === 0) return;
+
+  // Escape closes the open project detail
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeCloseDetail) activeCloseDetail();
+  });
 
   selectedWorks.forEach((selectedWork) => {
     let hoverEnterAnim = null;
@@ -88,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // onclick (not addEventListener) so reopening a project doesn't
           // stack listeners that would reverse previous animations too
           const closeDetail = function () {
+            if (activeCloseDetail !== closeDetail) return; // Already closed
+            activeCloseDetail = null;
             // Close faster than it opened (same animation, played backwards)
             openDetailAnim.timeScale(DETAIL_CLOSE_SPEED).reverse();
             pauseVideosIn(selectedWorkDetail);
@@ -95,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
           };
           if (selectedDetailClose) selectedDetailClose.onclick = closeDetail;
           if (selectedCloseMap) selectedCloseMap.onclick = closeDetail;
+          activeCloseDetail = closeDetail;
         }
       });
     });
@@ -117,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (window.screen.width >= 678) {
         tl.to(selectedWork.querySelector(".selected-work-title.main"), {
-          translateY: "-100%",
+          translateY: "-110%",
           duration: 0.5,
           ease: "back.out(1.7)",
         })

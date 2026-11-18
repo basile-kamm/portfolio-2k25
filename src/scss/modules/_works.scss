@@ -22,7 +22,7 @@
 }
 
 .works-title {
-  font-family: "Humane";
+  font-family: var(--font-title);
   font-size: 15vw;
   line-height: 80%;
   font-weight: 400;
@@ -87,9 +87,10 @@
     display: none;
   }
 
-  label p {
+  label span {
+    display: block;
     color: $white;
-    font-family: "Migra";
+    font-family: var(--font-accent);
     font-size: 2vw;
     font-style: italic;
     font-weight: 200;
@@ -105,7 +106,7 @@
     }
   }
 }
-input:checked + p {
+input:checked + span {
   opacity: 1;
   font-size: 2.4vw;
   -webkit-text-stroke: 0.7px $white;
@@ -132,7 +133,7 @@ input:checked + p {
     flex-direction: column;
     padding-left: 2.5vw;
 
-    label p {
+    label span {
       font-size: 3.5vh;
       margin-bottom: 1.2vh;
     }
@@ -149,7 +150,7 @@ input:checked + p {
     }
   }
 
-  input:checked + p {
+  input:checked + span {
     transform: translateY(1%);
   }
 
